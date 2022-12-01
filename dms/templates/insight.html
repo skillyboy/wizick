@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+<!-- Sidebar Starts  -->
+        <div class="sidebar">
+            <div class="logo">
+                <a href="{% url 'home' %}"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+            </div>
+            <ul class="side-menu top">
+                <li class="tablinks" id="defaultOpen" onclick="openTab(event, 'home-page')">
+                    <a href="{% url 'home' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/home.png" alt=""></i>
+                        <div>Home</div>
+                    </a>
+                </li>
+                <li id="dash-tab" class="tablinks" onclick="openTab(event, 'dash-board')">
+                    <a href="{% url 'dashboard' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/dashboard.png" alt=""></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li id="docManager-tab" class="tablinks" onclick="openTab(event, 'doc-manager')">
+                    <a href="{% url 'docmanager' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/icon-park-outline_category-management.png" alt=""></i>
+                        <div>Document Manager</div>
+                    </a>
+                </li>
+                <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+                    <a href="{% url 'tinymce' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                        <div> Document Editor</div>
+                    </a>
+                </li>
+                <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+                    <a href="{% url 'newtempeditor' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                        <div> Create Template</div>
+                    </a>
+                </li>
+                <li id="clause-tab" class="tablinks" onclick="openTab(event, 'clauselibrary')">
+                    <a href="{% url 'clause' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/library.png" alt=""></i>
+                        <div> Clause Library</div>
+                    </a>
+                </li>
+                <li id="temp-tab" class="tablinks" onclick="openTab(event, 'community-temp')">
+                    <a href="{% url 'clienttemp' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/heroicons-outline_template.png" alt=""></i>
+                        <div>Template</div>
+                    </a>
+                </li>
+                <li id="insight-tab" class="tablinks" onclick="openTab(event, 'insight-sect')">
+                    <a href="{% url 'insight' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/gg_insights.png" alt=""></i>
+                        <div> Insight</div>
+                    </a>
+                </li>
+                <li id="legal-tab" class="tablinks" onclick="openTab(event, 'legal-terminology')">
+                    <a href="{% url 'legal' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/legal.png" alt=""></i>
+                        <div> Legal Terminology</div>
+                    </a>
+                </li>
+
+                <hr>
+
+                <li class="username tablinks" id="user-tab" onclick="openTab(event, 'user')">
+                    <a href="{% url 'profile' %}">
+                        <div class="profile-pic-div">
+                            <img src="{{profile.p_img.url}}" class="display-pic" alt="">
+                        </div>
+                        <div>{{profile.first_name|title}} {{profile.last_name|title}}</div>
+                    </a>
+                </li>
+
+                <li id="notification-tab" class="tablinks" onclick="openTab(event, 'notifications')">
+                    <a href="{% url 'notification' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/Notification.png" alt=""></i>
+                        <div> Notification <span class="notify">2</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'logoutfunc' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/logout.png" alt=""></i>
+                        <div> Log out</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidebar Starts  -->
+
+    <div class="main">
+        <div class="topbar">
+            <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt=""></i>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode">
+                <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+            </label>
+        </div>
+
+ 
+            <!-- Insight-Section Starts  -->
+            <section id="insight-sect" class="insight-section tabcontent animate__animated animate__fadeInLeft">
+                <div id="top-section">
+                    <div class="title">
+                        <h1>Get <span>an insight </span>
+                            <br> and perform task
+                        </h1>
+                    </div>
+                    <div class="title">
+                        <img src="{% static '' %}img/undraw_file_manager_re_ms29.png" alt="homeimage" srcset="" class="img-shadow">
+                    </div>
+                </div>
+
+                <!-- <div class="btn-section">
+                    <button id="btn-download">Download</button>
+                    <button id="btn-view">View</button>
+                    <button id="btn-edit">Edit</button>
+                    <button id="btn-delete">Delete</button>
+                </div> -->
+
+                <section id="table">
+                    <table id="documents-2">
+                        <tr>
+                            <th>Select</th>
+                            <th>Renewals</th>
+                            <th>Title</th>
+                            <th>Parties Involved</th>
+                            <th>Effective Date</th>
+                            <th>Expiration Date</th>
+                            <th>Consideration</th>
+                            <th>Liability Cap</th>
+                            <th>Term</th>
+                            <th>Government Law</th>
+                        </tr>
+                        
+                        {% for item in mydocs  %}
+                        <tr>
+                            <td>
+                                <select id="manage-btn">
+                                <a href="#"><option>{{item.title}}</option></a>
+                                <a href="#"><option value="default">Download</option></a>
+                                <a href="#"><option value="doc">View</option></a>
+                                <a href="#"><option value="pdf">Edit</option></a>
+                                <a href="#"><option value="pdf">Delete</option></a>
+                                </select>
+                            </td>
+                            <td class="negative">-5</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.parties}}</td>
+                            <td>{{item.effectivedate}}</td>
+                            <td>{{item.expirydate}}</td>
+                            <td>{{item.consideration}}</td>
+                            <td>{{item.liabilitycap}}</td>
+                            <td>{{item.term}}</td>
+                            <td>India</td>
+                        </tr>
+                        {% endfor %}
+                        
+
+                        {% for item in mypdf  %}
+                        <tr>
+                            <td>
+                                <select id="manage-btn">
+                                <a href="#"><option>{{item.title}}</option></a>
+                                <a href="#"><option>Download</option></a>
+                                <a href="#"><option>View</option></a>
+                                <a href="#"><option>Edit</option></a>
+                                <a href="#"><option>Delete</option></a>
+                                </select>
+                            </td>
+                            <td class="negative">-5</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.parties}}</td>
+                            <td>{{item.effectivedate}}</td>
+                            <td>{{item.expirydate}}</td>
+                            <td>{{item.consideration}}</td>
+                            <td>{{item.liabilitycap}}</td>
+                            <td>{{item.term}}</td>
+                            <td>India</td>
+                        </tr>
+                        {% endfor %}
+
+                        {% for item in mydrafts  %}
+                        <tr>
+                            <td>
+                                <select id="manage-btn">
+                                <a href="#"><option>{{item.title}}</option></a>
+                                <a href="#"><option value="default">Download</option></a>
+                                <a href="#"><option value="doc">View</option></a>
+                                <a href="#"><option value="pdf">Rename</option></a>
+                                <a href="#"><option value="pdf">Edit</option></a>
+                                <a href="#"><option value="pdf">Delete</option></a>
+                                </select>
+                            </td>
+                            <td class="negative">-5</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.parties}}</td>
+                            <td>{{item.effectivedate}}</td>
+                            <td>{{item.expirydate}}</td>
+                            <td>{{item.consideration}}</td>
+                            <td>{{item.liabilitycap}}</td>
+                            <td>{{item.term}}</td>
+                            <td>India</td>
+                        </tr>
+                        {% endfor %}                        
+                    </table>
+
+                </section>
+            </section>
+            <!-- Insight-Section Ends  -->
+
+
+    <script src="{% static '' %}js/script.js"></script>
+    <script src="{% static '' %}js/main.js"></script>
+</body>
+
+</html>

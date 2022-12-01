@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load simple_tags %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ocument Manager</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/home.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.tiny.cloud/1/grjue6zgt2kiw5ryvt4z271o7w52oofnhegmxvtgpgwo2hho/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+    
+            selector: 'textarea#export',
+            toolbar: 'export pagebreak | formatselect fontselect fontsizeselect bold italic underline strikethrough forecolor backcolor subscript superscript | alignleft aligncenter alignright alignjustify indent outdent rtl ltr | bullist numlist checklist | emoticons image table link hr charmap',
+            height: 500,
+            toolbar_mode: 'sliding',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+            
+            toolbar: "undo redo print spellcheckdialog formatpainter | blocks fontfamily fontsize | bold italic underline forecolor backcolor | link image addcomment showcomments  | alignleft aligncenter alignright alignjustify lineheight | checklist bullist numlist indent outdent | removeformat",
+            height: '600px',
+            toolbar_sticky: true,
+            icons: 'thin',
+            autosave_restore_when_empty: true,
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'john.doe', 
+            
+        });
+    </script>
+</head>
+
+{% if messages %}
+    {% for item in messages %}
+      <div style="color: white; padding:2rem; background:#35B7FF;font-size:1rem; font-weight:700;text-align:center;">{{item}}</div>
+    {% endfor %}
+{% endif %}
+
+<body>
+
+    <div class="container">
+
+        <img id="dark-rect" src="{% static '' %}img/dark_Rectangle348.png" alt="rect" hidden>
+        <img id="side-rect" src="{% static '' %}img/Rectangle348.png" alt="rect" hidden>
+
+<!-- Sidebar Starts  -->
+<div class="sidebar">
+    <div class="logo">
+        <a href="{% url 'home' %}"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+    </div>
+    <ul class="side-menu top">
+        <li class="tablinks" id="defaultOpen" onclick="openTab(event, 'home-page')">
+            <a href="{% url 'home' %}">
+                <i><img class="icon" src="{% static '' %}img/icon/home.png" alt=""></i>
+                <div>Home</div>
+            </a>
+        </li>
+        <li id="dash-tab" class="tablinks" onclick="openTab(event, 'dash-board')">
+            <a href="{% url 'dashboard' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/dashboard.png" alt=""></i>
+                <div>Dashboard</div>
+            </a>
+        </li>
+        <li id="docManager-tab" class="tablinks" onclick="openTab(event, 'doc-manager')">
+            <a href="{% url 'docmanager' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/icon-park-outline_category-management.png" alt=""></i>
+                <div>Document Manager</div>
+            </a>
+        </li>
+        <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+            <a href="{% url 'tinymce' %}">
+                <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                <div> Document Editor</div>
+            </a>
+        </li>
+        <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+            <a href="{% url 'newtempeditor' %}">
+                <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                <div> Create Template</div>
+            </a>
+        </li>
+        <li id="clause-tab" class="tablinks" onclick="openTab(event, 'clauselibrary')">
+            <a href="{% url 'clause' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/library.png" alt=""></i>
+                <div> Clause Library</div>
+            </a>
+        </li>
+        <li id="temp-tab" class="tablinks" onclick="openTab(event, 'community-temp')">
+            <a href="{% url 'admintemp' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/heroicons-outline_template.png" alt=""></i>
+                <div>Template</div>
+            </a>
+        </li>
+        <li id="insight-tab" class="tablinks" onclick="openTab(event, 'insight-sect')">
+            <a href="{% url 'insight' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/gg_insights.png" alt=""></i>
+                <div> Insight</div>
+            </a>
+        </li>
+        <li id="legal-tab" class="tablinks" onclick="openTab(event, 'legal-terminology')">
+            <a href="{% url 'legal' %}">
+                <i><img class="icon" src="{% static '' %}img/icon/legal.png" alt=""></i>
+                <div> Legal Terminology</div>
+            </a>
+        </li>
+
+        <hr>
+
+        <li class="username tablinks" id="user-tab" onclick="openTab(event, 'user')">
+            <a href="{% url 'profile' %}">
+                <div class="profile-pic-div">
+                    <img src="{{profile.p_img.url}}" class="display-pic" alt="">
+                </div>
+                <div>{{profile.first_name|title}} {{profile.last_name|title}}</div>
+            </a>
+        </li>
+
+        <li id="notification-tab" class="tablinks" onclick="openTab(event, 'notifications')">
+            <a href="{% url 'notification' %}">
+                <i><img class="icon" src="{% static '' %}img/icon/Notification.png" alt=""></i>
+                <div> Notification <span class="notify">2</span></div>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'logoutfunc' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/logout.png" alt=""></i>
+                <div> Log out</div>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- Sidebar Starts  -->
+
+
+
+
+            <!-- Clause-library Starts  -->
+            <section id="clauselibrary" class="clause-library tabcontent ">
+                <div class="sidebar-2 animate__animated animate__fadeInRight">
+                    <div class="title">
+                        <h2>Clause Library</h2>
+                        <a href="#"><i class="icon"> <img src="{% static '' %}img/icon/close.png" alt="" id="expand"></i></a>
+                        <a href="#"><i class="icon"> <img src="{% static '' %}img/icon/expand.png" alt="" id="btn-close"></i></a>
+                    </div>
+                    <div class="form-section">
+                        <form action="">
+                            <select name="favourite" class="selection favourite">
+                                <option value="">Favourite</option>
+                                <option value="pdf">PDF</option>
+                                <option value="doc">Ms-Word</option>
+                                <option value="xls">Ms-Excel</option>
+                                <option value="ppt">Ms-PowerPoint</option>
+                            </select><br>
+                            <label for="clause-category">Clause Categories</label>
+                            <input type="search" placeholder="Search Category" id="clause-search">
+                        </form>
+                    </div>
+
+                    <div id="A1"></div>
+                    <div class="words">
+                        <div class="list">
+                            <ul>
+                                {% for item in clauses %}
+                                <li>{{item.name}}</li>
+                                {% endfor %}
+                                <div id="B1"></div>
+                                <div id="C1"></div>
+                                <div id="D1"></div>
+                                <div id="E1"></div>
+                                <div id="F1"></div>
+                                <div id="G1"></div>
+                                <div id="H1"></div>
+                                <div id="I1"></div>
+                                <div id="J1"></div>
+                                <div id="K1"></div>
+                                <div id="L1"></div>
+                                <div id="M1"></div>
+                                <div id="N1"></div>
+                                <div id="O1"></div>
+                                <div id="P1"></div>
+                                <div id="Q1"></div>
+                                <div id="R1"></div>
+                                <div id="S1"></div>
+                                <div id="T1"></div>
+                                <div id="U1"></div>
+                                <div id="V1"></div>
+                                <div id="W1"></div>
+                                <div id="X1"></div>
+                                <div id="Y1"></div>
+                                <div id="Z1"></div>
+                            </ul>
+                        </div>
+                        <div class="inner-nav">
+                            <ul>
+                                <li><a href="#" class="active">ALL</a></li>
+                                <li><a href="#A1">A</a></li>
+                                <li><a href="#B1">B</a></li>
+                                <li><a href="#C1">C</a></li>
+                                <li><a href="#D1">D</a></li>
+                                <li><a href="#E1">E</a></li>
+                                <li><a href="#F1">F</a></li>
+                                <li><a href="#G1">G</a></li>
+                                <li><a href="#H1">H</a></li>
+                                <li><a href="#I1">I</a></li>
+                                <li><a href="#J1">J</a></li>
+                                <li><a href="#K1">K</a></li>
+                                <li><a href="#L1">L</a></li>
+                                <li><a href="#M1">M</a></li>
+                                <li><a href="#N1">N</a></li>
+                                <li><a href="#O1">O</a></li>
+                                <li><a href="#P1">P</a></li>
+                                <li><a href="#Q1">Q</a></li>
+                                <li><a href="#R1">R</a></li>
+                                <li><a href="#S1">S</a></li>
+                                <li><a href="#T1">T</a></li>
+                                <li><a href="#U1">U</a></li>
+                                <li><a href="#V1">V</a></li>
+                                <li><a href="#W1">W</a></li>
+                                <li><a href="#X1">X</a></li>
+                                <li><a href="#Y1">Y</a></li>
+                                <li><a href="#Z1">Z</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="clauses" class="animate__animated animate__fadeInUp">
+                        <h3>Acceptance</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ducimus eveniet, eius voluptatum similique fugit consequatur
+                            ullam illum culpa eaque, est dolores temporibus molestiae 
+                            nobis dicta, recusandae veniam molestias accusamus aliquid?
+                        </p>
+                    </div>
+                </div>
+                <div id="clause-content">
+                    <div  class="inner-sect animate__animated animate__fadeIn">
+                        <form class="search-bar">
+                            <input type="text" id="input-search" placeholder="Search Clause" name="search">
+                            <button type="button" id="btn-search"><i class="icon"><img src="{% static '' %}img/icon/search.png"
+                                        alt=""></i></button>
+                        </form>
+                    </div>
+
+                    <div id="all-clause" class="inner-sect clause animate__animated animate__fadeIn">
+                        {% for item in clauses %}
+                        <div class="item">
+                            <h3>{{item.name}}</h3>
+                            <h4>{{title}}</h4>
+                            <p>{{item.clause}}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+               
+            </section>
+            <!-- Clause-library Ends  -->
+
+
+
+
+    <script>
+
+
+        // Community Template Slider
+        let right = [...document.querySelectorAll("#btn-com-right")];
+        let left = [...document.querySelectorAll("#btn-com-left")];
+        let commCards = [...document.querySelectorAll(".comm-cards")];
+
+
+        commCards.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
+
+            right[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+            });
+            left[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+            });
+        });
+
+
+
+        //  My-Template Slider
+        let right2Nav = [...document.querySelectorAll("#btn-temp-right")];
+        let left2Nav = [...document.querySelectorAll("#btn-temp-left")];
+        let tempCardsNav = [...document.querySelectorAll(".mytemp-cards")];
+
+        tempCardsNav.forEach((item2, k) => {
+
+            let containerDimensionsTemp = item2.getBoundingClientRect();
+            let containerWidthTemp = containerDimensionsTemp.width;
+
+            right2Nav[k].addEventListener('click', () => {
+                item2.scrollLeft += containerWidthTemp;
+            });
+            left2Nav[k].addEventListener('click', () => {
+                item2.scrollLeft -= containerWidthTemp;
+            });
+        });
+
+
+    </script>
+
+
+
+    <!-- <script>
+                    
+        let rightNav = [...document.querySelectorAll("#btn-com-right")];
+        let leftNav = [...document.querySelectorAll("#btn-com-left")];
+        let commCardsNav = [...document.querySelectorAll("#community-temp > .comm-cards")];
+        
+        
+        commCardsNav.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
+           
+            rightNav[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+                console.log(containerWidth);
+        });
+            leftNav[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+        });
+     });
+
+
+
+    //  My Template Slider
+
+    const right2Nav = [...document.querySelectorAll("#btn-temp-right")];
+    const left2Nav = [...document.querySelectorAll("#btn-temp-left")];
+    const tempCardsNav = [...document.querySelectorAll("#community-temp > .mytemp-cards")];
+    
+        tempCardsNav.forEach((item2, k) => {
+            let containerDimension = item2.getBoundingClientRect();
+            let containerWidth2 = containerDimension.width;
+            
+            right2Nav[0].addEventListener('click', () => {
+                item2.scrollLeft += containerWidth2;
+                console.log(containerDimension);
+        });
+            left2Nav[0].addEventListener('click', () => {
+                item2.scrollLeft -= containerWidth2;
+        });
+     });
+
+    </script> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc.1/dist/chartjs-plugin-datalabels.min.js"
+        integrity="sha256-Oq8QGQ+hs3Sw1AeP0WhZB7nkjx6F1LxsX6dCAsyAiA4=" crossorigin="anonymous"></script>
+        <script src="{% static '' %}js/doc.js">
+    </script>
+    <!-- <script src="../js/all.js"></script> -->
+
+    <!-- <script src="{% static '' %}js/main.js"></script> -->
+
+    
+</body>
+
+</html>

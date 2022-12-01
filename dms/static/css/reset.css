@@ -1,0 +1,156 @@
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+  letter-spacing: 1px;
+
+}
+
+
+span {
+  color: #35B7FF;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+#side-rect {
+  position: absolute;
+  width: 50%;
+  height: 633px;
+  z-index: 0;
+
+}
+
+.rect-hide{
+  display: none;
+}
+
+
+#dark-rect {
+  position: absolute;
+  width: 50%;
+  height: 633px;
+  z-index: 0;
+ }
+
+.container {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  margin: 5px 80px;
+  width: 150px;
+}
+
+.wizick-logo-t{
+  position: relative;
+  z-index: 1;
+  top: -20px;
+  width: 19%;
+  left: 970px;
+}
+
+#sect-1 {
+  display: flex;
+  margin: 15px 5%;
+  padding: 10px;
+}
+
+.sect-1 {
+  width: 40%;
+  height: 400px;
+  margin-left: 110px;
+  margin-top: 30px;
+  }
+
+  #form{
+    margin-top: 60px;
+  }
+/* form  */
+
+
+.sect-head {
+  margin-bottom: 20px;
+  padding: 5px 0px;
+}
+
+.sect-head  p{
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+
+
+h1,
+p,
+input,
+label {
+  margin-bottom: 10px;
+}
+
+.lb {
+  margin: 10px;
+}
+
+/* form{
+    background-color: aqua;
+} */
+
+
+input[type=password],
+select {
+  width: 100%;
+  padding: 16px 36px;
+  margin: 16px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color: var(--faint-blue);
+}
+
+input[type=submit] {
+  width: 35%;
+  background-color: #35B7FF;
+  color: white;
+  padding: 16px 40px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+input[type=submit]:hover {
+  background: #E9F5FFE5;
+  color: #35B7FF;
+
+}
+
+.input-label {
+  font-weight: bold;
+}
+
+
+
+div {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#login-img img {
+  width: 110%;
+  margin-top: 90px;
+  position: relative;
+  left: 40px;
+}
+

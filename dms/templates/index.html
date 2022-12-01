@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wizick</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{% static '' %}css/style.css">  
+    <link rel="stylesheet" href="{% static '' %}css/app.css">
+
+
+</head>
+
+{% if messages %}
+    {% for item in messages %}
+      <div style="color: white; padding:2rem; background:#35B7FF;font-size:1rem; font-weight:700;text-align:center;">{{item}}</div>
+    {% endfor %}
+{% endif %}
+<body>
+
+    <!-- <div class="container"> -->
+
+        <div class="main">
+
+            <div class="topbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+                </div>
+                <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt="" hidden></i>
+                <input type="checkbox" id="switch-mode" hidden>
+                <label for="switch-mode" class="switch-mode">
+                    <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                    <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+                </label>
+            </div>
+
+            <!-- Home-Section Starts  -->
+            <div class="landing-section">
+                <div id="top-section" class="animate__animated animate__fadeInDown">
+                    <div class="title">
+                        <h1>Save Manage <br> & Edit Documents</h1>
+                        <p>Wizick is the leading destination to find, create, upload,
+                            <br> manage and every other things you can do with documents
+                        </p>
+                        <a href="{% url 'home' %}"><button>Get Started <i><img class="icon" src="{% static '' %}img/icon/Union.png" alt=""></i></button></a>
+                    </div>
+                    <div class="title">
+                        <img src="{% static '' %}img/undraw_collecting_re_lp6p2.png" alt="homeimage" srcset="" class="img-shadow">
+                    </div>
+                </div>
+
+                <section id="cards">
+                    <a href="{% url 'signin' %}" class="card animate__animated animate__fadeIn">
+                        <div>
+                            <img src="{% static '' %}img/undraw_secure_login_pdn4.png" alt="Signin image" srcset="">
+                            <button>Sign In</button>
+                        </div>
+                    </a>
+                    <a href="{% url 'register' %}" class="card animate__animated animate__fadeIn">
+                        <div>
+                            <img class="signup" src="{% static '' %}img/Group88.png" alt="Signup image" srcset="">
+                            <button class="btn-2">Sign Up</button>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'demo' %}" class="card animate__animated animate__fadeIn">
+                        <div>
+                            <img src="{% static '' %}img/undraw_online_test_gba7.png" alt="Demo image" srcset="">
+                            <button>Demo Login</button>
+                        </div>
+                    </a>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- </div> -->
+    <script src="{% static '' %}js/script.js"></script>
+    <script src="{% static '' %}js/all.js"></script>
+   
+</body>
+
+</html>
+
+
+

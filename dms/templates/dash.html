@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/home.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+<body>
+
+    <div class="container">
+        <img id="dark-rect" src="{% static '' %}img/dark_Rectangle348.png" alt="rect" hidden>
+        <img id="side-rect" src="{% static '' %}img/Rectangle348.png" alt="rect" hidden>
+<!-- Sidebar Starts  -->
+<div class="sidebar">
+    <div class="logo">
+        <a href="{% url 'home' %}"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+    </div>
+    <ul class="side-menu top">
+        <li class="tablinks" id="defaultOpen" onclick="openTab(event, 'home-page')">
+            <a href="{% url 'home' %}">
+                <i><img class="icon" src="{% static '' %}img/icon/home.png" alt=""></i>
+                <div>Home</div>
+            </a>
+        </li>
+        <li id="dash-tab" class="tablinks" onclick="openTab(event, 'dash-board')">
+            <a href="{% url 'dashboard' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/dashboard.png" alt=""></i>
+                <div>Dashboard</div>
+            </a>
+        </li>
+        <li id="docManager-tab" class="tablinks" onclick="openTab(event, 'doc-manager')">
+            <a href="{% url 'pdfmanager' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/icon-park-outline_category-management.png" alt=""></i>
+                <div>Document Manager</div>
+            </a>
+        </li>
+        <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+            <a href="#">
+                <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                <div> Document Editor</div>
+            </a>
+        </li>
+        <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+            <a href="{% url 'newtempeditor' %}">
+                <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                <div> Create Template</div>
+            </a>
+        </li>
+        <li id="clause-tab" class="tablinks" onclick="openTab(event, 'clauselibrary')">
+            <a href="{% url 'clause' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/library.png" alt=""></i>
+                <div> Clause Library</div>
+            </a>
+        </li>
+        <li id="temp-tab" class="tablinks" onclick="openTab(event, 'community-temp')">
+            <a href="{% url 'admintemp' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/heroicons-outline_template.png" alt=""></i>
+                <div>Template</div>
+            </a>
+        </li>
+        <li id="insight-tab" class="tablinks" onclick="openTab(event, 'insight-sect')">
+            <a href="{% url 'insight' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/gg_insights.png" alt=""></i>
+                <div> Insight</div>
+            </a>
+        </li>
+        <li id="legal-tab" class="tablinks" onclick="openTab(event, 'legal-terminology')">
+            <a href="{% url 'legal' %}">
+                <i><img class="icon" src="{% static '' %}img/icon/legal.png" alt=""></i>
+                <div> Legal Terminology</div>
+            </a>
+        </li>
+
+        <hr>
+
+        <li class="username tablinks" id="user-tab" onclick="openTab(event, 'user')">
+            <a href="{% url 'profile' %}">
+                <div class="profile-pic-div">
+                    <img src="{{profile.p_img.url}}" class="display-pic" alt="">
+                </div>
+                <div>{{profile.first_name|title}} {{profile.last_name|title}}</div>
+            </a>
+        </li>
+        <li id="notification-tab" class="tablinks" onclick="openTab(event, 'notifications')">
+            <a href="#">
+                <i><img class="icon" src="{% static '' %}img/icon/Notification.png" alt=""></i>
+                <div> Notification <span class="notify">2</span></div>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'logoutfunc' %}">
+                <i> <img class="icon" src="{% static '' %}img/icon/logout.png" alt=""></i>
+                <div> Log out</div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+            </ul>
+        </div>
+        <!-- Sidebar Starts  -->
+
+        <div class="main">
+            <div class="topbar">
+                <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt=""></i>
+                <input type="checkbox" id="switch-mode" hidden>
+                <label for="switch-mode" class="switch-mode">
+                    <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                    <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+                </label>
+            </div>
+            <!-- Dashboard Section Starts -->
+            <section id="dash-board" class="dashboard tabcontent animate__animated animate__fadeInLeft">
+                <div class="title">
+                    <h2>Total number of Contracts: <span>45</span></h2>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="number">20</div>
+                            <div class="card-name">Contracts Under Drafting</div>
+                        </div>
+                        <div class="icon-box">
+                            <i><img src="{% static '' %}img/icon/Vector1.png" alt=""></i>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="number">10</div>
+                            <div class="card-name">Contracts Under Negotiation</div>
+                        </div>
+                        <div class="icon-box">
+                            <i><img src="{% static '' %}img/icon/Vector2.png" alt=""></i>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="number">15</div>
+                            <div class="card-name">Contracts Pending for E-signature</div>
+                        </div>
+                        <div class="icon-box">
+                            <i><img src="{% static '' %}img/icon/Vector3.png" alt=""></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="charts">
+                    <div class="chart" id="doughnut-chart">
+                        <h2>CONTRACTS</h2>
+                        <div>
+                            <canvas id="doughnutChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <h2>CONTRACTS DUE FOR EXPIRY</h2>
+                        <div>
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Dashboard Section Ends -->
+        </div>
+        <div class="in-active-modal">
+            <div class="pop-up">
+                <h2>Save</h2>
+                <button id="modal-btn-with-insight">With Insight</button>
+                <button id="modal-btn-without-insight">Without Insight</button>
+                <button id="modal-btn-as-template">As Template</button>
+                <button id="modal-btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+
+        // Community Template Slider
+        let right = [...document.querySelectorAll("#btn-com-right")];
+        let left = [...document.querySelectorAll("#btn-com-left")];
+        let commCards = [...document.querySelectorAll(".comm-cards")];
+
+
+        commCards.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
+
+            right[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+            });
+            left[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+            });
+        });
+
+
+
+        //  My-Template Slider
+        let right2Nav = [...document.querySelectorAll("#btn-temp-right")];
+        let left2Nav = [...document.querySelectorAll("#btn-temp-left")];
+        let tempCardsNav = [...document.querySelectorAll(".mytemp-cards")];
+
+        tempCardsNav.forEach((item2, k) => {
+
+            let containerDimensionsTemp = item2.getBoundingClientRect();
+            let containerWidthTemp = containerDimensionsTemp.width;
+
+            right2Nav[k].addEventListener('click', () => {
+                item2.scrollLeft += containerWidthTemp;
+            });
+            left2Nav[k].addEventListener('click', () => {
+                item2.scrollLeft -= containerWidthTemp;
+            });
+        });
+
+
+    </script>
+
+
+
+    <!-- <script>
+                    
+        let rightNav = [...document.querySelectorAll("#btn-com-right")];
+        let leftNav = [...document.querySelectorAll("#btn-com-left")];
+        let commCardsNav = [...document.querySelectorAll("#community-temp > .comm-cards")];
+        
+        
+        commCardsNav.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
+           
+            rightNav[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+                console.log(containerWidth);
+        });
+            leftNav[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+        });
+     });
+
+
+
+    //  My Template Slider
+
+    const right2Nav = [...document.querySelectorAll("#btn-temp-right")];
+    const left2Nav = [...document.querySelectorAll("#btn-temp-left")];
+    const tempCardsNav = [...document.querySelectorAll("#community-temp > .mytemp-cards")];
+    
+        tempCardsNav.forEach((item2, k) => {
+            let containerDimension = item2.getBoundingClientRect();
+            let containerWidth2 = containerDimension.width;
+            
+            right2Nav[0].addEventListener('click', () => {
+                item2.scrollLeft += containerWidth2;
+                console.log(containerDimension);
+        });
+            left2Nav[0].addEventListener('click', () => {
+                item2.scrollLeft -= containerWidth2;
+        });
+     });
+
+    </script> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc.1/dist/chartjs-plugin-datalabels.min.js"
+        integrity="sha256-Oq8QGQ+hs3Sw1AeP0WhZB7nkjx6F1LxsX6dCAsyAiA4=" crossorigin="anonymous"></script>
+    <script src="{% static '' %}js/chart1.js"></script>
+    <script src="{% static '' %}js/chart2.js"></script>
+    <!-- <script src="{% static '' %}js/all.js"></script> -->
+
+    <script src="{% static '' %}js/main.js"></script>
+  
+
+
+
+
+</body>
+
+</html>

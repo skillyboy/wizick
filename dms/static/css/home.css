@@ -1,0 +1,2920 @@
+/* Homepage CSS Starts */
+.tabcontent {
+    background: var(--white);
+}
+
+
+#clause-content{
+    margin-left: 20rem;
+}
+
+.home-section #top-section {
+    background   : var(--faint-blue);
+    border-radius: 36px;
+    margin       : 2px auto;
+    padding      : 35px 30px;
+    display      : flex;
+    width        : 90%;
+}
+
+.home-section #top-section button {
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+
+.home-section .title {
+    width      : 45%;
+    margin-left: 8%;
+}
+
+.home-section .title h1 {
+    color    : var(--light-blue);
+    font-size: 2.5rem;
+}
+
+.home-section .title p {
+    line-height   : 24px;
+    letter-spacing: 0.01em;
+    font-size     : 0.7rem;
+
+}
+
+.home-section .title img {
+    width: 80%;
+}
+
+.home-section #cards {
+    display   : flex;
+    width     : 90%;
+    padding   : 20px;
+    text-align: center;
+    margin    : 20px auto;
+
+}
+
+.home-section #cards p {
+    color: var(--light-blue);
+}
+
+
+
+.home-section #cards .card {
+    background-color: var(--faint-blue);
+    border-radius   : 20px;
+    margin          : 0 auto;
+    padding         : 10px;
+    font-size       : 1rem;
+    width           : 29%;
+    text-decoration : none;
+    text-align      : center;
+    height          : 220px;
+    cursor          : pointer;
+}
+
+.home-section #cards .card img {
+    width : 180px;
+    margin: 5px;
+}
+
+.home-section #cards .card div p {
+    position   : absolute;
+    top        : 160px;
+    margin-left: 40px;
+}
+
+/* Homepage CSS Ends */
+
+
+
+/* Dashboard CSS Starts */
+.dashboard .title {
+    margin       : 0 auto;
+    text-align   : center;
+    border-radius: 20px;
+    width        : 80%;
+    background   : var(--faint-blue);
+    padding      : 10px;
+    color        : var(--light-blue);
+}
+
+
+.dashboard .cards {
+    width                : 80%;
+    height               : 250px;
+    padding              : 20px;
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap             : 30px;
+    margin               : 0 auto;
+}
+
+.dashboard .cards .card {
+    padding        : 20px;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    background     : var(--orange);
+    border-radius  : 10px;
+    box-shadow     : 0 7px 25px 0 rgba(0, 0, 0, 0.08);
+    margin         : 0 auto;
+}
+
+
+.dashboard .cards .card:nth-child(2) {
+    background: var(--purple);
+}
+
+.dashboard .cards .card:nth-child(3) {
+    background: var(--blue);
+
+}
+
+.dashboard .cards .card .card-content .number {
+    font-size  : 2.5rem;
+    font-weight: bold;
+    color      : white;
+}
+
+.dashboard .cards .card .card-content .card-name {
+    color: #ffffff;
+}
+
+.dashboard .cards .card .icon-box i img {
+    width: 75px;
+}
+
+.dashboard .charts {
+    display              : grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap             : 30px;
+    width                : 80%;
+    padding              : 20px 20px;
+    margin               : 0 auto;
+}
+
+.dashboard .charts .chart {
+    align-items    : center;
+    justify-content: space-between;
+    background     : var(--white);
+    padding        : 20px;
+    border-radius  : 10px;
+    box-shadow     : 0 7px 25px rgba(0, 0, 0, 0.08);
+    width          : 100%;
+    height         : 320px;
+}
+
+.chart h2 {
+    margin-bottom: 5px;
+    font-size    : 20px;
+    color        : var(--ash);
+    text-align   : center;
+    margin-bottom: 20px;
+}
+
+.dashboard .charts .chart div {
+    width : 500px;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.dashboard .charts .chart div:nth-child(2) {
+    width: 300px;
+}
+
+/* Dashboard CSS Ends */
+
+
+
+/*Doc Manager-Section CSS Starts */
+.doc-section #top-section {
+    background   : var(--faint-blue);
+    border-radius: 150px 0 0 150px;
+    margin       : 2px auto;
+    margin-right : 0;
+    padding      : 35px 30px;
+    display      : flex;
+    width        : 90%;
+
+}
+
+.doc-section #top-section button {
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+.doc-section .title {
+    width      : 45%;
+    margin-left: 8%;
+    height     : 120px;
+}
+
+.doc-section .title h1 {
+    color     : var(--light-blue);
+    font-size : 2rem;
+    margin-top: 20px;
+
+}
+
+.doc-section .title p {
+    line-height   : 24px;
+    letter-spacing: 0.01em;
+    font-size     : 0.9rem;
+
+}
+
+.doc-section .title img {
+    position: relative;
+    top     : -60px;
+    left    : 20px;
+    width   : 250px;
+}
+
+.doc-section .form-section {
+    width     : 100%;
+    margin    : auto;
+    margin-top: 30px;
+    text-align: center;
+    padding   : 10px;
+
+}
+
+.doc-section .form-section select {
+    padding         : 10px 20px;
+    border-radius   : 10px;
+    border          : 1px solid var(--ash);
+    background-color: var(--white);
+    width           : 150px;
+}
+
+.doc-section .form-section #doc-search {
+    width           : 250px;
+    padding         : 10px 20px;
+    border-radius   : 10px;
+    margin          : 0 50px;
+    border          : 1px solid var(--ash);
+    background-color: var(--faint-blue);
+}
+
+.doc-section .form-section input {
+    width        : 150px;
+    padding      : 10px 20px;
+    border-radius: 10px;
+    margin-left  : 50px;
+    border       : 1px solid var(--ash);
+    ;
+}
+
+.doc-section .form-section input#btn-submit {
+
+    width        : 120px;
+    border-radius: 20px;
+    background   : var(--light-blue);
+}
+
+.doc-section .form-section input#date {
+    background: var(--faint-blue);
+}
+
+.doc-section .form-section button {
+    width           : 120px;
+    padding         : 10px 20px;
+    border-radius   : 20px;
+    border          : 1px solid var(--ash);
+    background-color: var(--light-blue);
+}
+
+.doc-section .form-section button:hover,
+.doc-section .form-section #btn-submit:hover {
+    background-color: #dddddd;
+}
+
+.doc-section .btn-section {
+    width     : 100%;
+    margin    : auto;
+    margin-top: 20px;
+    text-align: center;
+    padding   : 10px;
+
+}
+
+.doc-section .btn-section button {
+    width           : 148px;
+    padding         : 10px 20px;
+    border-radius   : 10px;
+    border          : none;
+    margin-left     : 20px;
+    color           : var(--light-blue);
+    border          : 1px solid var(--light-blue);
+    background-color: transparent;
+}
+
+.doc-section .btn-section button:hover {
+    background: #ddd;
+}
+
+
+
+#btn-edit.disable {
+    border : 1px solid #7e7e7e;
+    cursor : no-drop;
+    opacity: 0.5;
+}
+
+.doc-section #table {
+    background   : var(--grey);
+    padding      : 0;
+    border-radius: 10px;
+    margin       : 10px;
+}
+
+
+.doc-section #table #documents {
+    font-size     : 0.8rem;
+    width         : 95%;
+    margin        : 20px auto;
+    text-align    : center;
+    border-spacing: 0px 5px;
+}
+
+.doc-section #table #documents th {
+    padding-top   : 12px;
+    padding-bottom: 12px;
+    background    : var(--ash);
+    color         : var(--dark);
+}
+
+/* .doc-section #table #documents td, */
+.doc-section #table #documents th {
+    border : 1px solid #ddd;
+    padding: 6px;
+}
+
+
+.doc-section #table #documents tr:nth-child(even) {
+    background-color: var(--grey);
+}
+
+.doc-section #table #documents tr td button.btn-update-insight {
+    background: #00A70740;
+    padding   : 10;
+    height    : 40px;
+}
+
+.doc-section #table #documents tr td button.btn-add-insight {
+    background: #F0000040;
+    padding   : 10;
+    height    : 40px;
+}
+
+
+.doc-section #table #documents tr {
+    text-align: left;
+}
+
+.doc-section #table #documents tr td:nth-child(1) {
+    text-align: center;
+}
+
+.doc-section #table #documents tr td:nth-child(2) {
+    text-align: center;
+}
+
+
+.doc-section #table #documents tr button {
+    width     : 100%;
+    border    : none;
+    background: transparent;
+}
+
+.doc-section #table #documents tr:hover {
+    background-color: #ddd;
+    margin          : 5px auto;
+    box-shadow      : 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+
+
+/********* Create Insight II ************/
+.doc-section .in-active-7 {
+    width              : 109%;
+    height             : 100%;
+    position           : absolute;
+    top                : 0px;
+    left               : -100px;
+    background-color   : var(--white);
+    z-index            : 1000;
+    padding-left       : 200px;
+    /* display         : none; */
+}
+
+.in-active-7 .insight-ii {
+    width     : 95%;
+    padding   : 30px;
+    text-align: center;
+    position  : absolute;
+    top       : -30px;
+    left      : 50px;
+}
+
+.in-active-7 .insight-ii .title {
+    background-color: var(--grey);
+    width           : 1120px;
+    padding         : 20px;
+    position        : absolute;
+    top             : 40px;
+    right           : 0px;
+    margin-bottom   : 50px;
+}
+
+.in-active-7 .insight-ii .title h2 {
+    font-size    : 2.2rem;
+    color        : #35B7FF;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.in-active-7 .insight-ii .form-section {
+    width     : 90%;
+    margin-top: 100px;
+    text-align: center;
+    padding   : 10px;
+}
+
+.in-active-7 .insight-ii .form-section form {
+    margin    : 0 auto;
+    text-align: center;
+    text-align: left;
+}
+
+.in-active-7 .insight-ii form label {
+    margin-left: 0px;
+    margin-top : 40px;
+    display    : block;
+
+}
+
+.in-active-7 .insight-ii .form-section form .col {
+    display    : inline-block;
+    width      : 45%;
+    margin     : 10px;
+    line-height: 1.5;
+}
+
+.in-active-7 .insight-ii .form-section form label {
+    font-size  : 1rem;
+    font-weight: bold;
+}
+
+.in-active-7 .insight-ii .form-section form p {
+    color        : #B2C1D6;
+    font-size    : 0.7rem;
+    margin-bottom: 5px;
+}
+
+.in-active-7 .insight-ii .form-section form .cards {
+    display: flex;
+}
+
+.in-active-7 .insight-ii .form-section form .cards .card {
+    width : 80%;
+    margin: 0 5px;
+}
+
+.in-active-7 .insight-ii .form-section form .cards .card p {
+    font-size: 0.7rem;
+    margin   : 5px 0;
+    color    : #B2C1D6;
+}
+
+.in-active-7 .insight-ii .form-section form .cards .todo {
+    position: relative;
+    top     : -14px;
+}
+
+.in-active-7 .insight-ii .form-section form .text-area {
+    position: relative;
+    top     : -20px;
+}
+
+.in-active-7 .insight-ii .form-section form .text-area textarea {
+    padding         : 10px 20px;
+    background-color: var(--faint-blue);
+    border-radius   : 12px;
+    border          : 1px solid #B2C1D6;
+    color           : #B2C1D6;
+}
+
+.in-active-7 .insight-ii .form-section form input[type=text] {
+    width           : 100%;
+    padding         : 15px 36px;
+    margin          : 20px 0;
+    display         : block;
+    border          : 1px solid #ccc;
+    border-radius   : 12px;
+    box-sizing      : border-box;
+    background-color: var(--faint-blue);
+}
+
+.in-active-7 .insight-ii .form-section form input[type=date] {
+    width           : 88%;
+    padding         : 15px 36px;
+    margin          : 10px 0;
+    display         : inline-block;
+    border          : 1px solid #ccc;
+    border-radius   : 12px;
+    box-sizing      : border-box;
+    background-color: var(--faint-blue);
+}
+
+.in-active-7 .insight-ii .form-section select {
+    width        : 88%;
+    padding      : 15px 36px;
+    border-radius: 10px;
+    border       : 1px solid var(--ash);
+    background   : var(--white);
+    color        : #B2C1D6;
+}
+
+.in-active-7 .insight-ii .form-section form input[type=button],
+.in-active-7 .insight-ii .form-section form input[type=submit] {
+    width           : 22%;
+    background-color: #35B7FF;
+    margin-top      : 20px;
+    color           : white;
+    padding         : 12px;
+    border          : none;
+    border-radius   : 8px;
+    cursor          : pointer;
+    font-size       : 1rem;
+    display         : block;
+    position        : relative;
+    top             : -130px;
+    left            : 600px;
+}
+
+.in-active-7 .insight-ii .form-section form input[type=button]:hover,
+.in-active-7 .insight-ii .form-section form input[type=submit]:hover {
+    background: #E9F5FFE5;
+    color     : #35B7FF;
+
+}
+
+/********* Create Insight II CSS************/
+
+/*Doc Manager-Section CSS Ends */
+
+/* Editor CSS  Starts*/
+.editor-section {
+    width     : 95%;
+    height    : 100%;
+    border    : 1px solid #b2c1d6;
+    text-align: center;
+    font-size : 3rem;
+    background: var(--white);
+    position  : fixed;
+    left      : 66px;
+    top       : 0px;
+    z-index   : 100000;
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+
+}
+
+.editor-section #editor {
+    border    : 1px solid #b2c1d6;
+    background: var(--white);
+    color     : var(--black);
+    width     : 100%;
+    height    : 100%;
+}
+
+/* Editor CSS  Ends*/
+
+
+
+
+/* Clause-library CSS Starts  */
+.clause-library .sidebar-2 {
+    position        : fixed;
+    top             : 0;
+    left            : 0px;
+    margin-left     : 60px;
+    width           : 260px;
+    height          : 100%;
+    padding         : 10px;
+    background-color: var(--unfaint-blue);
+    overflow        : auto;
+    letter-spacing  : 0.2px;
+    z-index         : 10002;
+    box-shadow      : 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+.clause-library .sidebar-2 .title {
+    margin       : 5px;
+    margin-bottom: 10px;
+}
+
+.clause-library .sidebar-2 h2 {
+    display     : inline;
+    font-size   : 1.4rem;
+    margin-right: 5px;
+}
+
+.clause-library .sidebar-2 .icon img {
+    width      : 35px;
+    align-items: baseline;
+    position   : relative;
+    top        : 12px;
+}
+
+.clause-library .sidebar-2 #btn-close {
+    display: none;
+}
+
+.clause-library .sidebar-2 form .selection {
+    padding      : 2px 5px;
+    width        : 45%;
+    margin       : 20px auto;
+    border-radius: 7px;
+    border       : 1px solid #b2c1d6;
+    color        : #b2c1d6;
+}
+
+.clause-library .sidebar-2 form label {
+    color         : #b2c1d6;
+    letter-spacing: 1px;
+}
+
+.clause-library .sidebar-2 form #clause-search {
+    margin-top   : 15px;
+    margin-bottom: 30px;
+    padding      : 5px 5px;
+    width        : 90%;
+    border-radius: 7px;
+    border       : 1px solid #b2c1d6;
+    color        : #000000;
+
+}
+
+/* clause Library */
+.clause-library .sidebar-2 .words .list ul li {
+    border-bottom: 1px solid #b2c1d6;
+    margin       : 1px 10px;
+    margin-bottom: 5px;
+    width        : 70%;
+    font-size    : 0.8rem;
+    font-weight  : none;
+    color        : var(--black);
+    padding      : 8px;
+    list-style   : none;
+    cursor       : pointer;
+}
+
+.clause-library .sidebar-2 .words .list ul li:hover {
+    /* background: #7e7e7e; */
+    border-bottom: 2px solid black;
+    color        : #35B7FF;
+}
+
+
+
+.clause-library .sidebar-2 .words {
+    margin-top: 10px;
+    display   : flex;
+}
+
+.clause-library .sidebar-2 .words .inner-nav {
+    position: -webkit-sticky;
+    top     : 1px;
+    z-index : 100000;
+
+}
+
+.clause-library .sidebar-2 .words .inner-nav ul li {
+    padding      : 2px 3px;
+    display      : block;
+    margin-bottom: 4px;
+    font-size    : 0.8rem;
+    text-align   : center;
+    list-style   : none;
+}
+
+.clause-library .sidebar-2 .inner-nav ul li a:hover {
+    color    : #35b7ff;
+    font-size: 1rem;
+}
+
+.clause-library .sidebar-2 .inner-nav .active {
+    color     : #35b7ff;
+    background: transparent;
+}
+
+
+.clause-library {
+    display : inline-block;
+    width   : 95%;
+    padding : 30px;
+    position: absolute;
+    top     : 0px;
+    left    : 50px;
+}
+
+.clause-library .inner-sect {
+    margin: 20px auto;
+}
+
+.clause-library form.search-bar input[type=text] {
+    border-radius: 16px;
+    padding      : 16px 36px;
+    font-size    : 17px;
+    border       : 1px solid grey;
+    width        : 90%;
+    background   : var(--faint-blue);
+    margin-bottom: 10px;
+}
+
+.clause-library form.search-bar button {
+    width        : 6%;
+    height       : 52px;
+    background   : none;
+    border       : none;
+    border-radius: 16px;
+    cursor       : pointer;
+    position     : relative;
+    top          : 3px;
+    right        : 70px;
+}
+
+.clause-library form.search-bar::after {
+    content: "";
+    clear  : both;
+    display: table;
+}
+
+.clause-library .inner-sect .item {
+    width           : 90%;
+    margin-bottom   : 15px;
+    display         : inline-block;
+    background-color: var(--faint-blue);
+    border-radius   : 12px;
+    padding         : 20px 50px;
+    font-size       : 0.8rem;
+    text-align      : left;
+    z-index         : 0;
+}
+
+.clause-library .inner-sect .item h3 {
+    color : #b2c1d6;
+    margin: 5px 0;
+}
+
+.clause-library .inner-sect .item h4 {
+    margin: 5px 0;
+}
+
+.clause-library .inner-sect .item p {
+    margin-top : 20px;
+    line-height: 1.5;
+}
+
+/* Clause Editor Css Starts  */
+.clause-library .in-active-6 {
+    width           : 109%;
+    height          : 100%;
+    position        : absolute;
+    top             : 0px;
+    left            : -100px;
+    background-color: var(--white);
+    z-index         : 10001;
+    padding-left    : 200px;
+    display         : none;
+
+}
+
+.clause-library .in-active-6 .clause-editor {
+    width     : 90%;
+    height    : 622px;
+    border    : 1px solid #b2c1d6;
+    text-align: center;
+    font-size : 3rem;
+    position  : absolute;
+    left      : 120px;
+    top       : 3px;
+
+
+}
+
+.clause-library .in-active-6 .clause-editor #editor {
+    border    : 1px solid #b2c1d6;
+    background: var(--white);
+    color     : var(--black);
+    width     : 100%;
+    height    : 100%;
+}
+
+
+
+
+#clauses {
+    width           : 94%;
+    background-color: white;
+    font-size       : 0.72rem;
+    border          : 1px solid #B2C1D6;
+    border-radius   : 24px;
+    position        : absolute;
+    top             : 50px;
+    z-index         : 10000000;
+    margin          : 10px auto;
+    padding         : 15px;
+    text-align      : left;
+    display         : none;
+}
+
+#clauses h3 {
+    text-align    : center;
+    font-size     : 1rem;
+    padding-bottom: 3px;
+}
+
+/* Clause Editor Css Ends */
+
+/* Clause-library  CSS Starts */
+
+
+
+
+/* Community Template CSS Starts */
+.com-template .document-img {
+    position: fixed;
+    z-index : 0;
+    top     : 200px;
+    width   : 380px;
+    left    : 900px;
+}
+
+.com-template {
+    display : inline-block;
+    width   : 95%;
+    padding : 30px;
+    position: absolute;
+    top     : -30px;
+    left    : 50px;
+}
+
+.com-template .btn-section button {
+    width        : 20%;
+    height       : 50px;
+    border       : 1px solid #B2C1D6;
+    border-radius: 12px;
+    background   : transparent;
+    color        : #b4b4b4;
+}
+
+.com-template .btn-section button:hover {
+    background-color: #E9F5FFE5;
+    color           : #B2C1D6;
+}
+
+.com-template .btn-section {
+    margin: 50px 0px 30px 0px;
+}
+
+.com-template>.btn-section .btn-community {
+    margin-right: 40px;
+    border      : 1px solid #35B7FF;
+}
+
+.com-template form.search-bar input[type=text] {
+    border-radius: 16px;
+    padding      : 16px 36px;
+    font-size    : 17px;
+    border       : 1px solid grey;
+    float        : left;
+    width        : 80%;
+    background   : var(--faint-blue);
+}
+
+.com-template form.search-bar .icon {
+    float        : left;
+    width        : 6%;
+    height       : 52px;
+    border       : none;
+    border-radius: 16px;
+    cursor       : pointer;
+    position     : relative;
+    top          : 2px;
+    right        : 56px;
+}
+
+.com-template form.search-bar .icon {
+    margin: 15px 10px;
+}
+
+.com-template form.search-bar::after {
+    content: "";
+    clear  : both;
+    display: table;
+}
+
+.com-template .title h2 {
+    font-size    : 2.2rem;
+    color        : var(--black);
+    text-align   : left;
+    border-radius: 12px;
+}
+
+.com-template .title h2 span {
+    color: #35B7FF;
+}
+
+.com-template .btn-nav {
+    background   : var(--faint-blue);
+    border       : none;
+    border-radius: 14px;
+    width        : 25%;
+    text-align   : center;
+    margin       : 30px 0;
+}
+
+.com-template .btn-nav span {
+    margin       : 0 35px;
+    align-items  : center;
+    margin-bottom: 10px;
+}
+
+.com-template .btn-nav button {
+    background   : none;
+    border       : none;
+    border-radius: 0px;
+    margin       : 5px;
+}
+
+.com-template>.btn-nav button .icon {
+    width  : 20px;
+    opacity: 0.5;
+}
+
+.com-template>.btn-nav button .icon:hover {
+    opacity: 1;
+}
+
+.com-template>#cards {
+    display        : flex;
+    width          : 70%;
+    text-align     : center;
+    padding        : 5px 0;
+    overflow-x     : auto;
+    scroll-behavior: smooth;
+}
+
+.com-template>#cards::-webkit-scrollbar {
+    display: none;
+}
+
+.com-template #cards p {
+    color: var(--black);
+}
+
+.com-template>#cards>.card {
+    background-color   : var(--faint-blue);
+    border-radius      : 20px;
+    margin-right       : 20px;
+    font-size          : 0.9rem;
+    text-decoration    : none;
+    padding            : 10px;
+    /* height          : 190px; */
+}
+
+.com-template>#cards>.card>div {
+    width: 180px;
+}
+
+
+.com-template #cards .card img {
+    width : 90px;
+    margin: 30px;
+}
+
+.com-template #cards .card div p {
+    position: relative;
+}
+
+
+/*********** My Template Css Starts ******/
+#community-temp .in-active-5 {
+    width              : 108%;
+    height             : 100%;
+    position           : absolute;
+    top                : 0px;
+    left               : -100px;
+    background-color   : var(--white);
+    z-index            : 100;
+    padding-left       : 200px;
+    /* display         : none; */
+}
+
+
+.in-active-5 .temp-document-img {
+    position: fixed;
+    z-index : 101;
+    top     : 200px;
+    width   : 380px;
+    left    : 900px;
+}
+
+.in-active-5 .my-template {
+    display : inline-block;
+    width   : 93%;
+    padding : 30px;
+    position: absolute;
+    top     : 0px;
+    left    : 100px;
+}
+
+.my-template .btn-section {
+    margin: 50px 0px 30px 0px;
+}
+
+.my-template .btn-section button {
+    width        : 20%;
+    height       : 50px;
+    border       : 1px solid #B2C1D6;
+    border-radius: 12px;
+    background   : transparent;
+    color        : #b4b4b4;
+    cursor       : pointer;
+}
+
+.my-template .btn-section .active {
+    border: 1px solid #35B7FF;
+}
+
+.my-template button:hover {
+    background-color: #E9F5FFE5;
+    color           : #B2C1D6;
+}
+
+
+.my-template .btn-section .btn-community {
+    margin-right: 40px;
+}
+
+.my-template .btn-section .btn-new-template {
+    margin-left: 40px;
+    background : #35B7FF;
+    color      : white;
+}
+
+.my-template .inner-sect form.search-bar input[type=text] {
+    border-radius: 16px;
+    padding      : 16px 36px;
+    font-size    : 17px;
+    border       : 1px solid grey;
+    float        : left;
+    width        : 80%;
+    background   : var(--faint-blue);
+}
+
+.my-template .inner-sect form.search-bar button {
+    float        : left;
+    width        : 6%;
+    height       : 52px;
+    border       : none;
+    border-radius: 16px;
+    cursor       : pointer;
+    position     : relative;
+    top          : 2px;
+    right        : 56px;
+}
+
+.my-template .inner-sect form.search-bar button .icon {
+    width      : 30%;
+    text-align : center;
+    padding-top: 10px;
+    margin     : 0px 10px;
+}
+
+.my-template .inner-sect form.search-bar::after {
+    content: "";
+    clear  : both;
+    display: table;
+}
+
+.my-template>.title h2 {
+    font-size    : 2.2rem;
+    color        : var(--black);
+    text-align   : left;
+    border-radius: 12px;
+}
+
+.my-template .title h2 span {
+    color: #35B7FF;
+}
+
+.my-template .btn-nav {
+    background   : var(--faint-blue);
+    border       : none;
+    border-radius: 14px;
+    width        : 25%;
+    text-align   : center;
+    margin       : 30px 0;
+}
+
+.my-template .btn-nav span {
+    margin: 0 35px;
+}
+
+.my-template>.btn-nav button {
+    background   : none;
+    border       : none;
+    border-radius: 0px;
+    width        : 20px;
+    opacity      : 0.5;
+}
+
+.my-template>.btn-nav button:hover {
+    opacity: 1;
+}
+
+.my-template>#cards {
+    display        : flex;
+    width          : 70%;
+    text-align     : center;
+    padding        : 5px 0;
+    overflow-x     : auto;
+    scroll-behavior: smooth;
+}
+
+.my-template>#cards::-webkit-scrollbar {
+    display: none;
+}
+
+.my-template #cards p {
+    color: var(--black);
+}
+
+.my-template #cards .card-1 {
+    background-color: var(--faint-blue);
+    border-radius   : 20px;
+    margin-right    : 20px;
+    font-size       : 0.9rem;
+    text-decoration : none;
+    padding         : 10px;
+}
+
+.my-template #cards .card-1 div {
+    width: 180px;
+}
+
+.my-template #cards>.card-1>div>.temp-icon {
+    width : 90px;
+    margin: 30px;
+}
+
+.my-template #cards .card-1 div p {
+    position: relative;
+}
+
+.new-div {
+    width: 180px;
+}
+
+
+/********** Corporate CSS Starts*********/
+#community-temp .in-active-5 .in-active-8 {
+    width           : 100%;
+    height          : 100%;
+    position        : absolute;
+    top             : 0px;
+    left            : -100px;
+    background-color: var(--white);
+    z-index         : 105;
+    padding-left    : 200px;
+    display         : none;
+}
+
+.in-active-8 .document-img-corporate {
+    position: absolute;
+    z-index : 106;
+    top     : 120px;
+    width   : 35%;
+    left    : 840px;
+}
+
+.in-active-8 .corporate {
+    display : inline-block;
+    width   : 90%;
+    padding : 30px;
+    position: absolute;
+    top     : 20px;
+    left    : 180px;
+}
+
+.in-active-8 .corporate button {
+    width        : 20%;
+    height       : 50px;
+    border       : 1px solid #B2C1D6;
+    border-radius: 12px;
+    background   : transparent;
+    color        : #b4b4b4;
+}
+
+.in-active-8 .corporate button:hover {
+    background-color: #E9F5FFE5;
+    color           : #B2C1D6;
+}
+
+.in-active-8 .corporate .inner-sect {
+    margin: 30px 0px;
+}
+
+.in-active-8 .corporate .inner-sect .btn-community {
+    margin-right: 40px;
+}
+
+.in-active-8 .corporate form.search-bar input[type=text] {
+    border-radius: 16px;
+    padding      : 16px 36px;
+    font-size    : 17px;
+    border       : 1px solid grey;
+    float        : left;
+    width        : 80%;
+    background   : var(--faint-blue);
+}
+
+.in-active-8 .corporate form.search-bar button {
+    float        : left;
+    width        : 6%;
+    height       : 52px;
+    border       : none;
+    border-radius: 16px;
+    cursor       : pointer;
+    position     : relative;
+    top          : 2px;
+    right        : 56px;
+}
+
+.in-active-8 .corporate form.search-bar button .icon {
+    width      : 30%;
+    text-align : center;
+    padding-top: 10px;
+    margin     : 0px 10px;
+}
+
+.in-active-8 .corporate form.search-bar::after {
+    content: "";
+    clear  : both;
+    display: table;
+}
+
+.in-active-8 .corporate .inner-sect h3 {
+    background-color: var(--faint-blue);
+    color           : #B2C1D6;
+    padding         : 16px;
+    width           : 40%;
+    text-align      : left;
+    margin-left     : 0px;
+    border-radius   : 12px;
+}
+
+.in-active-8 .corporate .inner-sect .item {
+    margin-bottom: 5px;
+    height       : 80px;
+}
+
+.in-active-8 .corporate .inner-sect .item p {
+    cursor          : pointer;
+    width           : 65%;
+    margin-left     : 0px;
+    display         : inline-block;
+    background-color: var(--faint-blue);
+    border-radius   : 12px;
+    padding         : 20px;
+    font-size       : 0.8rem;
+    position        : relative;
+    top             : -34px;
+    left            : -30px;
+    z-index         : 0;
+}
+
+.in-active-8 .corporate .inner-sect .item i img {
+    position: relative;
+    z-index : 1;
+}
+
+.in-active-8 .corporate .inner-sect .btn-delete {
+    padding      : 0px 40px;
+    border-radius: 24px;
+    color        : #35B7FF;
+    height       : 40px;
+    position     : relative;
+    top          : -34px;
+}
+
+
+
+
+/* Edit Template CSS Starts */
+.in-active-9 {
+    width              : 95%;
+    height             : 108%;
+    box-sizing: border-box;
+    position           : absolute;
+    top                : 0px;
+    left               : 60px;
+    background-color: var(--white);
+    z-index            : 10003;
+    box-shadow         : 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+
+.in-active-9 #temp-edit #cards .sect-head h1 {
+    font-size: 2.2rem;
+    color    : #35B7FF;
+    line-height: 1;
+}
+
+.in-active-9 .document-img-temp-edit {
+    position: relative;
+    z-index : 10002;
+    top     : 120px;
+    width   : 30%;
+    left    : 950px;
+}
+
+.in-active-9 #temp-edit {
+    position  : absolute;
+    top       : 10px;
+    text-align: center;
+    padding   : 0px;
+    width     : 100%;
+
+}
+
+.in-active-9 #temp-edit #cards .sect-head h4 {
+    color     : #cccccc;
+    font-size : 1rem;
+}
+
+.in-active-9 #temp-edit #cards {
+    display       : flex;
+    flex-direction: row;
+    margin-top        : -20px;
+    width         : 98%;
+    position      : relative;
+    z-index       : 10002;
+    height        : 500px;
+    gap           : 1rem;
+    padding: 10px;
+
+}
+
+
+.in-active-9 #temp-edit #cards .card {
+    width : 50%;
+
+}
+
+
+.in-active-9 #temp-edit #cards #form {
+    background: none;
+    text-align: left;
+    margin-top: -100px;
+    margin-left: 20px;
+    width     : 40%;
+}
+
+.in-active-9 #temp-edit #cards  .card .sect-head {
+    margin: 0px;
+
+}
+
+.in-active-9 .input-label {
+    font-weight: bold;
+    display    : block;
+}
+
+.in-active-9 #temp-edit #cards #form form {
+    font-size : 1rem;
+    overflow-y: scroll;
+    word-wrap : break-word;
+    height    : 400px;
+    padding   : 0.5rem;
+}
+
+
+.in-active-9 #temp-edit #cards #form form input[type=text] {
+    width        : 90%;
+    padding      : 14px 36px;
+    margin-top   : 10px;
+    margin-bottom: 20px;
+    display      : inline-block;
+    border       : 1px solid #ccc;
+    border-radius: 12px;
+    box-sizing   : border-box;
+    background   : var(--faint-blue);
+}
+
+
+.in-active-9 #temp-edit #cards .index {
+    line-height  : 1.8;
+    width        : 100%;
+    box-shadow   : 2px 2px #cccccc;
+    box-shadow   : 0 4px 8px 0 #cccccc79, 0 6px 20px 0 #cccccc79;
+    padding      : 20px;
+    height       : 450px;
+    border-radius: 19.5px;
+    margin       : 10px 10px;
+    font-weight  : bolder;
+    font-size    : 1.2rem;
+    background   : var(--white);
+}
+
+.in-active-9 #temp-edit #cards form .index #editor {
+    border       : 1px solid #b2c1d6;
+    background   : var(--white);
+    color        : var(--black);
+    width        : 100%;
+    /* height    : 100%; */
+}
+
+.in-active-9 #temp-edit button {
+    width           : 14%;
+    background-color: transparent;
+    color           : #35B7FF;
+    border          : 1px solid #cccccc;
+    padding         : 10px 40px;
+    /* height       : auto; */
+    margin          : 5px 15px;
+    border-radius   : 24px;
+    cursor          : pointer;
+    font-size       : 1rem;
+}
+
+.in-active-9 #temp-edit button:hover {
+    background: #E9F5FFE5;
+    color     : #35B7FF;
+}
+
+.in-active-9 #temp-edit .preview {
+    width        : 14%;
+    border-radius: 24px;
+    color        : #35B7FF;
+    border       : 1px solid #cccccc;
+    padding      : 12px 40px;
+    display: inline-block;;
+    position     : relative;
+    top          : 5px;
+    left         : 300px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+
+/* .in-active-9 #temp-edit .btn-temp-prev {
+    display: none;
+    transition: all 0.3s;
+}
+.in-active-9 #temp-edit .btn-temp-next {
+    transition: all 0.3s;
+} */
+
+.in-active-9 #temp-edit .btn-temp-cancel {
+    background-color: #35B7FF;
+    color           : white;
+    border          : none;
+}
+
+.in-active-9 #temp-edit .btn-temp-finish {
+    background-color: #35B7FF;
+    color           : white;
+    border          : none;
+}
+
+
+/* Save as Template form Css Starts */
+#save-as {
+    position     : fixed;
+    top          : 60px;
+    left         : 60px;
+    width        : 68%;
+    z-index      : 10005;
+    /* display   : none; */
+    transition   : ease-in-out 0.4s;
+
+}
+
+/* .saveas2{
+    display: none;
+} */
+
+#save-as h1 {
+    color        : #cccccc;
+    font-size    : 2rem;
+    margin-bottom: 0px;
+}
+
+/* Question form  */
+#save-as #form {
+    padding   : 10px;
+    width     : 44%;
+    background: var(--white);
+}
+
+#save-as .input-label {
+    font-weight: bold;
+    display    : block;
+}
+
+#save-as form {
+    font-size: 0.7rem;
+    /* width : 100%; */
+}
+
+#save-as input[type=text] {
+    width        : 90%;
+    padding      : 14px 36px;
+    margin-top   : 10px;
+    margin-bottom: 15px;
+    display      : inline-block;
+    border       : 1px solid #ccc;
+    border-radius: 12px;
+    box-sizing   : border-box;
+    background   : var(--faint-blue);
+}
+
+
+
+
+/***** create-temp-ii CSS Starts******/
+.in-active-10 {
+    width           : 100%;
+    height          : 100%;
+    position        : absolute;
+    top             : 0px;
+    left            : -50px;
+    background-color: var(--white);
+    z-index         : 105;
+    padding-left    : 200px;
+    display         : none;
+}
+
+.create-temp-ii {
+    display   : inline-block;
+    width     : 94%;
+    text-align: center;
+    position  : absolute;
+    top       : 10px;
+    left      : 90px;
+}
+
+.create-temp-ii>.title {
+    background-color: var(--grey);
+    width           : 1150px;
+    padding         : 20px;
+    padding-left    : 500px;
+    text-align      : center;
+    position        : absolute;
+    top             : 30px;
+    right           : 20px;
+    margin-bottom   : 50px;
+}
+
+.create-temp-ii>.title>h2 {
+    font-size    : 2.2rem;
+    color        : #35B7FF;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.create-temp-ii>.form-section {
+    width     : 90%;
+    margin-top: 150px;
+    text-align: center;
+    padding   : 10px;
+}
+
+.create-temp-ii>.form-section>select {
+    width        : 380px;
+    padding      : 10px 20px;
+    border-radius: 10px;
+    border       : 1px solid var(--ash);
+    background   : var(--white);
+    color        : #B2C1D6;
+    margin-left  : 30px;
+}
+
+.create-temp-ii>#form {
+    width     : 80%;
+    position  : relative;
+    left      : 20%;
+    margin-top: 30px;
+}
+
+.create-temp-ii>#form form {
+    margin    : 0 auto;
+    text-align: center;
+    text-align: left;
+}
+
+.create-temp-ii>#form form label {
+    margin-left: 0px;
+    margin-top : 40px;
+    display    : block;
+
+}
+
+.create-temp-ii>#form form label#file-label {
+    border       : 1px solid #ccc;
+    background   : var(--white);
+    width        : 20%;
+    padding      : 16px 30px;
+    border-radius: 12px;
+    box-sizing   : border-box;
+    position     : absolute;
+    top          : 129px
+}
+
+.create-temp-ii>#form form input[type=text] {
+    width           : 50%;
+    padding         : 16px 36px;
+    margin          : 20px 0;
+    display         : block;
+    border          : 1px solid #ccc;
+    border-radius   : 12px;
+    box-sizing      : border-box;
+    background-color: var(--faint-blue);
+}
+
+.create-temp-ii>#form form input[type=file] {
+    width           : 50%;
+    padding         : 16px 36px;
+    padding-left    : 70px;
+    margin          : 20px 0;
+    display         : inline-block;
+    border          : 1px solid #ccc;
+    border-radius   : 12px;
+    box-sizing      : border-box;
+    background-color: var(--faint-blue);
+}
+
+.create-temp-ii>#form form input[type=submit] {
+    width           : 25%;
+    background-color: #35B7FF;
+    margin-top      : 20px;
+    margin-right    : 20px;
+    color           : white;
+    padding         : 16px 20px;
+    border          : none;
+    border-radius   : 12px;
+    cursor          : pointer;
+    font-size       : 1rem;
+}
+
+.create-temp-ii>#form form input[type=button] {
+    width           : 24%;
+    background-color: #35B7FF;
+    margin-top      : 20px;
+    margin-right    : 20px;
+    color           : white;
+    padding         : 16px 20px;
+    border          : none;
+    border-radius   : 12px;
+    cursor          : pointer;
+    font-size       : 1rem;
+}
+
+.create-temp-ii>#form form input[type=button]:hover,
+.create-temp-ii>#form form input[type=submit]:hover {
+    background: #E9F5FFE5;
+    color     : #35B7FF;
+}
+
+/***** create-temp-ii CSS Ends******/
+
+
+/****** Create Template I CSS *****/
+.in-active-12 {
+    width           : 100%;
+    height          : 100%;
+    position        : absolute;
+    top             : 0px;
+    left            : -50px;
+    background-color: var(--white);
+    z-index         : 105;
+    padding-left    : 200px;
+    display         : none;
+}
+
+.create-temp {
+    display   : inline-block;
+    width     : 95%;
+    padding   : 30px;
+    text-align: center;
+    position  : absolute;
+    top       : 0px;
+    left      : 50px;
+}
+
+.create-temp>.title {
+    background-color: var(--grey);
+    width           : 110%;
+    padding         : 20px;
+    position        : absolute;
+    top             : 40px;
+    left            : -100px;
+    margin-bottom   : 50px;
+}
+
+.create-temp>.title h2 {
+    font-size    : 2.2rem;
+    color        : #35B7FF;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    text-align   : center;
+}
+
+.create-temp>.form-section {
+    width     : 100%;
+    margin-top: 140px;
+    text-align: center;
+    padding   : 10px;
+}
+
+.create-temp>.form-section>select {
+    width        : 382px;
+    padding      : 10px 20px;
+    border-radius: 10px;
+    border       : 1px solid var(--ash);
+    background   : var(--white);
+    color        : #B2C1D6;
+    margin-left  : 30px;
+}
+
+.create-temp>.cards {
+    display   : flex;
+    width     : 90%;
+    text-align: center;
+    /* margin : 20px; */
+    margin-top: 30px;
+
+}
+
+.create-temp>.cards p {
+    color: var(--black);
+}
+
+
+
+.create-temp>.cards .card {
+    background-color: var(--faint-blue);
+    border-radius   : 20px;
+    margin          : 0 auto;
+    margin-right    : 20px;
+    font-size       : 0.9rem;
+    width           : 22%;
+    text-decoration : none;
+    height          : 190px;
+}
+
+.create-temp>.cards .card img {
+    width : 90px;
+    margin: 30px;
+}
+
+.create-temp>.cards .card div p {
+    position      : relative;
+    /* top        : 490px; */
+    /* margin-left: 30px; */
+}
+
+/****** Create Template I CSS *****/
+
+
+
+
+
+
+/* Edit Template form Css Ends*/
+
+/* Edit Template CSS Ends */
+
+
+/********** Corporate CSS Ends ======*********/
+
+/************** My Template Css Ends ======******/
+
+/*================= Community Template CSS Ends =========== */
+
+
+
+/****** Save with Template CSS  ******/
+.in-active-11 {
+    width     : 95%;
+    height    : 100%;
+    border    : 1px solid #b2c1d6;
+    text-align: center;
+    font-size : 3rem;
+    background: var(--white);
+    margin-top: 0px;
+    position  : fixed;
+    left      : 66px;
+    top       : 0px;
+    z-index   : 100000;
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+    display   : none;
+}
+
+
+
+.in-active-11>#save-as-temp {
+    position  : absolute;
+    top       : -2px;
+    text-align: center;
+    padding   : 20px;
+    width     : 100%;
+    margin-top: 20px;
+
+}
+
+.in-active-11>#save-as-temp h1 {
+    color        : #35B7FF;
+    font-size    : 2rem;
+    margin-bottom: 25px;
+}
+
+.in-active-11>#save-as-temp #cards {
+    display: flex;
+    margin : 0px auto;
+    width  : 90%;
+
+}
+
+.in-active-11>#save-as-temp #cards .card {
+    width     : 40%;
+    height    : 400px;
+    text-align: left;
+
+}
+
+
+/* Question form  */
+.in-active-11>#save-as-temp #form {
+    padding : 20px;
+    width   : 60%;
+    position: relative;
+    top     : -90px;
+}
+
+
+.in-active-11>#save-as-temp .input-label {
+    font-weight: bold;
+    display    : block;
+}
+
+.in-active-11>#save-as-temp form {
+    font-size: 0.7rem;
+}
+
+.in-active-11>#save-as-temp input[type=text] {
+    width        : 90%;
+    padding      : 12px 36px;
+    margin-top   : 5px;
+    display      : inline-block;
+    border       : 1px solid #ccc;
+    border-radius: 12px;
+    box-sizing   : border-box;
+    background   : var(--faint-blue);
+}
+
+.in-active-11>#save-as-temp button {
+    width           : 12%;
+    background-color: transparent;
+    color           : #35B7FF;
+    border          : 1px solid #cccccc;
+    padding         : 10px 40px;
+    margin          : 5px;
+    border-radius   : 24px;
+    cursor          : pointer;
+    font-size       : 1rem;
+
+}
+
+.in-active-11>#save-as-temp button.active {
+    background-color: #35B7FF;
+    color           : white;
+    border          : none;
+}
+
+.in-active-11>#save-as-temp>button {
+    position: relative;
+    left    : 210px;
+    top     : -50px;
+}
+
+.in-active-11>#save-as-temp .btn-copy {
+    width        : 35%;
+    padding      : 5px 10px;
+    left         : 0px;
+    margin-bottom: 30px;
+    font-size    : 0.8rem;
+}
+
+.in-active-11>#save-as-temp .btn-preview {
+    width        : 20%;
+    position     : relative;
+    left         : 200px;
+    border-radius: 12px;
+}
+
+.in-active-11>#save-as-temp .btn-cancel {
+    background: #b2c1d6;
+    color     : white;
+}
+
+.in-active-11>#save-as-temp button:hover {
+    background: #E9F5FFE5;
+    border    : 1px solid #cccccc;
+    color     : #35B7FF;
+
+}
+
+.in-active-11>#save-as-temp #cards .index {
+    line-height: 1.8;
+    width      : 60%;
+    border     : 1px solid black;
+    padding    : 20px;
+    height     : 400px;
+    background : var(--white);
+}
+
+/****** Save with Template CSS  ******/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============== Insight-Section CSS Starts ======= */
+.insight-section #top-section {
+    background   : var(--faint-blue);
+    border-radius: 150px 0 0 150px;
+    margin       : 2px auto;
+    margin-right : 0;
+    padding      : 35px 30px;
+    display      : flex;
+    width        : 90%;
+}
+
+.insight-section #top-section button {
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+.insight-section .title {
+    width      : 45%;
+    margin-left: 8%;
+    height     : 120px;
+}
+
+.insight-section .title h1 {
+    color     : var(--black);
+    font-size : 2rem;
+    margin-top: 20px;
+
+}
+
+.insight-section .title h1 span {
+    color: #35b7ff;
+}
+
+.insight-section .title p {
+    line-height   : 24px;
+    letter-spacing: 0.01em;
+    font-size     : 0.9rem;
+
+}
+
+.insight-section .title img {
+    position: relative;
+    top     : -60px;
+    left    : 20px;
+    width   : 250px;
+}
+
+.insight-section .btn-section {
+    width     : 100%;
+    margin    : auto;
+    margin-top: 20px;
+    text-align: center;
+    padding   : 10px;
+
+}
+
+.insight-section .btn-section button {
+    width           : 150px;
+    padding         : 10px 20px;
+    border-radius   : 10px;
+    border          : none;
+    margin-left     : 20px;
+    color           : var(--light-blue);
+    border          : 1px solid var(--light-blue);
+    background-color: transparent;
+}
+
+.insight-section #table {
+    background   : var(--grey);
+    padding      : 5px;
+    border-radius: 10px;
+    margin       : 10px;
+}
+
+
+.insight-section #documents-2 {
+    border-collapse: collapse;
+    font-size      : 0.6rem;
+    width          : 95%;
+    margin         : 10px auto;
+    text-align     : center;
+    border-spacing : 0px 5px;
+    overflow       : hidden;
+}
+
+.insight-section #documents-2 tr th {
+    padding   : 10px;
+    background: var(--ash);
+    color     : var(--dark);
+}
+
+.insight-section #documents-2 tr {
+    text-align      : left;
+    border-bottom   : 1px solid #ddd;
+    background-color: var(--white);
+    box-shadow      : 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+.insight-section #documents-2 tr:hover {
+    background-color: #ddd;
+    margin          : 5px auto;
+    box-shadow      : 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+.insight-section #documents-2 td,
+.insight-section #documents-2 th {
+    margin-bottom: 5px;
+    padding      : 6px;
+}
+
+.insight-section #documents-2 tr td {
+    text-align: center;
+    padding   : 10px;
+}
+
+.insight-section #documents-2 tr td:nth-child(1) {
+    text-align: center;
+}
+
+.insight-section #documents-2 tr td:nth-child(2) {
+    text-align: center;
+}
+
+.insight-section #documents-2 tr td:nth-child(3) {
+    text-align: left;
+}
+
+.insight-section #documents-2 tr td:nth-child(4) {
+    text-align: left;
+}
+
+.insight-section #documents-2 tr td:nth-child(6) {
+    background: #00A70740;
+    padding   : 0;
+}
+
+.insight-section #documents-2 tr td.expired {
+    background: #F0000040;
+}
+
+.insight-section #documents-2 tr td.negative {
+    color: #ff0000;
+}
+
+/* Insight-Section CSS Ends  */
+
+
+
+
+
+/* Legal Terminology CSS Starts */
+.legal-term {
+    display : inline-block;
+    width   : 95%;
+    padding : 30px;
+    position: absolute;
+    top     : 0px;
+    left    : 50px;
+}
+
+.legal-term .inner-sect {
+    margin: 20px auto;
+}
+
+.legal-term form.search-bar input[type=text] {
+    border-radius: 16px;
+    padding      : 16px 36px;
+    font-size    : 17px;
+    border       : 1px solid grey;
+    width        : 90%;
+    background   : var(--faint-blue);
+    margin-bottom: 10px;
+}
+
+.legal-term form.search-bar button {
+    width        : 6%;
+    height       : 52px;
+    background   : none;
+    border       : none;
+    border-radius: 16px;
+    cursor       : pointer;
+    position     : relative;
+    top          : 3px;
+    right        : 70px;
+}
+
+
+.legal-term form.search-bar::after {
+    content: "";
+    clear  : both;
+    display: table;
+}
+
+.legal-term .inner-sect h2 {
+    margin       : auto;
+    color        : var(--black);
+    padding      : 16px;
+    width        : 40%;
+    text-align   : center;
+    border-radius: 12px;
+    position     : relative;
+    top          : -10px;
+}
+
+
+.legal-term .inner-sect .item {
+    width           : 90%;
+    margin-bottom   : 15px;
+    display         : inline-block;
+    background-color: var(--faint-blue);
+    border-radius   : 12px;
+    padding         : 20px 50px;
+    font-size       : 0.8rem;
+    text-align      : left;
+    z-index         : 0;
+
+}
+
+.legal-term .inner-sect .item h3 {
+    color: #35b7ff;
+}
+
+.legal-term .inner-sect .item .hide-text {
+    display   : none;
+    transition: 10s ease-out;
+}
+
+
+.legal-term>.inner-nav {
+    position: fixed;
+    height  : 100%;
+    top     : 100px;
+    right   : 40px;
+
+}
+
+.legal-term>.inner-nav a {
+    display      : block;
+    margin-bottom: 5px;
+    color        : #b2c1d6;
+    font-size    : 0.8rem;
+}
+
+.legal-term>.inner-nav a:hover {
+    color    : #35b7ff;
+    font-size: 1rem;
+}
+
+
+
+.legal-term button.btn-read-more {
+    background-color: #35b7ff;
+    color           : #ffffff;
+    border          : none;
+    padding         : 5px;
+    margin-top      : 20px;
+    border-radius   : 8px;
+    box-shadow      : 0 4px 4px 0 #94949433, 0 2px 20px 0 #70707030;
+    position        : relative;
+    top             : 5px;
+    left            : 650px;
+}
+
+.legal-term button.btn-read-more:hover {
+    background: #7e7e7e;
+    width     : 100px;
+}
+
+
+/* Legal Terminology CSS Ends */
+
+
+
+
+
+/* user-section CSS Starts */
+.user-sect {
+    text-align: center;
+    margin-top: 15px;
+    width     : 100%;
+}
+
+.user-sect .user {
+    width        : 60%;
+    margin       : auto;
+    margin-bottom: 40px;
+    padding      : 20px;
+    text-align   : center;
+}
+
+.user-sect .user .profile-pic-div {
+    width        : 100px;
+    height       : 100px;
+    border-radius: 50%;
+    overflow     : hidden;
+    border       : 1px solid #7e7e7e;
+    margin       : 0px auto;
+}
+
+.user-sect .user img.display-pic {
+    width : 100%;
+    height: 100%;
+}
+
+#upload-button {
+    position: relative;
+    top     : -32px;
+    left    : 35px;
+}
+
+.user-sect .user #icon-edit {
+    border       : 1px solid #ff0000;
+    border-radius: 50%;
+    padding      : 2px;
+    position     : relative;
+    top          : -30px;
+    left         : 30px;
+    cursor       : pointer;
+}
+
+.user-sect .user h1 {
+    font-size : 1.3rem;
+    margin    : 5px auto;
+    margin-top: -15px;
+    color     : var(--black);
+}
+
+.user-sect .user span {
+    display      : block;
+    margin-bottom: 10px;
+}
+
+.user-sect .user button {
+    font-size    : 0.9rem;
+    margin       : auto;
+    margin-bottom: 20px;
+    border-radius: 15.5px;
+    width        : 50%;
+    height       : 50px;
+    border       : none;
+    background   : var(--light-blue);
+}
+
+
+.user-sect .user button:hover {
+    background-color: var(--ash-white);
+    color           : var(--white);
+}
+
+.user-sect .user .btn-add {
+    background: var(--faint-blue);
+    color     : var(--ash);
+}
+
+.user-sect>.user .btn-sign-out {
+    background-color: transparent;
+    border          : 1px solid var(--ash-white);
+    color           : var(--ash);
+    display         : block;
+    width           : 35%;
+    margin-top      : 16px;
+}
+
+.user-sect p {
+    margin    : 0px auto;
+    margin-top: 20px;
+}
+
+
+/* **********************************************/
+
+/******* Edit Display Picture CSS Starts  *******/
+
+.container .in-active-3 {
+    width           : 109%;
+    height          : 110%;
+    position        : absolute;
+    top             : 0px;
+    left            : -100px;
+    background-color: var(--white);
+    z-index         : 100;
+    text-align      : center;
+    padding-left    : 200px;
+    display         : block;
+}
+
+
+.upload-pic #card .inner-div {
+    width        : 80%;
+    height       : 140px;
+    background   : var(--faint-blue);
+    margin       : 10px auto;
+    margin-bottom: 40px;
+    padding-top  : 20px;
+    padding-left : 20px;
+    border-radius: 15.5px;
+}
+
+.upload-pic #card .inner-div .profile-pic-div {
+    width        : 100px;
+    height       : 100px;
+    border-radius: 50%;
+    overflow     : hidden;
+    border       : 1px solid #7e7e7e;
+}
+
+.upload-pic #card .inner-div .profile-pic-div .display-pic {
+    width : 100%;
+    height: 100%;
+
+}
+
+.upload-pic #card label {
+    width        : 50%;
+    padding      : 16px 40px;
+    border-radius: 15.5px;
+    border       : none;
+    background   : var(--light-blue);
+    position     : relative;
+    left         : 100px;
+    top          : -70px;
+    cursor       : pointer;
+}
+
+.upload-pic #card button {
+    width        : 25%;
+    padding      : 16px 40px;
+    border-radius: 15.5px;
+    border       : none;
+    background   : var(--light-blue);
+    position     : relative;
+    left         : -120px;
+    top          : 40px;
+}
+
+.upload-pic #card label:hover,
+.upload-pic #card button:hover {
+    background: #7e7e7e;
+    color     : white;
+}
+
+.upload-pic #card {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.upload-pic #card h1 {
+    color    : var(--black);
+    font-size: 1.4rem;
+    margin   : 0px auto;
+    position : relative;
+    top      : -50px;
+}
+
+.upload-pic #card p {
+    margin    : 0px auto;
+    margin-top: 140px;
+}
+
+/******* Edit Display Picture CSS Ends  *******/
+
+
+
+/* **********************************************/
+/* *********** Manage User CSS ************ */
+
+.container .in-active {
+    width           : 109%;
+    height          : 110%;
+    position        : absolute;
+    top             : 0px;
+    left            : -100px;
+    background-color: var(--white);
+    z-index         : 100;
+    text-align      : center;
+    padding-left    : 200px;
+    /* display         : none; */
+}
+
+#manage-user {
+    margin    : 0 auto;
+    margin-top: 20px;
+    width     : 90%;
+    text-align: center;
+}
+
+#manage-user .inner-div {
+    background-color: var(--faint-blue);
+    width           : 100%;
+    margin          : 0px auto;
+    margin-bottom   : 15px;
+    padding         : 25px 30px;
+    border-radius   : 15.5px;
+    text-align      : left;
+}
+
+#manage-user .inner-div .display-pic {
+    border-radius: 50%;
+    border       : 1px solid #ccc;
+    float        : left;
+    width        : 75px;
+    height       : 70px;
+    margin-left  : 1px;
+    margin-right : 30px;
+}
+
+#manage-user .dp-div {
+    border-radius: 150px;
+    padding      : 1px;
+    height       : 75px;
+    width        : 50%;
+    margin-bottom: 30px;
+
+}
+
+#manage-user button {
+    border-radius: 15.5px;
+    width        : 50%;
+    height       : 50px;
+    font-size    : 0.9rem;
+    margin-bottom: 5px;
+}
+
+#manage-user .inner-div .ename span {
+    font-size: 0.7rem;
+}
+
+
+#manage-user button:hover {
+    background-color: #7e7e7e;
+    color           : #ffffff;
+}
+
+#manage-user h1 {
+    font-size : 1rem;
+    margin    : 4px auto;
+    margin-top: 12px;
+    color     : var(--black);
+}
+
+#manage-user h3 {
+    color    : #B2C1D6;
+    font-size: 0.7rem;
+    margin   : 5px auto;
+    position : relative;
+    top      : -10px;
+}
+
+#manage-user .user-detail {
+    font-size  : 1rem;
+    font-weight: bold;
+}
+
+
+#manage-user a {
+    float        : right;
+    color        : white;
+    width        : 130px;
+    padding      : 15px;
+    border-radius: 12px;
+    font-size    : 0.8rem;
+    text-align   : center;
+    margin       : 0px 25px;
+}
+
+#manage-user a:hover {
+    background-color: #7e7e7e;
+}
+
+.active {
+    background-color: #35B7FF;
+}
+
+#manage-user>a>.btn-sign-out {
+    background-color: transparent;
+    border          : 1px solid #7e7e7e;
+    color           : #B2C1D6;
+    display         : block;
+    width           : 140%;
+    margin-top      : 0px;
+    margin-left     : -180px;
+}
+
+#manage-user>a>.btn-sign-out:hover {
+    background-color: #7e7e7e;
+    color           : white;
+}
+
+#manage-user>a:hover {
+    background: transparent;
+}
+
+.main .in-active>p {
+    margin    : 100px auto;
+    font-size : 0.9rem;
+    text-align: center;
+}
+
+/* *********** Manage User CSS Ends ************ */
+
+
+/* **********************************************/
+/* *********** Change User Password CSS Starts ************ */
+.container .in-active-2 {
+    width           : 100%;
+    height          : 110%;
+    position        : absolute;
+    top             : 0px;
+    left            : 0px;
+    background-color: var(--white);
+    z-index         : 100;
+    text-align      : center;
+    padding-left    : 200px;
+    display         : none;
+}
+
+#changepwd-user {
+    margin-top  : 60px;
+    text-align  : center;
+    margin-left : -80px;
+    margin-right: 50px;
+}
+
+#changepwd-user .inner-div {
+    background-color: var(--faint-blue);
+    width           : 90%;
+    margin          : 0px auto;
+    margin-bottom   : 15px;
+    padding         : 20px;
+    border-radius   : 15.5px;
+    text-align      : left;
+}
+
+#changepwd-user .dp-div {
+    border-radius: 150px;
+    padding      : 1px;
+    height       : 70px;
+    width        : 35%;
+}
+
+#changepwd-user .dp-div .display-pic {
+    border-radius: 50%;
+    border       : 1px solid #ccc;
+    width        : 70px;
+    margin-right : 12px;
+    float        : left;
+    width        : 69px;
+    margin-left  : 1px;
+    margin-right : 30px;
+
+}
+
+#changepwd-user .inner-div .ename span {
+    font-size: 0.7rem;
+}
+
+#changepwd-user h1 {
+    font-size : 1rem;
+    margin    : 2px auto;
+    margin-top: 15px;
+    color     : var(--black);
+}
+
+#changepwd-user #changepwd {
+    margin: auto;
+    width : 80%;
+}
+
+#changepwd-user #changepwd .sect-1 {
+    width : 90%;
+    margin: 0 auto;
+}
+
+.sect-head {
+    margin-bottom: 20px;
+    padding      : 5px 0px;
+}
+
+#changepwd-user #changepwd .sect-head h1 {
+    font-size: 1.6rem;
+    color    : var(--ash);
+}
+
+#changepwd-user #changepwd #form form {
+    font-size : 0.9rem;
+    text-align: left;
+    width     : 80%;
+    position  : relative;
+    left      : 70px;
+}
+
+#changepwd-user #changepwd #form form input[type=password],
+select {
+    width           : 100%;
+    padding         : 12px 36px;
+    margin          : 14px auto;
+    margin-bottom   : 20px;
+    display         : inline-block;
+    border          : 1px solid #ccc;
+    border-radius   : 12px;
+    box-sizing      : border-box;
+    background-color: var(--faint-blue);
+}
+
+#changepwd-user #changepwd #form form input[type=submit] {
+    width           : 30%;
+    background-color: #35B7FF;
+    color           : white;
+    padding         : 15px 40px;
+    margin          : 10px;
+    border          : none;
+    border-radius   : 12px;
+    cursor          : pointer;
+    font-size       : 1rem;
+    position        : relative;
+    left            : 180px;
+}
+
+#changepwd-user #changepwd #form form input[type=submit]:hover {
+    background: #7e7e7e;
+    color     : #ffffff;
+}
+
+#changepwd-user>p {
+    font-size : 1rem;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* *********** Change User Password CSS ************ */
+
+
+/* **********************************************/
+/******  Password Successful CSS Starts *******/
+.container .in-active-4 {
+    width           : 100%;
+    height          : 110%;
+    position        : absolute;
+    top             : 0px;
+    left            : 0px;
+    background-color: var(--white);
+    z-index         : 100;
+    text-align      : center;
+    padding-left    : 200px;
+    display         : none;
+}
+
+#success {
+    width     : 50%;
+    margin    : 10px auto;
+    text-align: center;
+    position  : relative;
+    left      : -150px;
+    top       : 30px;
+}
+
+#success .sect-1 .sect-head {
+    margin       : 0 auto;
+    margin-bottom: 20px;
+    padding      : 5px 5px;
+    text-align   : center;
+    width        : 100%;
+}
+
+#success .sect-1 .sect-head h1 {
+    font-size: 1.4rem;
+    color    : #7e7e7e;
+}
+
+#success .sect-1 .success-img button {
+    height       : 46px;
+    width        : 40%;
+    border-radius: 14px;
+    margin-top   : 60px;
+    background   : var(--light-blue);
+    border       : none;
+}
+
+#success .sect-1 .success-img button:hover {
+    background: #7e7e7e;
+    color     : white;
+}
+
+#success .sect-1 .success-img img {
+    width     : 400px;
+    margin    : 20px;
+    text-align: center;
+}
+
+#success>p {
+    margin-top: 50px;
+    font-size : 1rem;
+    color     : #B2C1D6;
+}
+
+/******  Password Successful CSS Ends *******/
+
+/*------------ User-section CSS Ends -----------*/
+
+
+
+
+
+/*----- Notification CSS Starts -----------*/
+.notification {
+    display : inline-block;
+    width   : 95%;
+    padding : 30px;
+    position: absolute;
+    top     : 0px;
+    left    : 50px;
+}
+
+
+
+
+.notification form.search-bar input[type=text] {
+    border-radius: 16px;
+    padding      : 16px 36px;
+    font-size    : 17px;
+    border       : 1px solid grey;
+    width        : 90%;
+    background   : var(--faint-blue);
+    margin-bottom: 10px;
+}
+
+.notification form.search-bar button {
+    width        : 6%;
+    height       : 52px;
+    background   : none;
+    border       : none;
+    border-radius: 16px;
+    cursor       : pointer;
+    position     : relative;
+    top          : 3px;
+    right        : 70px;
+}
+
+
+.notification form.search-bar::after {
+    content: "";
+    clear  : both;
+    display: table;
+}
+
+.notification .inner-sect {
+    margin     : 20px auto;
+    align-items: center;
+}
+
+.notification .inner-sect #date {
+    margin: 40px 0px;
+    color : var(--ash);
+}
+
+.notification .inner-sect .note {
+    display: flex;
+}
+
+.notification .inner-sect #close img {
+    background-color: #b2c1d6;
+    padding         : 5px;
+    border-radius   : 50%;
+    width           : 25px;
+    cursor          : pointer;
+}
+
+.notification .inner-sect h4 {
+    margin       : auto;
+    color        : var(--ash);
+    padding      : 16px;
+    width        : 40%;
+    text-align   : center;
+    border-radius: 12px;
+    position     : relative;
+    top          : -10px;
+}
+
+.notification .inner-sect h4 span {
+    color: #ff0000;
+}
+
+.notification .inner-sect .item {
+    width           : 85%;
+    margin-bottom   : 20px;
+    margin-left     : 20px;
+    display         : inline-block;
+    background-color: var(--faint-blue);
+    border-radius   : 9px 9px 44px 9px;
+    padding         : 20px 50px;
+    font-size       : 0.8rem;
+    text-align      : left;
+    z-index         : 0;
+    display         : flex;
+    align-items     : center;
+    box-shadow      : 0 4px 4px 0 #53535333, 0 2px 20px 0 #53535333;
+}
+
+.notification .inner-sect .item .content {
+    margin: 20px;
+    width : 50%;
+}
+
+.notification .inner-sect .item .content h3 {
+    color        : #3B4287;
+    margin-bottom: 10px;
+}
+
+.notification .inner-sect .item .content p {
+    color      : var(--ash);
+    line-height: 1.8;
+}
+
+.notification .inner-sect .item span {
+    position: relative;
+    top     : -10px;
+    left    : 160px;
+}
+
+.notification .inner-sect .item span button {
+    margin-left     : 40px;
+    background-color: transparent;
+    border          : none;
+}
+
+.notification .inner-sect .item span p {
+    text-align : center;
+    margin     : 15px auto;
+    margin-left: 50px;
+    color      : var(--ash);
+}
+
+.notification .inner-sect .item span button.new {
+    background-color: #ff0000;
+    color           : #ffffff;
+    padding         : 5px;
+    width           : 79px;
+    border-radius   : 44px;
+    box-shadow      : 0 4px 4px 0 #00000033, 0 2px 20px 0 #00000030;
+    position        : absolute;
+    top             : 110px;
+}
+
+
+.notification .inner-sect .item span button.read {
+    background-color: #008000;
+    color           : #ffffff;
+    padding         : 5px;
+    width           : 79px;
+    border-radius   : 44px;
+    box-shadow      : 0 4px 4px 0 #00000033, 0 2px 20px 0 #00000030;
+    position        : absolute;
+    top             : 110px;
+
+}
+
+/* Notification CSS Ends */

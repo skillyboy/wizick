@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{% static '' %}css/styl{% static '' %}">
+    <link rel="stylesheet" href="{% static '' %}css/signup.css"> 
+</head>
+
+{% if messages %}
+    {% for item in messages %}
+      <div style="color: white; padding:2rem; background:#35B7FF;font-size:1rem; font-weight:700;text-align:center;">{{item}}</div>
+    {% endfor %}
+{% endif %}
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <img  id="dark-rect" src="{% static '' %}img/dark_Rectangle348.png" alt="rect" hidden>
+        <img id="side-rect" src="{% static '' %}img/Rectangle348.png" alt="rect" hidden>
+        <div class="topbar">
+            <div class="logo">
+                <a href="../index.html"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+            </div>
+            <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt="" hidden></i>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode">
+                <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+            </label>
+        </div>
+        <img src="{% static '' %}img/WIZICKLOGO2.png" class="wizick-logo-t2" alt="">
+        <img src="{% static '' %}img/WIZICKLOGO.png" class="wizick-logo-t" alt="">
+        <section id="sect-1">
+            <div id="signup-img" class="sect-1">
+                <img src="{% static '' %}img/Group88.png" alt="Login">
+            </div>
+            <div id="form" class="sect-1">
+                <div class="sect-head">
+                    <h1><span>Wizick,</span></h1>
+                    <h2>Sign up your account</h2>
+                </div>
+
+
+                <form method="POST"  action="{% url 'signup' %}">
+                {%csrf_token%}
+                    <div class="error-text">Error! Confirm Password Not Matched</div>
+                    <input type="text" id="fname" name="first_name" placeholder="First Name" required>
+                    <input type="text" id="lname" name="last_name" placeholder="Last Name" required>
+                    <input type="email" id="username" name="username" placeholder="Email address" required>
+                    <input type="text" id="company" name="company" placeholder="Company" required>
+                    <input type="text" id="company" name="phone" placeholder="Phone Number" required>
+                    <input type="password" id="create-pwd" name="password1" placeholder="Create password" required> <br>
+                    <input type="password" id="confirm-pwd" name="password2" placeholder="Confirm password" required>
+                    <div class="show">Show</div>
+
+                    <p class="terms"> By creating an account, you agree to our <a href="#"><span>Terms & 
+                                Conditions</span></a></p>
+                    <button type="submit" id="btn-create-acct">Create Account</button>
+
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="{% static '' %}/js/all.js"></script>
+    <script src="{% static '' %}js/script.js"></script>
+</body>
+
+</html>

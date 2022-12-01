@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load simple_tags %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ocument Manager</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/home.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.tiny.cloud/1/grjue6zgt2kiw5ryvt4z271o7w52oofnhegmxvtgpgwo2hho/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+    
+            selector: 'textarea#export',
+            toolbar: 'export pagebreak | formatselect fontselect fontsizeselect bold italic underline strikethrough forecolor backcolor subscript superscript | alignleft aligncenter alignright alignjustify indent outdent rtl ltr | bullist numlist checklist | emoticons image table link hr charmap',
+            height: 500,
+            toolbar_mode: 'sliding',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+            
+            toolbar: "undo redo print spellcheckdialog formatpainter | blocks fontfamily fontsize | bold italic underline forecolor backcolor | link image addcomment showcomments  | alignleft aligncenter alignright alignjustify lineheight | checklist bullist numlist indent outdent | removeformat",
+            height: '600px',
+            toolbar_sticky: true,
+            icons: 'thin',
+            autosave_restore_when_empty: true,
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'john.doe', 
+            
+        });
+    </script>
+</head>
+
+{% if messages %}
+    {% for item in messages %}
+      <div style="color: white; padding:2rem; background:#35B7FF;font-size:1rem; font-weight:700;text-align:center;">{{item}}</div>
+    {% endfor %}
+{% endif %}
+
+<body>
+
+    <div class="container">
+
+        <img id="dark-rect" src="{% static '' %}img/dark_Rectangle348.png" alt="rect" hidden>
+        <img id="side-rect" src="{% static '' %}img/Rectangle348.png" alt="rect" hidden>
+
+        <!-- Sidebar Starts  -->
+        <div class="sidebar">
+            <div class="logo">
+                <a href="{% url 'home' %}"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+            </div>
+            <ul class="side-menu top">
+                <li class="tablinks" id="defaultOpen" onclick="openTab(event, 'home-page')">
+                    <a href="#">
+                        <i><img class="icon" src="{% static '' %}img/icon/home.png" alt=""></i>
+                        <div>Home</div>
+                    </a>
+                </li>
+                <li id="dash-tab" class="tablinks" onclick="openTab(event, 'dash-board')">
+                    <a href="#">
+                        <i> <img class="icon" src="{% static '' %}img/icon/dashboard.png" alt=""></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li id="docManager-tab" class="tablinks" onclick="openTab(event, 'doc-manager')">
+                    <a href="#">
+                        <i> <img class="icon" src="{% static '' %}img/icon/icon-park-outline_category-management.png" alt=""></i>
+                        <div>Document Manager</div>
+                    </a>
+                </li>
+                <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+                    <a href="#">
+                        <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                        <div> Document Editor</div>
+                    </a>
+                </li>
+                <li id="clause-tab" class="tablinks" onclick="openTab(event, 'clauselibrary')">
+                    <a href="#">
+                        <i> <img class="icon" src="{% static '' %}img/icon/library.png" alt=""></i>
+                        <div> Clause Library</div>
+                    </a>
+                </li>
+                <li id="temp-tab" class="tablinks" onclick="openTab(event, 'community-temp')">
+                    <a href="{% url 'clienttemp' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/heroicons-outline_template.png" alt=""></i>
+                        <div>Template</div>
+                    </a>
+                </li>
+                <li id="insight-tab" class="tablinks" onclick="openTab(event, 'insight-sect')">
+                    <a href="#">
+                        <i> <img class="icon" src="{% static '' %}img/icon/gg_insights.png" alt=""></i>
+                        <div> Insight</div>
+                    </a>
+                </li>
+                <li id="legal-tab" class="tablinks" onclick="openTab(event, 'legal-terminology')">
+                    <a href="#">
+                        <i><img class="icon" src="{% static '' %}img/icon/legal.png" alt=""></i>
+                        <div> Legal Terminology</div>
+                    </a>
+                </li>
+
+                <hr>
+
+                <li class="username tablinks" id="user-tab" onclick="openTab(event, 'user')">
+                    <a href="#">
+                        <div class="profile-pic-div">
+                            <img src="{{profile.profile_pic.url}}" class="display-pic" alt="">
+                        </div>
+                        <div>{{profile.first_name|title}} {{profile.last_name|title}}</div>
+                    </a>
+                </li>
+                <li id="notification-tab" class="tablinks" onclick="openTab(event, 'notifications')">
+                    <a href="#">
+                        <i><img class="icon" src="{% static '' %}img/icon/Notification.png" alt=""></i>
+                        <div> Notification <span class="notify">2</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'logoutfunc' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/logout.png" alt=""></i>
+                        <div> Log out</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidebar Starts  -->
+
+
+
+        <div class="container">
+
+            <img id="dark-rect" src="{% static '' %}img/dark_Rectangle348.png" alt="rect" hidden>
+            <img id="side-rect" src="{% static '' %}img/Rectangle348.png" alt="rect" hidden>
+    
+    
+    
+            <!-- <div class="main"> -->
+                <!-- Community Template Starts -->
+                <!-- <section id="community-temp" class="com-template tabcontent"> -->
+                    
+                    <!-- Edit Template Questions Starts -->
+                    <div class="in-active-9 animate__animated animate__fadeInRight">
+                        <img src="{% static '' %}img/DOCUMENT_ICON_III.png" class="document-img-temp-edit" alt="">
+                        <section id="temp-edit">
+                            <h3 class="preview">Footnote</h3>
+                            <h3 class="preview">Preview</h3>
+                            
+                            
+                            <div id="cards">
+                                
+                                <form method="POST"  action="{% url 'agreementcntxt' %}" >
+                                {% csrf_token %}
+                                <button type="submit">Done</button>
+                        
+    
+                            
+                                <div id="form" class="card">
+    
+                                    <div class="sect-head">
+                                        <h1>Questionnaire</h1>
+                                        <h4>Answer the following questions to create a template</h4>
+                                    </div>
+                                    
+                                    <form action="#">
+                                        {% if admintemp %}
+                                        <!-- QUESTION -->
+                                            {% if admintemp.alternate2 %}
+                                            {{admintemp.alternate2}}
+                                            <input type="radio" value="{{admintemp.alternate2optionB}}" name="alternate2ans">
+                                            {% endif %}
+                                            
+                                            <!-- options -->
+                                            {% if admintemp.alternate2optionB %}
+                                            {{admintemp.alternate2optionB}}
+                                            <input type="radio" value="{{admintemp.alternate2optionB}}" name="alternate2ans">
+                                            {% endif %}
+                                            
+                                            {% if admintemp.alternate2optionC %}
+                                            {{admintemp.alternate2optionC}}
+                                            <input type="radio" value="{{admintemp.alternate2optionB}}" name="alternate2ans">
+                                            {% endif %}
+                                            
+                                            {% if admintemp.alternate2optionD %}
+                                            {{admintemp.alternate2optionD}}
+                                            <input type="radio" value="{{admintemp.alternate2optionB}}" name="alternate2ans">    
+                                            {% endif %}
+                                            <!-- end options -->
+                                            
+                                            <!-- Clause Question -->
+                                            <br><br><br>
+                                                {% if clauses %}
+                                                    <h3>{{admintemp.clause}}</h3>
+                                                            <br>
+                                                    <label for="null">Skip</label><input type="radio" value="" name="clause">
+                                                    {% for clause in clauses %}
+                                                        <label for="clause">{{clause.title}}</label>
+                                                        <input type="radio" value="{{clause.clause}}" name="clauseans">
+                                                    {% endfor %}
+                                                {% endif %}  
+                                            <br><br><br>
+                                            <!-- Clause ends -->
+
+                                            {% if admintemp.question1 %}
+                                            <label for="" class="input-label">{{admintemp.question1}}</label>
+                                            <input type="text" name="question1ans" placeholder="Fill in question">
+                                            {% endif %}  
+                                            
+                                            {% if admintemp.question2 %}
+                                            <label for="" class="input-label">{{admintemp.question2}}</label>
+                                            <input type="text" name="question2ans" placeholder="Fill in question">
+                                            {% endif %}  
+    
+                                            {% if admintemp.question3 %}
+                                            <label for="" class="input-label">{{admintemp.question3}}</label>
+                                            <input type="text" name="question3ans" placeholder="Fill in question">
+                                            {% endif %} 
+    
+                                            {% if admintemp.question4 %}
+                                            <label for="" class="input-label">{{admintemp.question4}}</label>
+                                            <input type="text" name="question4ans" placeholder="Fill in question">
+                                            {% endif %} 
+    
+                                            {% if admintemp.question5 %}
+                                            <label for="" class="input-label">{{admintemp.question5}}</label>
+                                            <input type="text" id="" name="question5ans" placeholder="Fill in question">
+                                            {% endif %} 
+    
+                                      
+                                        {% endif %}
+                                        <br> <br>
+                                    </form>
+                                </div>
+                                <div class="card index">
+                                    <textarea id="editor" name="body" cols="25"> 
+                                            {% if admintemp %}
+                                                {{admintemp.body}}
+                                            {% endif %} 
+                                    </textarea>
+                                </div>
+                                <!-- Edit Template Form II  -->
+                                <section id="save-as" class="saveas2 animate__animated animate__fadeInDown">
+                                    <div id="form">
+                                        <div class="sect-head">
+                                            <h1><span>Questions</span></h1>
+                                        </div>
+                                        <form action="#">
+                                            <label for="" class="input-label"> Quggon 5</label>
+                                            <input type="text" id="" name="" placeholder="Fill in question">
+                                            <label for="" class="input-label">Questiong 6</label>
+                                            <input type="text" id="" name="" placeholder="Fill in question">
+                                            <label for="" class="input-label">Question 7</label>
+                                            <input type="text" id="" name="" placeholder="Fill in question">
+                                            <label for="" class="input-label">What is the rate per hour for ascvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnsistancepost-delivery of
+                                                the Product</label>
+                                            <input type="text" id="" name="" placeholder="Fill in question">
+                                            <label for="" class="input-label">Within how many days of notice, the breach is to be
+                                                remedied
+                                                by the developer</label>
+                                            <input type="text" id="" name="" placeholder="Fill in question">
+                                        </form>
+                                    </div>
+                                </section>
+                                <!-- Edit Template Form II  -->
+                            </form>
+                            </div>
+                            <button class="btn-temp-prev">Previous</button>
+                            <button class="btn-temp-next">Next</button>
+                            <button class="btn-temp-cancel">Cancel</button>
+                            <button class="btn-temp-finish">Finish</button>
+                            <br>
+                        </section>
+                    </div>
+                    <!-- Edit Template Questions Ends -->
+                <!-- </section> -->
+                <!-- Community Template Ends -->
+    
+        </div>
+    <script>
+
+
+        // Community Template Slider
+        let right = [...document.querySelectorAll("#btn-com-right")];
+        let left = [...document.querySelectorAll("#btn-com-left")];
+        let commCards = [...document.querySelectorAll(".comm-cards")];
+
+
+        commCards.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
+
+            right[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+            });
+            left[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+            });
+        });
+
+
+
+        //  My-Template Slider
+        let right2Nav = [...document.querySelectorAll("#btn-temp-right")];
+        let left2Nav = [...document.querySelectorAll("#btn-temp-left")];
+        let tempCardsNav = [...document.querySelectorAll(".mytemp-cards")];
+
+        tempCardsNav.forEach((item2, k) => {
+
+            let containerDimensionsTemp = item2.getBoundingClientRect();
+            let containerWidthTemp = containerDimensionsTemp.width;
+
+            right2Nav[k].addEventListener('click', () => {
+                item2.scrollLeft += containerWidthTemp;
+            });
+            left2Nav[k].addEventListener('click', () => {
+                item2.scrollLeft -= containerWidthTemp;
+            });
+        });
+
+
+    </script>
+
+
+
+    <!-- <script>
+                    
+        let rightNav = [...document.querySelectorAll("#btn-com-right")];
+        let leftNav = [...document.querySelectorAll("#btn-com-left")];
+        let commCardsNav = [...document.querySelectorAll("#community-temp > .comm-cards")];
+        
+        
+        commCardsNav.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
+           
+            rightNav[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+                console.log(containerWidth);
+        });
+            leftNav[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+        });
+     });
+
+
+
+    //  My Template Slider
+
+    const right2Nav = [...document.querySelectorAll("#btn-temp-right")];
+    const left2Nav = [...document.querySelectorAll("#btn-temp-left")];
+    const tempCardsNav = [...document.querySelectorAll("#community-temp > .mytemp-cards")];
+    
+        tempCardsNav.forEach((item2, k) => {
+            let containerDimension = item2.getBoundingClientRect();
+            let containerWidth2 = containerDimension.width;
+            
+            right2Nav[0].addEventListener('click', () => {
+                item2.scrollLeft += containerWidth2;
+                console.log(containerDimension);
+        });
+            left2Nav[0].addEventListener('click', () => {
+                item2.scrollLeft -= containerWidth2;
+        });
+     });
+
+    </script> -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc.1/dist/chartjs-plugin-datalabels.min.js"
+        integrity="sha256-Oq8QGQ+hs3Sw1AeP0WhZB7nkjx6F1LxsX6dCAsyAiA4=" crossorigin="anonymous"></script>
+    <script src="{% static '' %}js/chart1.js"></script>
+    <script src="{% static '' %}js/chart2.js"></script>
+    <!-- <script src="{% static '' %}js/all.js"></script> -->
+
+    <script src="{% static '' %}js/main.js"></script>
+    <script>
+        tinymce.init({
+            selector: "#editor",
+            menubar: false,
+            toolbar: '',
+            width: '800px',
+            height: '480px',
+            content_style: `
+                body {
+                    background: #fff;
+                }
+
+                @media (min-width: 840px) {
+                    html {
+                        background: #0e2406;
+                        min-height: 100%;
+                        padding: 0 .5rem
+                    }
+
+                    body {
+                        background-color: #fff;
+                        box-sizing: border-box;
+                        min-height: calc(100vh - 1rem);
+                        padding:4rem 6rem 6rem 6rem
+                    }
+                }
+                `,
+        });
+    </script>
+    <style>
+        body {
+            margin: 4rem auto;
+            padding: 0 2rem;
+            background-color: #f9f9fb;
+        }
+        main {
+            width: 100%;
+        }
+        .container-box
+        {
+            margin-right: 30px;
+            width: 500px;
+            height: 200px;
+            background-color: white ;
+            padding: 20px;
+            text-align:left;
+            transition: all .2s ease-in-out;
+            border-radius:10px;
+        }
+        .container-box:hover
+        {
+            -webkit-transform: scale(1.05);
+            transform:scale(1.05);
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        }  
+    </style>
+    
+</body>
+
+</html>

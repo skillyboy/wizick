@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mytemplate</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.tiny.cloud/1/grjue6zgt2kiw5ryvt4z271o7w52oofnhegmxvtgpgwo2hho/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+</head>
+
+{% if messages %}
+{% for item in messages %}
+  <div style="color: white; padding:2rem; background:#35B7FF;font-size:1rem; font-weight:700;text-align:center;">{{item}}</div>
+{% endfor %}
+{% endif %}
+<body>
+
+    <div class="container">
+
+        <img id="dark-rect" src="{% static '' %}img/dark_Rectangle348.png" alt="rect" hidden>
+        <img id="side-rect" src="{% static '' %}img/Rectangle348.png" alt="rect" hidden>
+
+<!-- Sidebar Starts  -->
+        <div class="sidebar">
+            <div class="logo">
+                <a href="{% url 'home' %}"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+            </div>
+            <ul class="side-menu top">
+                <li class="tablinks" id="defaultOpen" onclick="openTab(event, 'home-page')">
+                    <a href="{% url 'home' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/home.png" alt=""></i>
+                        <div>Home</div>
+                    </a>
+                </li>
+                <li id="dash-tab" class="tablinks" onclick="openTab(event, 'dash-board')">
+                    <a href="{% url 'dashboard' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/dashboard.png" alt=""></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li id="docManager-tab" class="tablinks" onclick="openTab(event, 'doc-manager')">
+                    <a href="{% url 'docmanager' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/icon-park-outline_category-management.png" alt=""></i>
+                        <div>Document Manager</div>
+                    </a>
+                </li>
+                <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+                    <a href="{% url 'tinymce' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                        <div> Document Editor</div>
+                    </a>
+                </li>
+                <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+                    <a href="{% url 'newtempeditor' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                        <div> Create Template</div>
+                    </a>
+                </li>
+                <li id="clause-tab" class="tablinks" onclick="openTab(event, 'clauselibrary')">
+                    <a href="{% url 'clause' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/library.png" alt=""></i>
+                        <div> Clause Library</div>
+                    </a>
+                </li>
+                <li id="temp-tab" class="tablinks" onclick="openTab(event, 'community-temp')">
+                    <a href="{% url 'clienttemp' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/heroicons-outline_template.png" alt=""></i>
+                        <div>Template</div>
+                    </a>
+                </li>
+                <li id="insight-tab" class="tablinks" onclick="openTab(event, 'insight-sect')">
+                    <a href="{% url 'insight' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/gg_insights.png" alt=""></i>
+                        <div> Insight</div>
+                    </a>
+                </li>
+                <li id="legal-tab" class="tablinks" onclick="openTab(event, 'legal-terminology')">
+                    <a href="{% url 'legal' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/legal.png" alt=""></i>
+                        <div> Legal Terminology</div>
+                    </a>
+                </li>
+
+                <hr>
+
+                <li class="username tablinks" id="user-tab" onclick="openTab(event, 'user')">
+                    <a href="{% url 'profile' %}">
+                        <div class="profile-pic-div">
+                            <img src="{{profile.p_img.url}}" class="display-pic" alt="">
+                        </div>
+                        <div>{{profile.first_name|title}} {{profile.last_name|title}}</div>
+                    </a>
+                </li>
+
+                <li id="notification-tab" class="tablinks" onclick="openTab(event, 'notifications')">
+                    <a href="{% url 'notification' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/Notification.png" alt=""></i>
+                        <div> Notification <span class="notify">2</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'logoutfunc' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/logout.png" alt=""></i>
+                        <div> Log out</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidebar Starts  -->
+
+        <!-- <div class="main"> -->
+        <!-- Community Template Starts -->
+        <!-- <section id="community-temp" class="com-template tabcontent"> -->
+
+        <!-- Edit Template Questions Starts -->
+        <div class="in-active-9 animate__animated animate__fadeInRight">
+            <img src="img/DOCUMENT_ICON_III.png" class="document-img-temp-edit" alt="">
+            <section id="temp-edit">
+                <!-- <h3 class="preview">Preview</h3> -->
+                <div id="cards">
+                    <!-- <button type="submit">Done</button> -->
+                        <br> <br>
+                    <div id="form" class="card">
+                        <div class="sect-head">
+                            <h1>Questionnaire</h1>
+                            <h4>Answer the following questions to create a template</h4>
+                        </div>
+                        <form method="POST"  action="{% url 'mytemplate' %}">
+                        {%csrf_token%}
+                        <br> <br> <br>
+                        
+                                <label for="" class="input-label">Add a date question1</label>
+                                <input type="text" id="" name="date1" placeholder="Fill in Questions">
+
+                                <label for="" class="input-label">Add a date question2</label>
+                                <input type="text" id="" name="date2" placeholder="Fill in Questions">
+
+                                <label for="" class="input-label">What is question No. 1?</label>
+                                <input type="text" id="" name="question1" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 2?</label>
+                                <input type="text" id="" name="question2" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 3?</label>
+                                <input type="text" id="" name="question3" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 4?</label>
+                                <input type="text" id="" name="question4" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 5?</label>
+                                <input type="text" id="" name="question5" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 6?</label>
+                                <input type="text" id="" name="question6" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 7?</label>
+                                <input type="text" id="" name="question7" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 8?</label>
+                                <input type="text" id="" name="question8" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 9?</label>
+                                <input type="text" id="" name="question9" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 10?</label>
+                                <input type="text" id="" name="question10" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 11?</label>
+                                <input type="text" id="" name="question11" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 12?</label>
+                                <input type="text" id="" name="question12" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 13?</label>
+                                <input type="text" id="" name="question13" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 14?</label>
+                                <input type="text" id="" name="question14" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 15?</label>
+                                <input type="text" id="" name="question15" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 16?</label>
+                                <input type="text" id="" name="question16" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 17?</label>
+                                <input type="text" id="" name="question17" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 18?</label>
+                                <input type="text" id="" name="question18" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 19?</label>
+                                <input type="text" id="" name="question19" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 20?</label>
+                                <input type="text" id="" name="question20" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+
+
+                                <label for="" class="input-label">What is question No. 21?</label>
+                                <input type="text" id="" name="question21" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 22?</label>
+                                <input type="text" id="" name="question22" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 23?</label>
+                                <input type="text" id="" name="question23" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 24?</label>
+                                <input type="text" id="" name="question24" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 25?</label>
+                                <input type="text" id="" name="question25" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 26?</label>
+                                <input type="text" id="" name="question26" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 27?</label>
+                                <input type="text" id="" name="question27" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 28?</label>
+                                <input type="text" id="" name="question28" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 29?</label>
+                                <input type="text" id="" name="question29" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 30?</label>
+                                <input type="text" id="" name="question30" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 31?</label>
+                                <input type="text" id="" name="question31" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 32?</label>
+                                <input type="text" id="" name="question32" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 33?</label>
+                                <input type="text" id="" name="question33" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 34?</label>
+                                <input type="text" id="" name="question34" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 35?</label>
+                                <input type="text" id="" name="question35" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 36?</label>
+                                <input type="text" id="" name="question36" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 37?</label>
+                                <input type="text" id="" name="question37" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button>                                 -->
+                                <label for="" class="input-label">What is question No. 38?</label>
+                                <input type="text" id="" name="question38" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 39?</label>
+                                <input type="text" id="" name="question39" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                                <label for="" class="input-label">What is question No. 40?</label>
+                                <input type="text" id="" name="question40" placeholder="Fill in Questions">
+                                <!-- <button class="btn-copy">Copy answer tag</button> -->
+                             <!-- TEMPLATE IN EDITOR -->
+
+
+
+                             <!-- TEMPLATE IN EDITOR -->
+                            </div>
+
+                            <div class="card index">
+
+                                <!-- <select id="manage-btn" name="category">
+                                    {% for item in category %}
+                                    <option>{{item.temp_class}}</option>
+                                    {% endfor %}
+                                </select> -->
+                                <div class="form-group">
+
+                                    <!-- <div class="row px-4">
+                                        <label for="" class="">Category</label>
+                                        <select class="tagging" name="category" >
+                                            {%for user in company_users%}
+                                            <option>{{item.temp_class}}</option>
+                                            {%endfor%}
+                                        </select>
+                                    </div> -->
+                                    <!-- <select class="tagging col-12 customInput" name="category" required placeholder="Input Category">
+                                        <option value="">Choose a category</option>
+                                        {% for item in category %}
+                                        <option value="{{item.temp_class}}">{{item.temp_class}}</option>
+                                        {% endfor %}
+                                    </select> -->
+                                </div>
+                                <!-- <input type="text" name="category" placeholder="Input Document category"> -->
+
+                                <textarea id="editor" name="body" cols="25" >
+                                    {{request.session.body}} 
+                                </textarea>
+                            </div>
+                            </div> <br> <br> <br> <br>
+                            <button type="submit" class="btn-temp-finish">Finish</button>
+                        </form>
+
+                        <a href="{% url 'admintemp' %}"><button class="btn-temp-cancel">Cancel</button></a>
+                        </form>
+                                
+            </section>
+        </div>
+        <!-- Edit Template Questions Ends -->
+        
+        <!-- Community Template Ends -->
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc.1/dist/chartjs-plugin-datalabels.min.js"
+        integrity="sha256-Oq8QGQ+hs3Sw1AeP0WhZB7nkjx6F1LxsX6dCAsyAiA4=" crossorigin="anonymous"></script>
+    <script src="{% static '' %}js/chart1.js"></script>
+    <script src="{% static '' %}js/chart2.js"></script>
+    <!-- <script src="js/all.js"></script> -->
+
+    <script src="{% static '' %}js/main.js"></script>
+    <script>
+        tinymce.init({
+            selector: "#editor",
+            menubar: false,
+            width: '800px',
+            height: '400px',
+            content_style: `
+                body {
+                    background: #fff;
+                }
+
+               `,
+        });
+    </script>
+    <style>
+        body {
+            margin: 4rem auto;
+            padding: 0 2rem;
+            background-color: #f9f9fb;
+        }
+
+        main {
+            width: 100%;
+        }
+
+        .container-box {
+            margin-right: 30px;
+            width: 500px;
+            height: 200px;
+            background-color: white;
+            padding: 20px;
+            text-align: left;
+            transition: all .2s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .container-box:hover {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load simple_tags %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My template</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/mytemplate.css">
+
+</head>
+
+<body>
+
+        <!-- Sidebar Starts  -->
+        <div class="sidebar">
+            <div class="logo">
+                <a href="{% url 'home' %}"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+            </div>
+            <ul class="side-menu top">
+                <li class="tablinks" id="defaultOpen" onclick="openTab(event, 'home-page')">
+                    <a href="{% url 'home' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/home.png" alt=""></i>
+                        <div>Home</div>
+                    </a>
+                </li>
+
+                <li id="dash-tab" class="tablinks" onclick="openTab(event, 'dash-board')">
+                    <a href="{% url 'dashboard' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/dashboard.png" alt=""></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li id="docManager-tab" class="tablinks" onclick="openTab(event, 'doc-manager')">
+                    <a href="{% url 'docmanager' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/icon-park-outline_category-management.png" alt=""></i>
+                        <div>Document Manager</div>
+                    </a>
+                </li>
+                <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+                    <a href="{% url 'tinymce' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                        <div> Document Editor</div>
+                    </a>
+                </li>
+                <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+                    <a href="{% url 'newtempeditor' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                        <div> Create Template</div>
+                    </a>
+                </li>
+                <li id="clause-tab" class="tablinks" onclick="openTab(event, 'clauselibrary')">
+                    <a href="{% url 'clause' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/library.png" alt=""></i>
+                        <div> Clause Library</div>
+                    </a>
+                </li>
+                <li id="temp-tab" class="tablinks" onclick="openTab(event, 'community-temp')">
+                    <a href="{% url 'clienttemp' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/heroicons-outline_template.png" alt=""></i>
+                        <div>Template</div>
+                    </a>
+                </li>
+                <li id="insight-tab" class="tablinks" onclick="openTab(event, 'insight-sect')">
+                    <a href="{% url 'insight' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/gg_insights.png" alt=""></i>
+                        <div> Insight</div>
+                    </a>
+                </li>
+                <li id="legal-tab" class="tablinks" onclick="openTab(event, 'legal-terminology')">
+                    <a href="{% url 'legal' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/legal.png" alt=""></i>
+                        <div> Legal Terminology</div>
+                    </a>
+                </li>
+
+                <hr>
+
+                <li class="username tablinks" id="user-tab" onclick="openTab(event, 'user')">
+                    <a href="{% url 'profile' %}">
+                        <div class="profile-pic-div">
+                            <img src="{{profile.p_img.url}}" class="display-pic" alt="">
+                        </div>
+                        <div>{{profile.first_name|title}} {{profile.last_name|title}}</div>
+                    </a>
+                </li>
+
+                <li id="notification-tab" class="tablinks" onclick="openTab(event, 'notifications')">
+                    <a href="{% url 'notification' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/Notification.png" alt=""></i>
+                        <div> Notification <span class="notify">2</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'logoutfunc' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/logout.png" alt=""></i>
+                        <div> Log out</div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- Sidebar Starts  -->
+
+    <div class="main">
+        <div class="topbar">
+            <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt=""></i>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode">
+                <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+            </label>
+        </div>
+
+        <!--********* My Template Section Starts  *******-->
+        <div class="in-active-5">
+            <img src="{% static '' %}img/group77.png" class="temp-document-img" alt="">
+            <section class="my-template">
+                <div class="btn-section">
+                    <a href="{% url 'admintemp' %}"><button class="btn-community" id="">Community</button></a>
+                    <a href="{% url 'clienttemp' %}"><button class="btn-template" id="btn-my-template">Template</button></a>
+                    <a href="{% url 'gentemp' %}"></a><button class="btn-template active" id="btn-my-template">Generated Templates</button>
+
+                    <!-- <button class="btn-new-template" id="btn-new-template">Create New Template</button> -->
+                </div>
+                <div class="inner-sect">
+                    <form class="search-bar">
+                        <input type="text" placeholder="Search for documents" id="file-search-myTemp" name="search">
+                        <i class="icon"><img src="{% static '' %}img/icon/search.png" alt=""></i>
+                    </form>
+                </div>
+                <div class="title"> <br>
+                    <h2>Surf through <br><span>Personal Documents</span></h2>
+                </div>
+
+                <!-- <div class="btn-nav">
+                    <button><img class="icon" id="btn-temp-left" src="{% static '' %}img/icon/union-back.png" alt=""></button>
+                    <span>Categories</span>
+                    <button><img class="icon" id="btn-temp-right" src="{% static '' %}img/icon/union-forward.png" alt=""></button>
+                </div> -->
+                <div id="cards" class="mytemp-cards">
+                    {% if cattemps %}
+                        {% for item in cattemps %}
+                            <a href="{% url 'gentempdetails' item.id %}" class="card-1 btn-corporate">
+                                <div>
+                                    <img class="temp-icon" src="{% static '' %}img/icon/folder.png" alt="homeimage" srcset="">
+                                    <p>{{item.title|title}}</p> <br>
+                                    <p>{{item.category|title}}</p>
+                                    <small>{{item.date_created|title}}</small>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div id="cards" class="mytemp-cards">
+                    {% if mytemps %}
+                    {% for item in mytemps %}
+                        <a href="{% url 'mygentempdetails' item.id %}" class="card-1 btn-corporate">
+                            <div>
+                                <img class="temp-icon" src="{% static '' %}img/icon/folder.png" alt="homeimage" srcset="">
+                                <p>{{item.title|title}}</p> <br>
+                                <p>{{item.category|title}}</p>
+                                <small>{{item.date_created|title}}</small>
+                            </div>
+                        </a>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+            </section>
+
+
+        </div>
+        <!-- My Template Section Ends  -->
+
+
+    </div>
+
+
+
+
+    <script>
+
+        //  My-Template Slider
+        let right2Nav = [...document.querySelectorAll("#btn-temp-right")];
+        let left2Nav = [...document.querySelectorAll("#btn-temp-left")];
+        let tempCardsNav = [...document.querySelectorAll(".mytemp-cards")];
+
+        tempCardsNav.forEach((item2, k) => {
+
+            let containerDimensionsTemp = item2.getBoundingClientRect();
+            let containerWidthTemp = containerDimensionsTemp.width;
+
+            right2Nav[k].addEventListener('click', () => {
+                item2.scrollLeft += containerWidthTemp;
+            });
+            left2Nav[k].addEventListener('click', () => {
+                item2.scrollLeft -= containerWidthTemp;
+            });
+        });
+
+
+    </script>
+
+
+    <script src="{% static '' %}js/script.js"></script>
+    <script src="{% static '' %}js/main.js"></script>
+</body>
+
+</html>

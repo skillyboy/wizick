@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reset</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/reset.css"> 
+
+</head>
+
+{% if messages %}
+    {% for item in messages %}
+      <div style="color: white; padding:2rem; background:#35B7FF;font-size:1rem; font-weight:700;text-align:center;">{{item}}</div>
+    {% endfor %}
+{% endif %}
+<body>
+
+    <img  id="dark-rect" src="{% static '' %}img/dark_Rectangle348.png" alt="rect">
+    <img id="side-rect" src="{% static '' %}img/Rectangle348.png" alt="rect">
+
+    <div class="container">
+
+        <div class="topbar">
+            <div class="logo">
+                <img src="{% static '' %}img/logo.png" alt="Wizick">
+            </div>
+            <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt="" hidden></i>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode">
+                <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+            </label>
+        </div>
+<!-- <img src="../img/WIZICKLOGO.png" class="wizick-logo-t" alt=""> -->
+        <section id="sect-1">
+            <div id="login-img" class="sect-1">
+                <img src="{% static '' %}img/Group374.png" alt="Reset Password">
+            </div>
+            <div id="form" class="sect-1">
+                <div class="sect-head">
+                    <h1>Reset <span>Password</span></h1>
+                    <p>Your New Password Must be Different <br>
+                        from Previously Used Password</p>
+                </div>
+
+
+                <form action="">
+
+                    <label for="password" class="input-label">New Password</label>
+                    <input type="password" id="npwd" name="password1" placeholder="Enter New Password" required>
+
+                    <label for="password" class="input-label">Confirm Password</label>
+                    <input type="password" id="cpwd" name="password2" placeholder="Confirm Password" required> <br>
+
+                    <input type="submit" value="Save">
+                    
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+
+
+
+<script src="{% static '' %}js/script.js"></script>
+</html>

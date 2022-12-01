@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.tiny.cloud/1/grjue6zgt2kiw5ryvt4z271o7w52oofnhegmxvtgpgwo2hho/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+</head>
+
+
+<body>
+    <div class="container">
+
+        <img id="dark-rect" src="{% static '' %}img/dark_Rectangle348.png" alt="rect" hidden>
+        <img id="side-rect" src="{% static '' %}img/Rectangle348.png" alt="rect" hidden>
+
+<!-- Sidebar Starts  -->
+        <div class="sidebar">
+            <div class="logo">
+                <a href="{% url 'home' %}"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+            </div>
+            <ul class="side-menu top">
+                <li class="tablinks" id="defaultOpen" onclick="openTab(event, 'home-page')">
+                    <a href="{% url 'home' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/home.png" alt=""></i>
+                        <div>Home</div>
+                    </a>
+                </li>
+                <li id="dash-tab" class="tablinks" onclick="openTab(event, 'dash-board')">
+                    <a href="{% url 'dashboard' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/dashboard.png" alt=""></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li id="docManager-tab" class="tablinks" onclick="openTab(event, 'doc-manager')">
+                    <a href="{% url 'docmanager' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/icon-park-outline_category-management.png" alt=""></i>
+                        <div>Document Manager</div>
+                    </a>
+                </li>
+                <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+                    <a href="{% url 'tinymce' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                        <div> Document Editor</div>
+                    </a>
+                </li>
+                <li id="editor-tab" class="tablinks" onclick="openTab(event, 'tinymce-editor')">
+                    <a href="{% url 'newtempeditor' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                        <div> Create Template</div>
+                    </a>
+                </li>
+                <li id="clause-tab" class="tablinks" onclick="openTab(event, 'clauselibrary')">
+                    <a href="{% url 'clause' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/library.png" alt=""></i>
+                        <div> Clause Library</div>
+                    </a>
+                </li>
+                <li id="temp-tab" class="tablinks" onclick="openTab(event, 'community-temp')">
+                    <a href="{% url 'admintemp' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/heroicons-outline_template.png" alt=""></i>
+                        <div>Template</div>
+                    </a>
+                </li>
+                <li id="insight-tab" class="tablinks" onclick="openTab(event, 'insight-sect')">
+                    <a href="{% url 'insight' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/gg_insights.png" alt=""></i>
+                        <div> Insight</div>
+                    </a>
+                </li>
+                <li id="legal-tab" class="tablinks" onclick="openTab(event, 'legal-terminology')">
+                    <a href="{% url 'legal' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/legal.png" alt=""></i>
+                        <div> Legal Terminology</div>
+                    </a>
+                </li>
+
+                <hr>
+
+                <li class="username tablinks" id="user-tab" onclick="openTab(event, 'user')">
+                    <a href="{% url 'profile' %}">
+                        <div class="profile-pic-div">
+                            <img src="{{profile.p_img.url}}" class="display-pic" alt="">
+                        </div>
+                        <div>{{profile.first_name|title}} {{profile.last_name|title}}</div>
+                    </a>
+                </li>
+
+                <li id="notification-tab" class="tablinks" onclick="openTab(event, 'notifications')">
+                    <a href="{% url 'notification' %}">
+                        <i><img class="icon" src="{% static '' %}img/icon/Notification.png" alt=""></i>
+                        <div> Notification <span class="notify">2</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'logoutfunc' %}">
+                        <i> <img class="icon" src="{% static '' %}img/icon/logout.png" alt=""></i>
+                        <div> Log out</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidebar Starts  -->
+
+        <!-- <div class="main"> -->
+        <!-- Community Template Starts -->
+        <!-- <section id="community-temp" class="com-template tabcontent"> -->
+
+        <!-- Edit Template Questions Starts -->
+        <div class="in-active-9 animate__animated animate__fadeInRight">
+            <img src="img/DOCUMENT_ICON_III.png" class="document-img-temp-edit" alt="">
+            <section id="temp-edit">
+                <h3 class="preview">Preview</h3>
+                <div id="cards">
+                    <!-- <button type="submit">Done</button> -->
+
+                    <div id="form" class="card">
+                        <div class="sect-head">
+                            <h1>Questionnaire</h1>
+                            <h4>Answer the following questions to create a template</h4>
+                        </div>
+                        <form method="POST"  action="{% url 'agreementcntxt' %}">
+                        {%csrf_token%}
+                            <!-- QUESTION -->
+                                <input type="hidden" name="category" value="{{admintemp.category.temp_class}}">                           
+                                <input type="hidden" name="title" value="{{admintemp.title}}">                           
+                                <input type="hidden" name="docid" value="{{admintemp.category.id}}">  
+
+                                            <br><br>
+                                {% if admintemp.date2 %}
+                                <label for="" class="input-label">{{admintemp.date2}}</label>
+                                <input type="date"  name="date2ans">
+                                {% endif %}
+                                <br><br>
+                                {% if admintemp.question1 %}
+                                <label for="" class="input-label">{{admintemp.question1}}</label>
+                                <input type="text" name="question1ans" placeholder="Fill in question">
+                                {% endif %}  
+                                                                
+                                {% if admintemp.question2 %}
+                                <label for="" class="input-label">{{admintemp.question2}}</label>
+                                <input type="text" name="question2ans" placeholder="Fill in question">
+                                {% endif %}  
+
+                                     <!-- alternate2 starts -->
+                                {% if admintemp.alternate2 %}
+                                <label for="" class="input-label">{{admintemp.alternate2}}</label>
+                                {% endif %}
+                                
+                                <!-- options -->
+                                {% if admintemp.alternate2optionA %}
+                                {{admintemp.alternate2optionA}}
+                                <input type="radio" value="{{admintemp.alternate2optionA}}" name="alternate2ans">
+                                {% endif %}
+
+                                {% if admintemp.alternate2optionB %}
+                                {{admintemp.alternate2optionB}}
+                                <input type="radio" value="{{admintemp.alternate2optionB}}" name="alternate2ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate2optionC %}
+                                {{admintemp.alternate2optionC}}
+                                <input type="radio" value="{{admintemp.alternate2optionC}}" name="alternate2ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate2optionD %}
+                                {{admintemp.alternate2optionD}}
+                                <input type="radio" value="{{admintemp.alternate2optionD}}" name="alternate2ans">    
+                                {% endif %}
+
+                                
+                                {% if admintemp.alternate2optionE %}
+                                {{admintemp.alternate2optionE}}
+                                <input type="radio" value="{{admintemp.alternate2optionE}}" name="alternate2ans">    
+                                {% endif %}                                
+                                <!-- end options -->
+                
+                                <br><br>
+
+                                {% if admintemp.question3 %}
+                                <label for="" class="input-label">{{admintemp.question3}}</label>
+                                <input type="text" name="question3ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question4 %}
+                                <label for="" class="input-label">{{admintemp.question4}}</label>
+                                <input type="text" name="question4ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question5 %}
+                                <label for="" class="input-label">{{admintemp.question5}}</label>
+                                <input type="text" id="" name="question5ans" placeholder="Fill in question">
+                                {% endif %}
+                                
+                                
+                                <!-- alternate3 starts --> 
+                                <br><br>
+                                {% if admintemp.alternate3 %}
+                                <label for="" class="input-label">{{admintemp.alternate3}}</label>
+                                {% endif %}
+                                        <!-- options -->
+                                {% if admintemp.alternate3optionA %}
+                                {{admintemp.alternate3optionA}}
+                                <input type="radio" value="{{admintemp.alternate3optionA}}" name="alternate4ans">    
+                                {% endif %}
+
+                                {% if admintemp.alternate3optionB %}
+                                {{admintemp.alternate3optionB}}
+                                <input type="radio" value="{{admintemp.alternate3optionB}}" name="alternate3ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate3optionC %}
+                                {{admintemp.alternate3optionC}}
+                                <input type="radio" value="{{admintemp.alternate3optionC}}" name="alternate3ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate3optionD %}
+                                {{admintemp.alternate3optionD}}
+                                <input type="radio" value="{{admintemp.alternate3optionD}}" name="alternate3ans">    
+                                {% endif %}
+                                {% if admintemp.alternate3optionE %}
+                                {{admintemp.alternate3optionE}}
+                                <input type="radio" value="{{admintemp.alternate3optionE}}" name="alternate3ans">    
+                                {% endif %}
+                                        <br><br>
+                                {% if admintemp.question6 %}
+                                <label for="" class="input-label">{{admintemp.question6}}</label>
+                                <input type="text" name="question6ans" placeholder="Fill in question">
+                                {% endif %}  
+                                
+                                {% if admintemp.question7 %}
+                                <label for="" class="input-label">{{admintemp.question7}}</label>
+                                <input type="text" name="question7ans" placeholder="Fill in question">
+                                {% endif %}  
+
+                                {% if admintemp.question8 %}
+                                <label for="" class="input-label">{{admintemp.question8}}</label>
+                                <input type="text" name="question8ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question9 %}
+                                <label for="" class="input-label">{{admintemp.question9}}</label>
+                                <input type="text" name="question9ans" placeholder="Fill in question">
+                                {% endif %} 
+
+
+
+
+                                                <!-- alternate1 starts --> <br><br>
+                                {% if admintemp.alternate1 %}
+                                <label for="" class="input-label">{{admintemp.alternate1}}</label>
+                                {% endif %}
+                                                    <!-- options -->
+                                {% if admintemp.alternate1optionA %}
+                                {{admintemp.alternate1optionA}}
+                                <input type="radio" value="{{admintemp.alternate1optionA}}" name="alternate1ans">
+                                {% endif %}
+
+                                {% if admintemp.alternate1optionB %}
+                                {{admintemp.alternate1optionB}}
+                                <input type="radio" value="{{admintemp.alternate1optionB}}" name="alternate1ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate1optionC %}
+                                {{admintemp.alternate1optionC}}
+                                <input type="radio" value="{{admintemp.alternate1optionC}}" name="alternate1ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate1optionD %}
+                                {{admintemp.alternate1optionD}}
+                                <input type="radio" value="{{admintemp.alternate1optionD}}" name="alternate1ans">    
+                                {% endif %}
+
+                                {% if admintemp.alternate1optionE %}
+                                {{admintemp.alternate1optionE}}
+                                <input type="radio" value="{{admintemp.alternate1optionE}}" name="alternate1ans">    
+                                {% endif %}
+                                
+                                {% if admintemp.alternate1optionF %}
+                                {{admintemp.alternate1optionF}}
+                                <input type="radio" value="{{admintemp.alternate1optionF}}" name="alternate1ans">    
+                                {% endif %}                                
+                                <br><br>
+                                
+                                {% if admintemp.question10 %}
+                                <label for="" class="input-label">{{admintemp.question10}}</label>
+                                <input type="text" id="" name="question10ans" placeholder="Fill in question">
+                                {% endif %}                                
+
+                                {% if admintemp.question11 %}
+                                <label for="" class="input-label">{{admintemp.question11}}</label>
+                                <input type="text" name="question11ans" placeholder="Fill in question">
+                                {% endif %}  
+                                
+                                {% if admintemp.question12 %}
+                                <label for="" class="input-label">{{admintemp.question12}}</label>
+                                <input type="text" name="question12ans" placeholder="Fill in question">
+                                {% endif %}  
+                                
+                                
+                                <br><br>
+                                {% if admintemp.date1 %}
+                                <label for="" class="input-label">{{admintemp.date1}}</label>
+                                <input type="date"  name="date1ans">
+                                {% endif %}
+                                <br>
+                                <br>
+                                
+                                {% if admintemp.question13 %}
+                                <label for="" class="input-label">{{admintemp.question13}}</label>
+                                <input type="text" name="question13ans" placeholder="Fill in question">
+                                {% endif %} 
+                                {% if admintemp.question14 %}
+                                <label for="" class="input-label">{{admintemp.question14}}</label>
+                                <input type="text" name="question14ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question15 %}
+                                <label for="" class="input-label">{{admintemp.question15}}</label>
+                                <input type="text" id="" name="question15ans" placeholder="Fill in question">
+                                {% endif %}
+                                
+                                <br><br>
+                                
+                                                <!-- alternate2 starts -->
+                                {% if admintemp.alternate4 %}
+                                    <label for="" class="input-label">{{admintemp.alternate4}}</label>
+                                {% endif %}
+                                
+                                <!-- options -->
+                                {% if admintemp.alternate4optionA %}
+                                {{admintemp.alternate4optionA}}
+                                    <input type="radio" value="{{admintemp.alternate4optionA}}" name="alternate4ans">
+                                {% endif %}
+
+                                {% if admintemp.alternate4optionB %}
+                                {{admintemp.alternate4optionB}}
+                                    <input type="radio" value="{{admintemp.alternate4optionB}}" name="alternate4ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate4optionC %}
+                                {{admintemp.alternate4optionC}}
+                                    <input type="radio" value="{{admintemp.alternate4optionC}}" name="alternate4ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate4optionD %}
+                                {{admintemp.alternate4optionD}}
+                                <input type="radio" value="{{admintemp.alternate4optionD}}" name="alternate4ans">    
+                                {% endif %}
+                                {% if admintemp.alternate4optionE %}
+                                {{admintemp.alternate4optionE}}
+                                <input type="radio" value="{{admintemp.alternate4optionE}}" name="alternate4ans">    
+                                {% endif %}
+                                <!-- end options -->
+                                <br><br>
+
+
+                                {% if admintemp.question16 %}
+                                <label for="" class="input-label">{{admintemp.question16}}</label>
+                                <input type="text" name="question16ans" placeholder="Fill in question">
+                                {% endif %}  
+                                
+                                {% if admintemp.question17 %}
+                                <label for="" class="input-label">{{admintemp.question17}}</label>
+                                <input type="text" name="question17ans" placeholder="Fill in question">
+                                {% endif %}  
+
+                                {% if admintemp.question18 %}
+                                <label for="" class="input-label">{{admintemp.question18}}</label>
+                                <input type="text" name="question18ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question19 %}
+                                <label for="" class="input-label">{{admintemp.question19}}</label>
+                                <input type="text" name="question19ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question20 %}
+                                <label for="" class="input-label">{{admintemp.question20}}</label>
+                                <input type="text" id="" name="question20ans" placeholder="Fill in question">
+                                {% endif %} 
+                                                <!-- alternate5 starts -->
+                                {% if admintemp.alternate5 %}
+                                <label for="" class="input-label">{{admintemp.alternate5}}</label>
+                                {% endif %}
+                                <!-- options -->
+                                {% if admintemp.alternate5optionA %}
+                                {{admintemp.alternate5optionA}}
+                                <input type="radio" value="{{admintemp.alternate5optionA}}" name="alternate5ans">
+                                {% endif %}
+
+                                {% if admintemp.alternate5optionB %}
+                                {{admintemp.alternate5optionB}}
+                                <input type="radio" value="{{admintemp.alternate5optionB}}" name="alternate5ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate5optionC %}
+                                {{admintemp.alternate5optionC}}
+                                <input type="radio" value="{{admintemp.alternate5optionC}}" name="alternate5ans">
+                                {% endif %}
+                                
+                                {% if admintemp.alternate5optionD %}
+                                {{admintemp.alternate5optionD}}
+                                <input type="radio" value="{{admintemp.alternate5optionD}}" name="alternate5ans">    
+                                {% endif %}
+                                {% if admintemp.alternate5optionE %}
+                                {{admintemp.alternate5optionE}}
+                                <input type="radio" value="{{admintemp.alternate5optionE}}" name="alternate5ans">    
+                                {% endif %}
+                                <!-- end options -->
+
+
+                                <br><br>
+                                {% if admintemp.question21 %}
+                                <label for="" class="input-label">{{admintemp.question21}}</label>
+                                <input type="text" name="question21ans" placeholder="Fill in question">
+                                {% endif %}  
+                                                                
+                                {% if admintemp.question22 %}
+                                <label for="" class="input-label">{{admintemp.question22}}</label>
+                                <input type="text" name="question22ans" placeholder="Fill in question">
+                                {% endif %}
+                                {% if admintemp.question23 %}
+                                <label for="" class="input-label">{{admintemp.question23}}</label>
+                                <input type="text" name="question23ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question24 %}
+                                <label for="" class="input-label">{{admintemp.question24}}</label>
+                                <input type="text" name="question24ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question25 %}
+                                <label for="" class="input-label">{{admintemp.question25}}</label>
+                                <input type="text" id="" name="question25ans" placeholder="Fill in question">
+                                {% endif %}
+
+                                {% if admintemp.question26 %}
+                                <label for="" class="input-label">{{admintemp.question26}}</label>
+                                <input type="text" name="question26ans" placeholder="Fill in question">
+                                {% endif %}  
+                                
+                                {% if admintemp.question27 %}
+                                <label for="" class="input-label">{{admintemp.question27}}</label>
+                                <input type="text" name="question27ans" placeholder="Fill in question">
+                                {% endif %}  
+
+                                {% if admintemp.question28 %}
+                                <label for="" class="input-label">{{admintemp.question28}}</label>
+                                <input type="text" name="question28ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question29 %}
+                                <label for="" class="input-label">{{admintemp.question29}}</label>
+                                <input type="text" name="question29ans" placeholder="Fill in question">
+                                {% endif %} 
+                                
+                                {% if admintemp.question30 %}
+                                <label for="" class="input-label">{{admintemp.question30}}</label>
+                                <input type="text" name="question30ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question31 %}
+                                <label for="" class="input-label">{{admintemp.question31}}</label>
+                                <input type="text" name="question31ans" placeholder="Fill in question">
+                                {% endif %}  
+                                                                
+                                {% if admintemp.question32 %}
+                                <label for="" class="input-label">{{admintemp.question32}}</label>
+                                <input type="text" name="question32ans" placeholder="Fill in question">
+                                {% endif %}
+                                {% if admintemp.question33 %}
+                                <label for="" class="input-label">{{admintemp.question33}}</label>
+                                <input type="text" name="question33ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question34 %}
+                                <label for="" class="input-label">{{admintemp.question34}}</label>
+                                <input type="text" name="question34ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question35 %}
+                                <label for="" class="input-label">{{admintemp.question35}}</label>
+                                <input type="text" id="" name="question35ans" placeholder="Fill in question">
+                                {% endif %}
+
+                                {% if admintemp.question36 %}
+                                <label for="" class="input-label">{{admintemp.question36}}</label>
+                                <input type="text" name="question36ans" placeholder="Fill in question">
+                                {% endif %}  
+                                
+                                {% if admintemp.question37 %}
+                                <label for="" class="input-label">{{admintemp.question37}}</label>
+                                <input type="text" name="question37ans" placeholder="Fill in question">
+                                {% endif %}  
+
+                                {% if admintemp.question38 %}
+                                <label for="" class="input-label">{{admintemp.question38}}</label>
+                                <input type="text" name="question38ans" placeholder="Fill in question">
+                                {% endif %} 
+
+                                {% if admintemp.question39 %}
+                                <label for="" class="input-label">{{admintemp.question39}}</label>
+                                <input type="text" name="question39ans" placeholder="Fill in question">
+                                {% endif %} 
+                                
+                                {% if admintemp.question40 %}
+                                <label for="" class="input-label">{{admintemp.question40}}</label>
+                                <input type="text" name="question40ans" placeholder="Fill in question">
+                                {% endif %} 
+
+
+
+ 
+                                <!-- Clause Question -->
+                                <br><br><br>
+                                    {% if admintemp.clause %}
+                                        <label for="" class="input-label"><h3>{{admintemp.clause}}</h3></label>
+                                        <label for="null">Skip</label><input type="radio" value="" name="clause">
+                                        {% for clause in clauses %}
+                                            <label for="clause">{{clause.title}}</label>
+                                            <input type="radio" value="{{clause.clause}}" name="clauseans">
+                                        {% endfor %}
+                                    {% endif %}  
+                                <br><br><br>
+                                <!-- QUESTION  ENDS-->
+
+                            
+                                    <!-- TEMPLATE IN EDITOR -->
+                                    <br><br>
+                                    </div>
+                                    <div class="card index">
+                                        <textarea id="editor" name="admintemp" cols="25">
+                                            {% if admintemp %}
+                                                {{admintemp.body|safe}}
+                                            {% endif %} 
+                                        </textarea>
+                                    </div>
+                                    </div> <br>
+                                    <button type="submit" class="btn-temp-finish">Finish</button>
+                            </form>
+                            <a href="{% url 'admintemp' %}"><button class="btn-temp-cancel">Cancel</button></a>
+                                
+            </section>
+        </div>
+        <!-- Edit Template Questions Ends -->
+        
+        <!-- Community Template Ends -->
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc.1/dist/chartjs-plugin-datalabels.min.js"
+        integrity="sha256-Oq8QGQ+hs3Sw1AeP0WhZB7nkjx6F1LxsX6dCAsyAiA4=" crossorigin="anonymous"></script>
+    <script src="{% static '' %}js/chart1.js"></script>
+    <script src="{% static '' %}js/chart2.js"></script>
+    <!-- <script src="js/all.js"></script> -->
+
+    <script src="{% static '' %}js/main.js"></script>
+    <script>
+        tinymce.init({
+            selector: "#editor",
+            menubar: false,
+            toolbar: '',
+            width: '700px',
+            height: '400px',
+            content_style: `
+                body {
+                    background: #fff;
+                }
+
+               `,
+        });
+    </script>
+    <style>
+        body {
+            margin: 4rem auto;
+            padding: 0 2rem;
+            background-color: #f9f9fb;
+        }
+
+        main {
+            width: 100%;
+        }
+
+        .container-box {
+            margin-right: 30px;
+            width: 500px;
+            height: 200px;
+            background-color: white;
+            padding: 20px;
+            text-align: left;
+            transition: all .2s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .container-box:hover {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        }
+    </style>
+
+</body>
+
+</html>

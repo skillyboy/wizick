@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css"> 
+    <link rel="stylesheet" href="{% static '' %}css/demo.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+{% if messages %}
+    {% for item in messages %}
+      <div style="color: white; padding:2rem; background:#35B7FF;font-size:1rem; font-weight:700;text-align:center;">{{item}}</div>
+    {% endfor %}
+{% endif %}
+<body>
+
+
+    <div class="container animate__animated animate__fadeIn">
+        <div class="topbar">
+            <div class="logo">
+               <a href="../index.html"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+            </div>
+            <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt="" hidden></i>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode">
+                <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+            </label>
+        </div>
+<img src="{% static '' %}img/WIZICKLOGO2.png" class="wizick-logo-t2" alt="">
+<img src="{% static '' %}img/WIZICKLOGO.png" class="wizick-logo-t" alt="">
+        <section id="sect-1">
+            <div id="demo-img" class="sect-1">
+                <img src="{% static '' %}img/undraw_online_test_gba7.png" alt="Demo">
+            </div>
+            <div id="form" class="sect-1">
+                <div class="sect-head">
+                    <h1><span>Wizick,</span></h1>
+                    <h2>Demo Sign in</h2>
+                </div>
+
+
+                <form method="POST"  action="{% url 'demologin' %}" >
+                    {%csrf_token%}                  
+                    <input type="email" id="email" name="email" placeholder="Email address"> <br>
+                    <input type="password" id="pwd" name="password" placeholder="Create password"> <br>
+
+                    <p class="passp"> Trial Mode last only 3 days according to the <span>Terms & Conditions</span></p>
+                <input type="submit" value="Start Demo">
+                </form>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="{% static '' %}js/script.js"></script>
+</body>
+
+</html>

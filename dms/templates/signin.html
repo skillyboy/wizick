@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{% static '' %}css/style.css"> 
+    <link rel="stylesheet" href="{% static '' %}css/signin.css">
+</head>
+
+{% if messages %}
+    {% for item in messages %}
+      <div style="color: white; padding:2rem; background:#35B7FF;font-size:1rem; font-weight:700;text-align:center;">{{item}}</div>
+    {% endfor %}
+{% endif %}
+<body>
+
+    <img id="dark-rect" src="{% static '' %}img/dark_Rectangle348.png" alt="rect">
+    <img id="side-rect" src="{% static '' %}img/Rectangle348.png" alt="rect">
+
+    <div class="container animate__animated animate__fadeIn">
+
+        <div class="topbar">
+            <div class="logo">
+                <a href="../index.html"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+            </div>
+            <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt="" hidden></i>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode">
+                <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+            </label>
+        </div>
+        <img src="{% static '' %}img/WIZICKLOGO.png" class="wizick-logo-t" alt="">
+        <section id="sect-1">
+            <div id="login-img" class="sect-1">
+                <img src="{% static '' %}img/undraw_secure_login_pdn4.png" alt="Login">
+            </div>
+            <div id="form" class="sect-1">
+                <div class="sect-head">
+                    <h1>Welcome to <span>Wizick,</span></h1>
+                    <p>SignIn your account</p>
+                </div>
+
+                <form method="POST"  action="{% url 'signin' %}" >
+                {%csrf_token%}
+                    <label for="email" class="input-label">Email</label>
+                    <input type="email" id="email" name="username" placeholder="Enter your email" required>
+
+                    <label for="password" class="input-label">Password</label>
+                    <input type="password" id="pwd" name="password" placeholder="Enter your Password" required> <br>
+
+                    <input type="checkbox" name="remember-me" id="remember-me">
+                    <label for="remember-me" class="lb">Remember me</label>
+                    <p class="passp"> <a href="{% url 'reset' %}"><span>Forgot password</span></a></p>
+                    <input type="submit" value="Sign in">
+                    <p>Don't have account? <a href="{% url 'register' %}"><span>Sign Up</span></a></p>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="{% static '' %}js/script.js"></script>
+</body>
+
+</html>

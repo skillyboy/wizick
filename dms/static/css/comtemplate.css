@@ -1,0 +1,157 @@
+
+
+/* Community Template CSS Starts */
+.com-template .document-img {
+  position: fixed;
+  z-index : 0;
+  top     : 200px;
+  width   : 380px;
+  left    : 900px;
+}
+
+.com-template {
+  display : inline-block;
+  width   : 95%;
+  padding : 30px;
+  position: absolute;
+  top     : -30px;
+  left    : 50px;
+}
+
+.com-template .btn-section button {
+  width        : 20%;
+  height       : 50px;
+  border       : 1px solid #B2C1D6;
+  border-radius: 12px;
+  background   : transparent;
+  color        : #b4b4b4;
+}
+
+.com-template .btn-section button:hover {
+  background-color: #E9F5FFE5;
+  color           : #B2C1D6;
+}
+
+.com-template .btn-section {
+  margin: 50px 0px 30px 0px;
+}
+
+.com-template>.btn-section .btn-community {
+  margin-right: 40px;
+  border      : 1px solid #35B7FF;
+}
+
+.com-template form.search-bar input[type=text] {
+  border-radius: 16px;
+  padding      : 16px 36px;
+  font-size    : 17px;
+  border       : 1px solid grey;
+  float        : left;
+  width        : 80%;
+  background   : var(--faint-blue);
+}
+
+.com-template form.search-bar .icon {
+  float        : left;
+  width        : 6%;
+  height       : 52px;
+  border       : none;
+  border-radius: 16px;
+  cursor       : pointer;
+  position     : relative;
+  top          : 2px;
+  right        : 56px;
+}
+
+.com-template form.search-bar .icon {
+  margin: 15px 10px;
+}
+
+.com-template form.search-bar::after {
+  content: "";
+  clear  : both;
+  display: table;
+}
+
+.com-template .title h2 {
+  font-size    : 2.2rem;
+  color        : var(--black);
+  text-align   : left;
+  border-radius: 12px;
+}
+
+.com-template .title h2 span {
+  color: #35B7FF;
+}
+
+.com-template .btn-nav {
+  background   : var(--faint-blue);
+  border       : none;
+  border-radius: 14px;
+  width        : 25%;
+  text-align   : center;
+  margin       : 30px 0;
+}
+
+.com-template .btn-nav span {
+  margin       : 0 35px;
+  align-items  : center;
+  margin-bottom: 10px;
+}
+
+.com-template .btn-nav button {
+  background   : none;
+  border       : none;
+  border-radius: 0px;
+  margin       : 5px;
+}
+
+.com-template>.btn-nav button .icon {
+  width  : 20px;
+  opacity: 0.5;
+}
+
+.com-template>.btn-nav button .icon:hover {
+  opacity: 1;
+}
+
+.com-template>#cards {
+  display        : flex;
+  width          : 70%;
+  text-align     : center;
+  padding        : 5px 0;
+  overflow-x     : auto;
+  scroll-behavior: smooth;
+}
+
+.com-template>#cards::-webkit-scrollbar {
+  display: none;
+}
+
+.com-template #cards p {
+  color: var(--black);
+}
+
+.com-template>#cards>.card {
+  background-color   : var(--faint-blue);
+  border-radius      : 20px;
+  margin-right       : 20px;
+  font-size          : 0.9rem;
+  text-decoration    : none;
+  padding            : 10px;
+  /* height          : 190px; */
+}
+
+.com-template>#cards>.card>div {
+  width: 180px;
+}
+
+
+.com-template #cards .card img {
+  width : 90px;
+  margin: 30px;
+}
+
+.com-template #cards .card div p {
+  position: relative;
+}

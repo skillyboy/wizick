@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <a href="{% url 'home' %}"> <img src="{% static '' %}img/logo.png" alt="Wizick"></a>
+        </div>
+        <ul class="side-menu top">
+            <li>
+                <a href="#">
+                    <i><img class="icon" src="{% static '' %}img/icon/home.png" alt=""></i>
+                    <div>Home</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/dashboard.png" alt=""></i>
+                    <div>Dashboard</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/icon-park-outline_category-management.png" alt=""></i>
+                    <div>Document Manager</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                    <div> DocumentEditor</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/library.png" alt=""></i>
+                    <div> Clause Library</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/heroicons-outline_template.png" alt=""></i>
+                    <div>Template</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/gg_insights.png" alt=""></i>
+                    <div> Insight</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i><img class="icon" src="{% static '' %}img/icon/legal.png" alt=""></i>
+                    <div> Legal Terminology</div>
+                </a>
+            </li>
+
+            <hr>
+
+            <li class="username tablinks" id="user-tab" onclick="openTab(event, 'user')">
+                <a href="#">
+                    <div class="profile-pic-div">
+                        <img src="{{profile.p_img.url}}" class="display-pic" alt="">
+                    </div>
+                    <div>Wizick User</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i><img class="icon" src="{% static '' %}img/icon/Notification.png" alt=""></i>
+                    <div> Notification <span class="notify">2</span></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/logout.png" alt=""></i>
+                    <div> Log out</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="topbar">
+            <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt=""></i>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode">
+                <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+            </label>
+        </div>
+        
+                <!-- ******* Insight- Section II for Create Insight Starts ***** -->
+                <div class="in-active-7 animate__animated animate__fadeInRight">
+                    <section class="insight-ii">
+                        <div class="title">
+                            <h2>Create your Insights</h2>
+                            <p>Enter your Insight information below</p>
+                        </div>
+
+                        <div class="form-section">
+                            <form method="POST"  action="{% url 'createpdfinsightform' %}" >
+                            {%csrf_token%} 
+
+                                <div class="col">
+                                    <label for="category">Parties Involved</label>
+                                    <p>(max space 255 chars and please use comma to seperate)</p>
+                                    <input type="text" id="parties"  value="{{insight.parties}}" name="parties" placeholder="{{insight.liabilitycap}}">
+
+                                    <label for="category">Liability Cap</label>
+                                    <p>(max space 255 chars and please use comma to seperate the value)</p>
+                                    <input type="text" id="cap"  value="{{insight.liabilitycap}}" name="liabilitycap" placeholder="Fill in answer">
+                                </div>
+                                <div class="col">
+                                    <label for="category">Consideration</label>
+                                    <p>max value 1000 cr. please don't use comma to seperate the value</p>
+                                    <input type="text" id="consider"  value="{{insight.consideration}}" name="consideration" placeholder="Fill in answer">
+
+                                    <label for="category">Term</label>
+                                    <p>please mention term in years as a whiole number</p>
+                                    <input type="text" id="term"  value="{{insight.term}}" name="term" placeholder="Fill in answer">
+                                </div>
+                                <div class="cards">
+                                    <div class="card">
+                                        <label for="category">Effective Date</label>
+                                        <input type="date" id="effectivedate"  value="{{insight.effectivedate}}" name="effectivedate"
+                                            placeholder="Fill in answer">
+                                    </div>
+                                    <div class="card">
+                                        <label for="category">Expiry Date</label>
+                                        <input type="date" id="expirydate"  value="{{insight.expirydate}}" name="expirydate"
+                                            placeholder="Fill in answer">
+                                    </div>
+                                    <div class="card todo">
+                                        <label for="category">Document Status</label>
+                                        <p>max space 255 chars</p>
+                                        <select name="status">
+                                            <option value="to do">To Do</option>
+                                            <option value="in progress">In Progress</option>
+                                            <option value="completed">Completed</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="text-area">
+                                    <label for="category">Additional Comment </label>
+                                    <p>(max space 255 chars and please use comma to seperate)</p>
+                                    <textarea name="comment" id="" cols="60" rows="5" value="{{insight.comment}}"> </textarea>
+                                    <input type="hidden" name="modifypdf" value="{{insight.id}}">
+                                   
+                                    <button type="submit"> Upload</button>
+                                    </div>
+                            </form>
+                                <input type="button" value="Cancel" id="btn-cancel">
+                        </div>
+                    </section>
+                </div> 
+                 <!--**** Insight- Section II for Create Insight Ends ***** -->
+
+    </div>
+
+
+
+    <script src="{% static '' %}js/script.js"></script>
+    <script src="{% static '' %}js/main.js"></script>
+</body>
+
+</html>

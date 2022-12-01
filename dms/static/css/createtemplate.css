@@ -1,0 +1,84 @@
+
+/* corporate */
+
+
+.corporate{
+    display: inline-block;
+    width: 95%;
+    padding: 30px;
+    text-align: center;
+    position: absolute;
+    top: -30px;
+    left: 50px;
+}
+
+.title {
+  background-color: var(--grey);
+  width: 110%;
+  padding: 20px;
+  position: absolute;
+  top: 40px;
+  left: -100px;
+  margin-bottom: 50px;
+}
+
+  .title h2{
+    font-size: 2.2rem;
+    color: #35B7FF;
+    margin-bottom: 10px;
+    border-radius: 12px;
+  }
+
+  .form-section {
+    width              : 100%;
+    margin-top         : 140px;
+    text-align         : center;
+    padding            : 10px;
+}
+
+.form-section select {
+    width: 382px;
+    padding      : 10px 20px;
+    border-radius: 10px;
+    border       : 1px solid var(--ash);
+    background: var(--white);
+    color:  #B2C1D6;
+    margin-left: 30px;
+}
+
+  .corporate .cards {
+    display: flex;
+    width  : 90%;
+    text-align: center;
+    /* margin: 20px; */
+    margin-top: 30px;
+
+}
+
+.corporate .cards p{
+    color: var(--black);
+}
+
+
+
+.corporate .cards .card{
+    background-color: var(--faint-blue);
+    border-radius   : 20px;
+    margin: 0 auto;
+    margin-right: 20px;
+    font-size       : 0.9rem;
+    width           : 22%;
+    text-decoration : none;
+    height: 190px;
+}
+
+.corporate .cards .card img{
+    width: 90px;
+    margin: 30px;
+}
+
+.corporate .cards .card div p {
+    position: relative;
+    /* top: 490px; */
+    /* margin-left: 30px; */
+}

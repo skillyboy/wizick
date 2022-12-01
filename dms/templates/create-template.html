@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create template</title>
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/createtemplate.css">    
+
+
+
+</head>
+
+{% if messages %}
+    {% for item in messages %}
+      <div style="color: white; padding:2rem; background:#35B7FF;font-size:1rem; font-weight:700;text-align:center;">{{item}}</div>
+    {% endfor %}
+{% endif %}
+<body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="{% static '' %}img/logo.png" alt="Wizick">
+        </div>
+        <ul class="side-menu top">
+            <li>
+                <a href="#">
+                    <i><img class="icon" src="{% static '' %}img/icon/home.png" alt=""></i>
+                    <div>Home</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/dashboard.png" alt=""></i>
+                    <div>Dashboard</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/icon-park-outline_category-management.png" alt=""></i>
+                    <div>Document Manager</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i><img class="icon" src="{% static '' %}img/icon/akar-icons_edit.png" alt=""></i>
+                    <div> DocumentEditor</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/library.png" alt=""></i>
+                    <div> Clause Library</div>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/heroicons-outline_template.png" alt=""></i>
+                    <div>Template</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/gg_insights.png" alt=""></i>
+                    <div> Insight</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i><img class="icon" src="{% static '' %}img/icon/legal.png" alt=""></i>
+                    <div> Legal Terminology</div>
+                </a>
+            </li>
+
+            <hr>
+
+            <li class="username tablinks" id="user-tab" onclick="openTab(event, 'user')">
+                <a href="#">
+                    <div class="profile-pic-div">
+                        <img src="{% static '' %}img/nodp.png" class="display-pic" alt="">
+                    </div>
+                    <div>Wizick User</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i><img class="icon" src="{% static '' %}img/icon/Notification.png" alt=""></i>
+                    <div> Notification <span class="notify">2</span></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i> <img class="icon" src="{% static '' %}img/icon/logout.png" alt=""></i>
+                    <div> Log out</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="topbar">
+            <i><img class="icon menu" src="{% static '' %}img/icon/align-left.png" alt=""></i>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode">
+                <i><img src="{% static '' %}img/icon/sun.png" alt=""></i>
+                <i><img class="moon" src="{% static '' %}img/icon/moon.png" alt=""></i>
+            </label>
+        </div>
+
+       
+
+        <section class="corporate">
+           
+            <div class="title">
+                <h2>Create your Template</h2>
+                <p>Enter your Template information below</p>
+            </div>
+
+            <div class="form-section">
+                <span>Choose a category type:</span>
+                <select name="filetype">
+                    <option value="">Existing Category</option>
+                    <option value="pdf">PDF</option>
+                    <option value="doc">Ms-Word</option>
+                    <option value="xls">Ms-Excel</option>
+                    <option value="ppt">Ms-PowerPoint</option>
+                  </select>
+                </div>
+
+            <div class="cards">
+                <a href="#" class="card">
+                    <div>
+                        <img src="{% static '' %}img/icon/folder.png" alt="homeimage" srcset="">
+                        <p>Corporate Agreement</p>
+                    </div>
+                </a>
+                <a href="#" class="card a-second">
+                    <div>
+                        <img class="img-2" src="{% static '' %}img/icon/folder.png" alt="homeimage" srcset="">
+                        <p>Company</p>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div>
+                        <img class="img-3" src="{% static '' %}img/icon/folder.png" alt="homeimage" srcset="">
+                        <p>Jv</p>
+                    </div>
+                </a>
+            </div>
+            <div class="cards">
+                <a href="#" class="card">
+                    <div>
+                        <img src="{% static '' %}img/icon/folder.png" alt="homeimage" srcset="">
+                        <p>Software Development</p>
+                    </div>
+                </a>
+                <a href="#" class="card a-second">
+                    <div>
+                        <img class="img-2" src="{% static '' %}img/icon/folder.png" alt="homeimage" srcset="">
+                        <p>Company Agreement</p>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div>
+                        <img class="img-3" src="{% static '' %}img/icon/folder.png" alt="homeimage" srcset="">
+                        <p>Software Development</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="{% static '' %}js/script.js"></script>
+</body>
+
+</html>

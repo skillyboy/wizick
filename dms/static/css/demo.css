@@ -1,0 +1,215 @@
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.container{
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+
+span {
+  color: #35B7FF;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+.logo {
+  margin: 5px 80px;
+  width: 150px;
+}
+
+.topbar .switch-mode i img.moon {
+  top: 1px;
+}
+
+.light {
+  background-color: #35B7FF;
+  padding: 3px 14px;
+  border-radius: 18px;
+
+}
+
+
+.wizick-logo-t{
+  position: relative;
+  z-index: 1;
+  top: 10px;
+  width: 19%;
+  left: 790px;
+}
+
+
+.wizick-logo-t2{
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 30%;
+  /* left: 970px; */
+}
+
+#sect-1 {
+  display: flex;
+  margin: 0px 5%;
+  padding: 10px;
+  position: relative;
+  top: -130px;
+}
+
+#sect-1 #demo-img{
+  margin-top: 30px;
+
+}
+
+
+.sect-1 {
+  width: 45%;
+  height: 400px;
+  margin-top: 20px;
+}
+
+
+/* form  */
+
+
+.sect-head {
+  margin-bottom: 20px;
+  /* background-color: aqua; */
+  padding: 5px 0px;
+  text-align: center;
+}
+
+h1,
+h4,
+input,
+label {
+  margin-bottom: 10px;
+}
+
+.lb {
+  margin: 10px;
+}
+
+form{
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+input[type=text],
+select {
+  width: 45%;
+  padding: 16px 36px;
+  margin: 16px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color: var(--faint-blue);
+}
+
+input[type=email],
+input[type=password],
+select {
+  width: 90%;
+  padding: 16px 36px;
+  margin: 16px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color: var(--faint-blue);
+}
+
+input[type=submit] {
+  width: 40%;
+  background-color: #35B7FF;
+  color: white;
+  padding: 16px 40px;
+  margin: 40px auto;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+input[type=submit]:hover {
+  background: #E9F5FFE5;
+  color: #35B7FF;
+
+}
+
+.passp{
+  font-size: 15px;
+}
+
+div {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#demo-img img {
+  position: relative;
+  z-index: 2;
+  width: 135%;
+  margin-top: 0px;
+  margin-left: -150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+ */

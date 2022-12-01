@@ -1,0 +1,150 @@
+span {
+  color: #35B7FF;
+}
+
+.sidebar {
+  width: 60px;
+}
+
+.container {
+  position: relative;
+  z-index : 2;
+}
+
+.main {
+  width: 100%;
+  left : 0;
+}
+
+
+#save-as {
+  position           : absolute;
+  top                : -2px;
+  text-align         : center;
+  padding            : 30px;
+  width              : 98%;
+  /* background-color: #35B7FF; */
+
+}
+
+#save-as h1 {
+  color        : #cccccc;
+  font-size    : 2rem;
+  margin-bottom: 25px;
+}
+
+#cards {
+  display: flex;
+  margin : 0px auto;
+  width  : 90%;
+
+}
+
+.card {
+  width     : 60%;
+  height    : 400px;
+  text-align: left;
+
+}
+
+
+/* Question form  */
+#save-as #form {
+  padding : 20px;
+  width   : 60%;
+  position: relative;
+  top     : -70px;
+}
+
+
+#save-as .input-label {
+  font-weight: bold;
+  display    : block;
+}
+
+
+
+
+#save-as form {
+  font-size: 0.7rem;
+  /* width : 100%; */
+}
+
+
+#save-as input[type=text],
+select {
+  width        : 90%;
+  padding      : 14px 36px;
+  margin       : 5px 0;
+  display      : inline-block;
+  border       : 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing   : border-box;
+  background   : var(--faint-blue);
+}
+
+
+#save-as button {
+  width           : 12%;
+  background-color: transparent;
+  color           : #35B7FF;
+  border          : 1px solid #cccccc;
+  padding         : 10px 40px;
+  margin          : 10px 5px;
+  border-radius   : 24px;
+  cursor          : pointer;
+  font-size       : 1rem;
+  position        : relative;
+  left            : 210px;
+}
+
+#save-as button.active {
+  background-color: #35B7FF;
+  color           : white;
+  border          : none;
+}
+
+#save-as .btn-copy {
+  width        : 45%;
+  padding      : 5px 10px;
+  left         : 0px;
+  margin-bottom: 30px;
+  font-size    : 0.8rem;
+}
+
+#save-as .btn-preview {
+  width        : 20%;
+  position     : relative;
+  left         : 200px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+#save-as .btn-cancel {
+  background: #b2c1d6;
+  color     : white;
+}
+
+#save-as button:hover {
+  background: #E9F5FFE5;
+  border    : 1px solid #cccccc;
+  color     : #35B7FF;
+
+}
+
+
+#save-as .index {
+  line-height: 1.8;
+  width      : 100%;
+  border     : 1px solid black;
+  padding    : 40px;
+  height     : 400px;
+  background : var(--white);
+}
+
+
+
+#login-img img {
+  width     : 100%;
+  margin-top: 90px;
+}

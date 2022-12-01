@@ -1,0 +1,205 @@
+* {
+  margin: 0 auto;
+}
+
+
+span {
+  color: #35B7FF;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  font-size     : 0.9rem;
+  letter-spacing: 1px;
+  position      : relative;
+  z-index       : 3;
+}
+
+.logo {
+  margin: 5px 80px;
+  width : 150px;
+}
+
+.wizick-logo-t {
+  position: relative;
+  z-index : 1;
+  top     : 10px;
+  width   : 18%;
+  left    : 800px;
+}
+
+
+.wizick-logo-t2 {
+  position: absolute;
+  z-index : 1;
+  top     : -30px;
+  width   : 30%;
+  /* left : 970px; */
+}
+
+#sect-1 {
+  display : flex;
+  margin  : -20px 5%;
+  padding : 10px;
+  position: relative;
+  top     : -190px;
+}
+
+.sect-1 {
+  width     : 45%;
+  height    : 280px;
+  margin-top: 40px;
+}
+
+#signup-img {
+  width     : 38%;
+  margin-top: 120px;
+}
+
+/* form  */
+.sect-head {
+  margin-bottom: 30px;
+  padding      : 5px 0px;
+  text-align   : center;
+}
+
+h1,
+h4,
+input,
+label {
+  margin-bottom: 10px;
+}
+
+.lb {
+  margin: 10px;
+}
+
+form {
+  margin    : 0 auto;
+  text-align: center;
+}
+
+
+
+input[type=text],
+select {
+  width           : 45%;
+  padding         : 16px 36px;
+  margin          : 10px 0;
+  display         : inline-block;
+  border          : 1px solid #ccc;
+  border-radius   : 12px;
+  box-sizing      : border-box;
+  outline         : none;
+  background-color: var(--faint-blue);
+  transition      : all 0.3s;
+}
+
+input[type=email],
+#create-pwd,
+#confirm-pwd,
+select {
+  width           : 90%;
+  padding         : 16px 36px;
+  margin          : 10px 0;
+  display         : inline-block;
+  border          : 1px solid #ccc;
+  outline         : none;
+  border-radius   : 12px;
+  box-sizing      : border-box;
+  background-color: var(--faint-blue);
+  cursor          : text;
+  transition      : all 0.3s;
+}
+
+
+form input:focus {
+  border-color: #35B7FF;
+}
+
+input[type=button] {
+  width           : 40%;
+  background-color: #35B7FF;
+  color           : white;
+  padding         : 16px 40px;
+  margin          : 20px auto;
+  border          : none;
+  border-radius   : 12px;
+  cursor          : no-drop;
+  opacity         : 0.7;
+  font-size       : 1rem;
+}
+
+
+input[type=button].active {
+  cursor    : pointer;
+  opacity   : 1;
+  transition: all 0.3s;
+}
+
+input[type=button].active:hover {
+  background: #E9F5FFE5;
+  color     : #35B7FF;
+
+}
+
+
+
+.terms {
+  font-size  : 15px;
+  text-align : center;
+  line-height: 1.7;
+}
+
+div {
+  border-radius: 5px;
+  padding      : 20px;
+}
+
+#signup-img img {
+  position   : relative;
+  z-index    : 2;
+  width      : 120%;
+  margin-top : -120px;
+  margin-left: -110px;
+}
+
+
+.error-text {
+  padding      : 8px 0;
+  border-radius: 5px;
+  color        : #b90113;
+  position     : absolute;
+  top          : 160px;
+  right        : 175px;
+  display      : none;
+}
+
+.error-text.matched {
+  padding            : 8px 0;
+  border-radius      : 5px;
+  color              : #35B7FF;
+}
+
+.show {
+  width     : 40px;
+  position  : absolute;
+  right      : 125px;
+  top       : 425px;
+  cursor    : pointer;
+  display   : none;
+  transition: all 0.1s;
+  padding   : 0px;
+}
+
+.show.active {
+  color           : #35B7FF;
+  background-color: transparent;
+}
