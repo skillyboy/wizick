@@ -465,11 +465,6 @@ let displayClausesHead = document.querySelector('#clauses > h3');
 let allClauses = document.querySelector('#all-clause');
 let clausesEditors = document.querySelector('.clause-editor');
 
-
-
-
-
-
 listClauses.forEach( item => {
 	item.addEventListener('click', function(){
 		let list = item.innerText;
@@ -485,7 +480,6 @@ allClauses.addEventListener('click', function(){
 clausesEditors.addEventListener('click', function(){
 	displayClauses.style.display = 'none';
 });
-
 
 
 btnExpand.addEventListener('click', function(){
