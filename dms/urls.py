@@ -18,6 +18,7 @@ urlpatterns = [
     path('demo', demo, name='demo'),
     path('demologin', demologin, name='demologin'),
 # ================== TEMPLATE ====================================
+    path('allmanager', allmanager, name='allmanager'),
     path('docmanager', docmanager, name='docmanager'),
     path('pdfmanager', pdfmanager, name='pdfmanager'),
     path('editormanager', editormanager, name='editormanager'),

@@ -104,23 +104,26 @@ def dashboard(request):
     temp= {}
     list = []
     allcontract= 0
+    
     profile = ProfileDetail.objects.get(username__username= request.user.username)
     generated = Generatedmytemplate.objects.all().count()
     mygenerated = Generatedtemplate.objects.all().count()
-    
-        
+    allcontract = int(generated + mygenerated)
+
     clientcategory = ClientCategory.objects.all()
     for temp in clientcategory :  
         count = ClientTemplates.objects.filter(clientcategory_id=temp.id).count()
         list.append(count)
     print(list)
     print(temp)
+    print(allcontract)
 
     context={
     'profile': profile,
     'clientcategory' :clientcategory,
     'temp' :temp,
-    'list' :list
+    'list' :list,
+    'allcontract' :allcontract,
     }
     return render(request, 'dashboard.html', context)
 
@@ -439,6 +442,20 @@ def withoutinsight(request):
 # ============================
         # Insight
 # ============================
+def allmanager(request):
+    profile = ProfileDetail.objects.get(username__username= request.user.username)
+    mydocs = MyDocs.objects.filter(user__username = request.user.username)
+    mypdf = Mypdfs.objects.filter(user__username = request.user.username)
+    editor = Myeditor.objects.filter(user__username = request.user.username)
+    
+    context={
+        'profile': profile,
+        'mydocs': mydocs,
+        'mypdf': mypdf,
+        'editor': editor,              
+    }   
+    return render(request, 'docmanager.html', context)
+
 
 def docmanager(request):
     profile = ProfileDetail.objects.get(username__username= request.user.username)

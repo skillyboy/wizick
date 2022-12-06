@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Manager</title>
+    <title>All Document Manager</title>
     <link rel="stylesheet" href="{% static '' %}css/style.css">
     <link rel="stylesheet" href="{% static '' %}css/home.css">
 
@@ -147,11 +147,11 @@
                     <!-- <a href="{% url 'editormanager' %}"><button id="btn-edit" >Editor</button></a> -->
 
                     <select id="filetype">
+                        <option value="alldoc">All</option>
                         <option value="doc">DOC</option>
                         <option value="pdf">PDF</option>
                         <option value="edit">My Drafts</option> 
                         <option value="mytemp">My Templates</option> 
-                        <option value="all">All</option>
                     </select>
     
                     <input type="text" placeholder="Search by Title" id="doc-search">
@@ -213,6 +213,69 @@
                                 {% csrf_token %}
                                     <input type="hidden" name="modifydoc" value="{{item.id}}">
                                 <button type="submit" class="btn-add-insight">Add <i><img src="{% static '' %}img/icon/add.png"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        {% for item in editor %}
+                        <tr>
+                            <td>
+                                <select id="manage-btn">
+                                <option value="" selected>Pick an Option</option>
+                                
+                                <a href=""><option value="pdf">Pick</option></a>
+                                <a href="/google.com"><option value="default">Download</option></a>
+                                <a href="/google.com"><option value="doc">View</option></a>
+                                <a href=""><option value="pdf">Rename</option></a>
+                                <a href=""><option value="pdf">Edit</option></a>
+                                <a href=""><option value="pdf">Delete</option></a>
+                                </select>
+                            </td>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{item.parties}}</td>
+                            <td><img src="{% static '' %}img/icon/ms-word.png" alt=""></td>
+                            <td class="file-name">{{item.title}}</td>
+                            <td>{{user}}</td>
+                            <td>{{item.status}} <i><br><img src="{% static '' %}mg/icon/todo.png" alt=""></i></td>
+                            <td class="file">{{item.date_created}}</td>
+                            <td></td>
+                            <td>
+                                <form action="{% url 'createdraftinsight' %}" method="POST">
+                                {% csrf_token %}
+                                    <input type="hidden" name="modifydraft" value="{{item.id}}">
+                                   <button type="submit" class="btn-add-insight">Add <i><img src="{% static '' %}img/icon/add.png"></i></button>
+                                </form>
+                            </td>
+                            <!-- <td><a href="{% url 'createdraftinsight' %}"><button class=" btn-add-insight">Add <i><img src="{% static '' %}img/icon/add.png" alt=""></i></button></td></a> -->
+                        </tr>
+                        {% endfor %}
+
+                        {% for item in mypdf %}
+                        <tr>
+                            <td>
+                                <select id="manage-btn">
+                                    <option value="" selected>Pick an Option</option>
+                                    <a href=""><option value="default">Download</option></a>
+                                    <a href=""><option value="pdf">Rename</option></a>
+                                    <a href=""><option value="pdf">Edit</option></a>
+                                    <a href="google.com"><option value="ggogh.com">Delete</option></a>
+                                </select>
+                            </td>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{item.parties}}</td>
+                            <td><img src="{% static '' %}img/icon/ms-word.png" alt=""></td>
+                            <td class="file-name">{{item.title}}</td>
+                            <td>{{user}}</td>
+                            <td>{{item.status}} <i><br><img src="{% static '' %}mg/icon/todo.png" alt=""></i></td>
+                            <td class="file">{{item.date_created}}</td>
+                            <td><a href={{item.url}}>View</a></td>
+                            <td><button type="submit" class="btn-add-insight"> <a href="https://www.evoting.nsdl.com/">E-Sign</a></button></td>
+                            <td>
+                                <form action="{% url 'createpdfinsight' %}" method="POST">
+                                {% csrf_token %}
+                                    <input type="hidden" name="modifypdf" value="{{item.id}}">
+                                    <button type="submit" class="btn-add-insight">Add <i><img src="{% static '' %}img/icon/add.png"></i></button>
                                 </form>
                             </td>
                         </tr>

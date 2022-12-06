@@ -213,6 +213,9 @@ function fileSelected(){
 	if (fileType.value === 'doc') {
 		window.location.assign("docmanager")
 	} 
+	else if (fileType.value === 'all')  {
+		window.location.assign("allmanager")
+	}
 	else if (fileType.value === 'pdf')  {
 		window.location.assign("pdfmanager")
 	}
