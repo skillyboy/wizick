@@ -164,7 +164,7 @@
 
                 <section id="cards">
                     <label class="card">
-                        <form method="POST"  action="{% url 'uploadpdffile' %}" >
+                        <form method="POST"  action="{% url 'uploadpdffile' %}" enctype="multipart/form-data">
                         {%csrf_token%} 
                             <div>
                                 <button type="submit"> Upload Document</button>
