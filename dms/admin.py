@@ -47,7 +47,7 @@ class MyeditorAdmin(admin.ModelAdmin):
 
 @admin.register(Mypdfs)
 class MypdfsAdmin(admin.ModelAdmin):
-    list_display = ('user','title','pdf','type','parties','term','liabilitycap','consideration','effectivedate','expirydate','status','comment')
+    list_display = ('user','title','pdf','parties','term','liabilitycap','consideration','effectivedate','expirydate','status','comment')
 
 @admin.register(MyDocs)   
 class MyDocsAdmin(admin.ModelAdmin):

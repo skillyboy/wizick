@@ -182,36 +182,41 @@
                             <th>Created ON</th>
                             <th>View</th>
                             <th>E-Stamp</th>
+                            <th>Delete</th>
                             <th>Insight</th>
                         </tr>
+                        
                         {% for item in mypdf %}
-                        <tr>
-                            <td>
-                                <select id="manage-btn">
-                                    <option value="" selected>Pick an Option</option>
-                                    <a href=""><option value="default">Download</option></a>
-                                    <a href=""><option value="pdf">Rename</option></a>
-                                    <a href=""><option value="pdf">Edit</option></a>
-                                    <a href="google.com"><option value="ggogh.com">Delete</option></a>
-                                </select>
-                            </td>
-                            <td>{{forloop.counter}}</td>
-                            <td>{{item.parties}}</td>
-                            <td><img src="{% static '' %}img/icon/ms-word.png" alt=""></td>
-                            <td class="file-name">{{item.title}}</td>
-                            <td>{{user}}</td>
-                            <td>{{item.status}} <i><br><img src="{% static '' %}mg/icon/todo.png" alt=""></i></td>
-                            <td class="file">{{item.date_created}}</td>
-                            <td><a href={{item.url}}>View</a></td>
-                            <td><button type="submit" class="btn-add-insight"> <a href="https://www.evoting.nsdl.com/">E-Sign</a></button></td>
-                            <td>
-                                <form action="{% url 'createpdfinsight' %}" method="POST">
-                                {% csrf_token %}
-                                    <input type="hidden" name="modifypdf" value="{{item.id}}">
-                                    <button type="submit" class="btn-add-insight">Add <i><img src="{% static '' %}img/icon/add.png"></i></button>
-                                </form>
-                            </td>
-                        </tr>
+                        {% if item.pdf %}
+                            <tr>
+                                <td>
+                                    <select id="manage-btn">
+                                        <option value="" selected>Pick an Option</option>
+                                        <a href=""><option value="default">Download</option></a>
+                                        <a href=""><option value="pdf">Rename</option></a>
+                                        <a href=""><option value="pdf">Edit</option></a>
+                                        <a href="google.com"><option value="ggogh.com">Delete</option></a>
+                                    </select>
+                                </td>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{item.parties}}</td>
+                                <td><img src="{% static '' %}img/icon/ms-word.png" alt=""></td>
+                                <td class="file-name">{{item.title}}</td>
+                                <td>{{user}}</td>
+                                <td>{{item.status}} <i><br><img src="{% static '' %}mg/icon/todo.png" alt=""></i></td>
+                                <td class="file">{{item.date_created}}</td>
+                                <td><a href={{item.pdf.url}}>View</a></td>
+                                <td><button type="submit" class="btn-add-insight"> <a href="https://www.evoting.nsdl.com/">E-Sign</a></button></td>
+                                <td>Delete</td>
+                                <td>
+                                    <form action="{% url 'createpdfinsight' %}" method="POST">
+                                    {% csrf_token %}
+                                        <input type="hidden" name="modifypdf" value="{{item.id}}">
+                                        <button type="submit" class="btn-add-insight">Add <i><img src="{% static '' %}img/icon/add.png"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endif %}
                         {% endfor %}
 
                     </table>

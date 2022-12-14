@@ -58,6 +58,8 @@ from rest_framework.validators import ValidationError
 from rest_framework.response import Response
 from rest_framework import status
 
+# import os
+# import urllib.parse
 
 
 class ProfileDetailListView (RetrieveUpdateDestroyAPIView):
@@ -101,14 +103,15 @@ def index(request):
     return render(request, 'index.html')
 
 def dashboard(request):
+    profile = ProfileDetail.objects.get(username__username= request.user.username)
     temp= {}
     list = []
     allcontract= 0
     
-    profile = ProfileDetail.objects.get(username__username= request.user.username)
     generated = Generatedmytemplate.objects.all().count()
     mygenerated = Generatedtemplate.objects.all().count()
     allcontract = int(generated + mygenerated)
+    
 
     clientcategory = ClientCategory.objects.all()
     for temp in clientcategory :  
@@ -117,13 +120,13 @@ def dashboard(request):
     print(list)
     print(temp)
     print(allcontract)
-
+    
     context={
-    'profile': profile,
-    'clientcategory' :clientcategory,
-    'temp' :temp,
-    'list' :list,
-    'allcontract' :allcontract,
+        'profile': profile,
+        'clientcategory' :clientcategory,
+        'temp' :temp,
+        'list' :list,
+        'allcontract' :allcontract,
     }
     return render(request, 'dashboard.html', context)
 
@@ -444,12 +447,14 @@ def withoutinsight(request):
 # ============================
 def allmanager(request):
     profile = ProfileDetail.objects.get(username__username= request.user.username)
+    
     mydocs = MyDocs.objects.filter(user__username = request.user.username)
     mypdf = Mypdfs.objects.filter(user__username = request.user.username)
     editor = Myeditor.objects.filter(user__username = request.user.username)
     
     context={
         'profile': profile,
+        
         'mydocs': mydocs,
         'mypdf': mypdf,
         'editor': editor,              
@@ -1092,8 +1097,9 @@ def useragreementcntxt(request):
             return redirect('admintemp')
     return render(request, 'admintemp.html')
 
+# =============================
 
-
+# ================================================
 def uploadpdffile(request):
     user_profile = ProfileDetail.objects.get(username__username=request.user.username)
     if request.method == 'POST':
@@ -1102,7 +1108,6 @@ def uploadpdffile(request):
             new = pdfform.save(commit=False)
             new.user = request.user
             new.date_created = timezone.localtime(timezone.now())
-            
             new.save()
             messages.success(request, 'PDF FILE UPLOADED successful')
             return redirect('pdfmanager')
@@ -1133,28 +1138,7 @@ def uploaddocfile(request):
         'pdfform':pdfform,
     }
     return render(request, 'home.html', context)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# ================================================
 
 
 

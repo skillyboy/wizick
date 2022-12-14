@@ -66,7 +66,7 @@ class MypdfsForm(forms.ModelForm):
         model = Mypdfs
         fields = ('pdf','parties', 'liabilitycap', 'consideration','term','effectivedate','expirydate','status','comment')
         widgets = {
-            'pdf': forms.FileInput(attrs={'class': 'inner-div', 'placeholder': 'Image upload required'}),
+            'pdf': forms.FileInput(attrs={'class': 'col'}),
             'parties': forms.TextInput(attrs={'class': 'col'}),
             'liabilitycap': forms.TextInput(attrs={'class': 'col'}),
             'consideration': forms.TextInput(attrs={'class': 'col'}),

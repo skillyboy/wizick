@@ -167,12 +167,11 @@
                         <form method="POST"  action="{% url 'uploadpdffile' %}" >
                         {%csrf_token%} 
                             <div>
-                                <p><button type="submit"> Upload Document</button></p>
+                                <button type="submit"> Upload Document</button>
                                 <img src="{% static '' %}img/FileTransfer.png" alt="homeimage">
-                               <!-- <label for="file" id="upload-button">Upload pdf</label> -->
-                               <br>
-                               <br>
-                               <!-- <input type="file" id="file" name="pdf"> -->
+                            <br>
+                            <br>
+                               <input type="file" name="pdf">
                             </div>
                         </form>
                     </label>
