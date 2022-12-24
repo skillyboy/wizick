@@ -485,13 +485,14 @@ def pdfmanager(request):
 def deletepdffile(request):
     url = request.META.get('HTTP_REFERER')
     if request.method == 'POST':
-        delfile = request.POST['aditemid']
+        delfile = request.POST['itemid']
         Mypdfs.objects.filter(pk=delfile).delete()
         return redirect(url)
 
 def editormanager(request):
     profile = ProfileDetail.objects.get(username__username= request.user.username)
     editor = Myeditor.objects.filter(user__username = request.user.username)
+    
     context={
         'editor': editor,
         'profile': profile,
@@ -1103,10 +1104,12 @@ def useragreementcntxt(request):
 def uploadpdffile(request):
     user_profile = ProfileDetail.objects.get(username__username=request.user.username)
     if request.method == 'POST':
+        # file = request.POST['pdf']
         pdfform = MypdfsForm(request.POST)
         if pdfform.is_valid():
             new = pdfform.save(commit=False)
             new.user = request.user
+            # new.pdf = file
             new.date_created = timezone.localtime(timezone.now())
             new.save()
             messages.success(request, 'PDF FILE UPLOADED successful')

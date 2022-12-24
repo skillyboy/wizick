@@ -153,6 +153,9 @@
                         <option value="mytemp">My Templates</option> 
                         <option value="all">All</option>
                     </select>
+                    
+                    
+
                     <input type="text" placeholder="Search by Title" id="doc-search">
                     <button hidden><i><img src="" alt=""></i> Search</button>
                     <input type="date" id="date" placeholder="dd/mm/yy">
@@ -207,7 +210,13 @@
                                 <td class="file">{{item.date_created}}</td>
                                 <td><a href={{item.pdf.url}}>View</a></td>
                                 <td><button type="submit" class="btn-add-insight"> <a href="https://www.evoting.nsdl.com/">E-Sign</a></button></td>
-                                <td>Delete</td>
+                                <td>
+                                    <form action="{% url 'deletepdffile' %}" method="POST">
+                                        {% csrf_token %}
+                                            <input type="hidden" name="itemid" value="{{item.id}}">
+                                            <button type="submit" class="btn-add-insight">Delete </button>
+                                        </form>
+                                </td>
                                 <td>
                                     <form action="{% url 'createpdfinsight' %}" method="POST">
                                     {% csrf_token %}

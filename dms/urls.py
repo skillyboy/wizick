@@ -66,6 +66,7 @@ urlpatterns = [
     
     path('uploaddocfile', uploaddocfile, name='uploaddocfile'),
     path('uploadpdffile', uploadpdffile, name='uploadpdffile'),
+    path('deletepdffile', deletepdffile, name='deletepdffile'),
     
     
     

@@ -8,6 +8,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from .models import *
+# from .forms import UploadFileForm
 
 class SignupForm(UserCreationForm):
     class Meta:
@@ -66,7 +67,7 @@ class MypdfsForm(forms.ModelForm):
         model = Mypdfs
         fields = ('pdf','parties', 'liabilitycap', 'consideration','term','effectivedate','expirydate','status','comment')
         widgets = {
-            'pdf': forms.FileInput(attrs={'class': 'col'}),
+            'pdf': forms.FileField(),
             'parties': forms.TextInput(attrs={'class': 'col'}),
             'liabilitycap': forms.TextInput(attrs={'class': 'col'}),
             'consideration': forms.TextInput(attrs={'class': 'col'}),

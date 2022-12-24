@@ -329,7 +329,7 @@ class Myeditor(models.Model):
 class Mypdfs(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=100, null=True, default='New Document')
-    pdf = models.FileField(upload_to='user_uploads/pdf/', blank=True, null=False )
+    pdf = models.FileField(upload_to='user_uploads/pdf/', blank=False, null=False )
     # type = models.ForeignKey(FileType, on_delete=models.CASCADE, null=True)
     parties = models.CharField(max_length=100, blank=True, null=True)
     term = models.CharField(max_length=1000, blank=True, null=True)
@@ -526,3 +526,4 @@ class ClientTemplates(models.Model):
 
     def __str__(self):
         return self.body
+    
