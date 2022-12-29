@@ -9,7 +9,7 @@ urlpatterns = [
     path('', include('dms.urls')),
     path('ckeditor', include('ckeditor_uploader.urls')),
     path('tinymce/', include('tinymce.urls')),
-    path('api-auth/', include('rest_framework.urls'))
+    # path('api-auth/', include('rest_framework.urls'))
 
 ]
 if settings.DEBUG:
