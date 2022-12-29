@@ -84,7 +84,7 @@ urlpatterns = [
     path('editormanager', editormanager, name='editormanager'),
     path('notification', notification, name='notification'),
 
-    path('esign/<int:pk>', ProfileDetailListView.as_view(), name='esigning')
+    # path('esign/<int:pk>', ProfileDetailListView.as_view(), name='esigning')
     
 
 ]
