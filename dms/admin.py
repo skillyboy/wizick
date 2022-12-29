@@ -43,7 +43,8 @@ class GeneratedmytemplateAdmin(admin.ModelAdmin):
 @admin.register(Myeditor)     
 class MyeditorAdmin(admin.ModelAdmin):
     list_display = ('title','body','date_created','term')
-
+    
+    
 
 @admin.register(Mypdfs)
 class MypdfsAdmin(admin.ModelAdmin):
