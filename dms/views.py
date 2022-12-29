@@ -52,25 +52,25 @@ from . forms import *
 
 from . serializers import *
 from . models import * 
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.validators import ValidationError
-from rest_framework.response import Response
-from rest_framework import status
+# from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+# from rest_framework.viewsets import ModelViewSet
+# from rest_framework.validators import ValidationError
+# from rest_framework.response import Response
+# from rest_framework import status
 
 # import os
 # import urllib.parse
 
 
-class ProfileDetailListView (RetrieveUpdateDestroyAPIView):
-    queryset = ProfileDetail.objects.all()
-    serializer_class = ProfileDetailSerializer 
-    def delete (self, request, pk):
-        profile= get_object_or_404(ProfileDetail, pk)
-        if profile == 1:
-            raise ValidationError(' Sorry Cannot delete this objects')
-        profile.delete()
-        return Response ('hello im here' )
+# class ProfileDetailListView (RetrieveUpdateDestroyAPIView):
+#     queryset = ProfileDetail.objects.all()
+#     serializer_class = ProfileDetailSerializer 
+#     def delete (self, request, pk):
+#         profile= get_object_or_404(ProfileDetail, pk)
+#         if profile == 1:
+#             raise ValidationError(' Sorry Cannot delete this objects')
+#         profile.delete()
+#         return Response ('hello im here' )
 
 
 
