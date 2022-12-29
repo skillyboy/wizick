@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'tinymce',
     'django.contrib.humanize', #pip inatall humanize
-    'rest_framework',   
+    # 'rest_framework',   
 ]
 
 MIDDLEWARE = [
