@@ -1,5 +1,5 @@
 import base64
-from http import client
+# from http import client
 from xml.dom.minidom import DocumentFragment
 from django.shortcuts import render,redirect,get_object_or_404
 
@@ -50,7 +50,7 @@ import re
 from . models import *
 from . forms import *
 
-from . serializers import *
+# from . serializers import *
 from . models import * 
 # from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 # from rest_framework.viewsets import ModelViewSet
