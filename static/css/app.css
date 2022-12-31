@@ -1,0 +1,126 @@
+.main{
+    padding-top: 100px ;
+    width: 100%;
+    left: 0px;
+}
+
+.main .topbar {
+    width: 100%;
+    position: absolute;
+    top: 0px ;
+    padding: 20px 0;
+   
+}
+
+.topbar .switch-mode {
+    position: absolute;
+    top          : 30px;
+    right        : 70px;
+}
+
+.main .topbar .logo{
+    position: relative;
+    left: 40px;
+}
+.landing-section button {
+    background-color: var(--light-blue);
+    border: none;
+    border-radius: 24px;
+    padding: 20px 40px;
+    color: white;
+    width: 70%;
+}
+
+.landing-section #top-section {
+    background   : var(--faint-blue);
+    border-radius: 36px;
+    margin       : 2px auto;
+    padding      : 35px 30px;
+    display      : flex;
+    width        : 90%;
+    transition: ease-in-out 0.3s;
+}
+
+
+.landing-section #top-section button {
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+    width: 50%;
+    
+    
+    align-items: center;
+}
+
+.landing-section #top-section button .icon {
+    width: 10%;
+    margin-left: 10px;
+}
+
+
+.landing-section .title {
+    width      : 45%;
+    margin-left: 8%;
+}
+
+.landing-section .title h1 {
+    color    : var(--light-blue);
+    font-size: 2.5rem;
+}
+
+.landing-section .title p {
+    line-height   : 24px;
+    letter-spacing: 0.01em;
+    font-size     : 0.8rem;
+    margin: 15px 0;
+
+}
+
+.landing-section .title img{
+    width: 80%;
+}
+
+.landing-section #cards {
+    display: flex;
+    width  : 90%;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+
+}
+
+.landing-section #cards p{
+    color: var(--light-blue);
+}
+
+
+
+.landing-section #cards .card{
+    background-color: var(--faint-blue);
+    border-radius   : 20px;
+    margin          : 0 auto;
+    padding         : 10px;
+    font-size       : 1rem;
+    width           : 25%;
+    text-decoration : none;
+    height: 240px;
+}
+
+.landing-section #cards .card img{
+    width: 150px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.landing-section #cards .card .signup{
+    margin-top: -20px;
+   
+}
+
+.landing-section #cards .card div button {
+    display: block;
+    position: absolute;
+    top: 600px;
+    margin-left: 30px;
+    padding: 14px 0;
+    width: 15%;
+
+}

@@ -1,0 +1,305 @@
+:root {
+    --poppins   : 'Poppins', sans-serif;
+    --lato      : 'Lato', sans-serif;
+    --montserrat: 'montserrat', sans-serif;
+
+    --ash         : #b2c1d6;
+    --ash-white   : #7e7e7e;
+    --white       : #fff;
+    --blue        : #0263FF;
+    --light-blue  : #35b7ff;
+    --faint-blue  : #E9F5FFE5;
+    --unfaint-blue: #e9f5ff;
+    --grey        : #f5f5f5;
+    --dark        : #4b4b4b;
+    --dark-purple : #342E37;
+    --red         : #DB504A;
+    --purple      : #AD33BE;
+    --light-yellow: #FFF2C6;
+    --orange      : #FF7723;
+    --light-orange: #FFE0D3;
+    --black       : #000000;
+}
+
+
+* {
+    padding    : 0;
+    margin     : 0;
+    box-sizing : border-box;
+    font-family: var(--montserrat);
+    color      : var(--dark);
+}
+
+
+
+
+body.dark {
+    --light       : #121212e6;
+    --white       : #1d1d1d;
+    --dark        : #FBFBFB;
+    --faint-blue  : #121212;
+    --grey        : #121212e6;
+    --black       : #ffffff;
+    --ash         : #35b7ff;
+    --unfaint-blue: #121212;
+}
+
+body {
+    background: var(--white);
+}
+
+input[type='submit'],
+button {
+    cursor: pointer;
+}
+
+.topbar {
+    position                : fixed;
+    top                     : 0;
+    margin-left             : -30px;
+    width                   : 100%;
+    padding                 : 0 20px;
+    display                 : grid;
+    grid-template-columns   : 0.5fr 1fr;
+    align-items             : center;
+    z-index                 : 1000;
+    background              : transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+.topbar .switch-mode {
+    display      : block;
+    width        : 2%;
+    min-width    : 65px;
+    height       : 25px;
+    border-radius: 25px;
+    background   : var(--grey);
+    cursor       : pointer;
+    position     : fixed;
+    top          : 15px;
+    right        : 60px;
+}
+
+.topbar .switch-mode::before {
+    content      : '';
+    position     : absolute;
+    top          : 2px;
+    left         : 2px;
+    bottom       : 2px;
+    width        : calc(36px - 4px);
+    background   : var(--light-blue);
+    border-radius: 25px;
+    transition   : all .3s ease;
+}
+
+.topbar #switch-mode:checked+.switch-mode::before {
+    left: calc(100% - (36px - 4px) - 2px);
+}
+
+.topbar .switch-mode i img {
+    position   : relative;
+    top        : 3px;
+    left       : 4px;
+    z-index    : 10;
+    margin-left: 5px;
+}
+
+.topbar .switch-mode i img.moon {
+    left: 8px;
+}
+
+.topbar .icon {
+    width   : 8%;
+    position: relative;
+    cursor  : pointer;
+}
+
+
+
+/* sidebar css */
+.sidebar {
+    position  : fixed;
+    top       : 0;
+    left      : 0;
+    font-size : 0.8rem;
+    width     : 260px;
+    height    : 100%;
+    background: var(--faint-blue);
+    overflow  : hidden;
+    z-index   : 10000;
+    transition: .4s ease;
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+.sidebar .logo {
+    position: relative;
+    top     : 10px;
+    left    : 10px;
+
+}
+
+.sidebar .logo img {
+    width     : 50%;
+    object-fit: cover;
+}
+
+.sidebar ul {
+    margin-top: 30px;
+}
+
+.sidebar ul li {
+    width     : 100%;
+    list-style: none;
+}
+
+.sidebar ul li a {
+    width          : 100%;
+    text-decoration: none;
+    height         : 40px;
+    display        : flex;
+    align-items    : center;
+}
+
+.sidebar ul li a i {
+    min-width : 60px;
+    text-align: center;
+}
+
+.sidebar ul li a div {
+    width  : 100%;
+    padding: 10px;
+}
+
+.sidebar ul li .display-pic {
+    height: 100%;
+    width : 100%;
+
+}
+
+.sidebar ul li .profile-pic-div {
+    width        : 40px;
+    height       : 30px;
+    border-radius: 50%;
+    margin       : 30px 15px;
+    overflow     : hidden;
+    border       : 1px solid #7e7e7e;
+    text-align   : center;
+    padding      : 0;
+}
+
+hr {
+    margin: 25px 40px;
+}
+
+.sidebar .icon {
+    width: 30%;
+}
+
+.sidebar ul li a div:hover {
+    background: var(--ash-white);
+    color     : var(--white);
+}
+
+.sidebar ul li a:hover {
+    background: var(--ash-white);
+}
+
+.active {
+    background: var(--light-blue);
+    color     : var(--white);
+}
+
+.sidebar.hide {
+    width: 0px;
+}
+
+.sidebar.hide .side-menu li a {
+    width     : 0px;
+    transition: width .3s ease;
+}
+
+.sidebar .notify {
+    background-color: var(--light-blue);
+    margin-left     : 20px;
+    color           : white;
+    border-radius   : 50%;
+    padding         : 3px 6px;
+    font-size       : 0.6rem;
+}
+/* sidebar css */
+
+
+/* main css  */
+.main {
+    position    : relative;
+    top         : 0;
+    width       : calc(100% - 260px);
+    left        : 260px;
+    min-height  : calc(100vh - 60px);
+    transition  : .3s ease;
+    padding-top : 60px;
+    padding-left: 20px;
+}
+
+.sidebar.hide~.main {
+    width: calc(100% - 60px);
+    left : 60px;
+}
+
+
+/* Insight Modal Css  */
+.container form .in-active-modal {
+    width           : 100%;
+    height          : 100%;
+    position        : fixed;
+    top             : 0px;
+    background-color: #0000001f;
+    z-index         : 1000000;
+    text-align      : center;
+    display      : none;
+  }
+
+.container form .in-active-modal .pop-up {
+    width           : 40%;
+    background-color: white;
+    border          : 1px solid #B2C1D6;
+    border-radius   : 24px;
+    margin          : 150px auto;
+    padding         : 40px 60px;
+    text-align      : center;
+    font-size: 16px;
+}
+
+.container form .in-active-modal .pop-up h2 {
+    color: var(--light-blue);
+}
+
+.container form .in-active-modal .pop-up button {
+    display         : block;
+    width           : 50%;
+    padding         : 10px 20px;
+    background-color: var(--light-blue);
+    border          : none;
+    border-radius   : 10px;
+    color           : var(--white);
+    margin          : 0 auto;
+    margin-top      : 20px;
+}
+
+.container form .in-active-modal .pop-up button#btn-cancel {
+    width           : 40%;
+    background-color: transparent;
+    border          : 1px solid #35B7FF;
+    color           : #000000;
+}
+
+.container form .in-active-modal .pop-up button#btn-cancel:hover,
+.container form .in-active-modal .pop-up button:hover {
+    background: #ccc;
+    color     : #000000;
+}
+
+/* Insight Modal Css  */

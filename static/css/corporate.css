@@ -1,0 +1,124 @@
+/* corporate */
+
+.document-img {
+  position: absolute;
+  z-index : 0;
+  top     : 90px;
+  width   : 35%;
+  left    : 700px;
+}
+
+.corporate {
+  display : inline-block;
+  width   : 95%;
+  padding : 30px;
+  position: absolute;
+  top     : -30px;
+  left    : 50px;
+}
+
+
+.corporate button {
+  width        : 20%;
+  height       : 50px;
+  border       : 1px solid #35B7FF;
+  border-radius: 12px;
+  background   : transparent;
+  color        : #b4b4b4;
+}
+
+.corporate button:hover {
+  background-color: #E9F5FFE5;
+  color           : #B2C1D6;
+}
+
+.inner-sect {
+  margin: 30px 0px;
+}
+
+
+.inner-sect .btn-community {
+  margin-right: 40px;
+}
+
+form.search-bar input[type=text] {
+  border-radius: 16px;
+  padding      : 16px 36px;
+  font-size    : 17px;
+  border       : 1px solid grey;
+  float        : left;
+  width        : 80%;
+  background   : var(--faint-blue);
+}
+
+form.search-bar button {
+  float        : left;
+  width        : 6%;
+  height       : 52px;
+  border       : none;
+  border-radius: 16px;
+  cursor       : pointer;
+  position     : relative;
+  top          : 2px;
+  right        : 56px;
+}
+
+form.search-bar .icon {
+  width      : 30%;
+  text-align : center;
+  padding-top: 10px;
+  position   : relative;
+  top: 13px;
+  left: -35px;
+
+
+}
+
+form.search-bar::after {
+  content: "";
+  clear  : both;
+  display: table;
+}
+
+.inner-sect h3 {
+  background-color: var(--faint-blue);
+  color           : #B2C1D6;
+  padding         : 16px;
+  width           : 40%;
+  text-align      : left;
+  margin-left     : 0px;
+  border-radius   : 12px;
+}
+
+.inner-sect .item {
+  margin-bottom: 5px;
+  height       : 80px;
+}
+
+.inner-sect .item p {
+  width           : 65%;
+  margin-left     : 0px;
+  display         : inline-block;
+  background-color: var(--faint-blue);
+  border-radius   : 12px;
+  padding         : 20px;
+  font-size       : 0.8rem;
+  position        : relative;
+  top             : -34px;
+  left            : -30px;
+  z-index         : 0;
+}
+
+.inner-sect .item i img {
+  position: relative;
+  z-index : 1;
+}
+
+.inner-sect .btn-delete {
+  padding      : 0px 40px;
+  border-radius: 24px;
+  color        : #35B7FF;
+  height       : 40px;
+  position     : relative;
+  top          : -34px;
+}

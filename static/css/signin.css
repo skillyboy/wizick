@@ -1,0 +1,207 @@
+
+span {
+  color: #35B7FF;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+
+.passp {
+  float: right;
+}
+
+#side-rect {
+  position: absolute;
+  width: 50%;
+  height: 633px;
+  z-index: 0;
+
+}
+
+.rect-hide{
+  display: none;
+}
+
+
+#dark-rect {
+  position: absolute;
+  width: 50%;
+  height: 633px;
+  z-index: 0;
+  
+}
+
+
+.container {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+
+.logo {
+  margin: 5px 80px;
+  width: 150px;
+}
+
+.topbar .switch-mode i img.moon {
+  top: 1px;
+}
+
+.light {
+  background-color: #35B7FF;
+  padding: 3px 14px;
+  border-radius: 18px;
+
+}
+
+
+.wizick-logo-t{
+  position: relative;
+  z-index: 1;
+  top: 25px;
+  width: 19%;
+  left: 970px;
+}
+
+#sect-1 {
+  display: flex;
+  margin: -20px 5%;
+  padding: 10px;
+  position: relative;
+  top: -170px;
+  
+}
+
+.sect-1 {
+  width: 40%;
+  height: 390px;
+  margin-left: 70px;
+  margin-top: 20px;
+}
+
+
+/* form  */
+
+
+.sect-head {
+  margin-bottom: 20px;
+  /* background-color: aqua; */
+  padding: 5px 0px;
+  
+}
+
+h1,
+h4,
+input,
+label {
+  margin-bottom: 10px;
+}
+
+.lb {
+  margin: 10px;
+}
+
+/* form{
+    background-color: aqua;
+} */
+
+
+input[type=email],
+input[type=password],
+select {
+  width: 90%;
+  padding: 16px 36px;
+  margin: 16px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color: var(--faint-blue);
+}
+
+input[type=submit] {
+  width: 35%;
+  background-color: var(--light-blue);
+  color: white;
+  padding: 16px 40px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+input[type=submit]:hover {
+  background: var(--dark);
+  color: #35B7FF;
+
+}
+
+.input-label {
+  font-weight: bold;
+}
+
+
+
+div {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#login-img img {
+  width: 100%;
+  margin-top: 90px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+ */
