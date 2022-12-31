@@ -170,54 +170,54 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-###################################
-JAZZMIN_SETTINGS = {
-    # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Wizick Admin",
+# ###################################
+# JAZZMIN_SETTINGS = {
+#     # title of the window (Will default to current_admin_site.site_title if absent or None)
+#     "site_title": "Wizick Admin",
 
-    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Wizick Admin",
+#     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+#     "site_header": "Wizick Admin",
 
-    # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Wizick Admin",
+#     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+#     "site_brand": "Wizick Admin",
 
-    # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "img/logo.png",
+#     # Logo to use for your site, must be present in static files, used for brand on top left
+#     "site_logo": "img/logo.png",
 
-    # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": "img/logo.png",
+#     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
+#     "login_logo": "img/logo.png",
 
-    # Logo to use for login form in dark themes (defaults to login_logo)
-    "login_logo_dark": "img/logo.png",
+#     # Logo to use for login form in dark themes (defaults to login_logo)
+#     "login_logo_dark": "img/logo.png",
 
-    # CSS classes that are applied to the logo above
-    "site_logo_classes": "img-circle",
+#     # CSS classes that are applied to the logo above
+#     "site_logo_classes": "img-circle",
 
-    # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": "img/logo.png",
+#     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
+#     "site_icon": "img/logo.png",
 
-    # Welcome text on the login screen
-    "welcome_sign": "Welcome to Wizick Admin Site",
+#     # Welcome text on the login screen
+#     "welcome_sign": "Welcome to Wizick Admin Site",
 
-    # Copyright on the footer
-    "copyright": "Wizick Ltd",
+#     # Copyright on the footer
+#     "copyright": "Wizick Ltd",
 
-    # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
-    "user_avatar": "profile_pic",
-}
+#     # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
+#     "user_avatar": "profile_pic",
+# }
 
-##############################################################3
+# ##############################################################3
 
-TINYMCE_DEFAULT_CONFIG = {
-    "plugins": "image", #plugins  
-}
+# TINYMCE_DEFAULT_CONFIG = {
+#     "plugins": "image", #plugins  
+# }
 
 
-# email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'tpro1216@gmail.com'
-EMAIL_HOST_PASSWORD = 'hbitlgergmwmdqrl'
-EMAIL_USE_TLS = True
-# email settings done
+# # email settings
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'tpro1216@gmail.com'
+# EMAIL_HOST_PASSWORD = 'hbitlgergmwmdqrl'
+# EMAIL_USE_TLS = True
+# # email settings done
