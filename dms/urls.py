@@ -83,6 +83,8 @@ urlpatterns = [
     path('agreementcntxt', agreementcntxt, name='agreementcntxt'),
     path('editormanager', editormanager, name='editormanager'),
     path('notification', notification, name='notification'),
+    path('date1ans', date1ans, name='date1ans'),
+    
 
     # path('esign/<int:pk>', ProfileDetailListView.as_view(), name='esigning')
     
