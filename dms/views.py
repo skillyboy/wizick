@@ -1019,7 +1019,7 @@ def mytemplate(request):
 
 def date1ans(request):
     url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
+    pyperclip.copy('{Q1}')
     pyperclip.paste()
     return HttpResponse ('copied')
 
