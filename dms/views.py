@@ -1023,112 +1023,112 @@ def date1ans(request):
     pyperclip.paste()
     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('aaadfddddfaaa')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('aaadfddddfaaa')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
     
 def clientquestion (request,id):
