@@ -1216,7 +1216,7 @@ def useragreementcntxt(request):
 # =============================
 
 # ================================================
-# def uploadpdffile(request):
+def uploadpdffile(request):
 #     user_profile = ProfileDetail.objects.get(username__username=request.user.username)
 #     if request.method == 'POST':
 #         pdfform = MypdfsForm(request.POST)
@@ -1238,7 +1238,7 @@ def useragreementcntxt(request):
 #         'user_profile':user_profile,
 #         'pdfform':pdfform,
 #     }
-#     return render(request, 'home.html', context)
+    return render(request, 'home.html')
 
 def uploaddocfile(request):
     user_profile = ProfileDetail.objects.get(username__username=request.user.username)

@@ -65,7 +65,7 @@ urlpatterns = [
     path('mygentempdetails/<str:id>', mygentempdetails, name='mygentempdetails'),
     
     path('uploaddocfile', uploaddocfile, name='uploaddocfile'),
-    # path('uploadpdffile', uploadpdffile, name='uploadpdffile'),
+    path('uploadpdffile', uploadpdffile, name='uploadpdffile'),
     path('deletepdffile', deletepdffile, name='deletepdffile'),
     
     
