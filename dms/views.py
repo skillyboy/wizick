@@ -1017,11 +1017,11 @@ def mytemplate(request):
         
     # return render(request, 'mytemplate.html',{'category':category, 'profile':profile})   
 
-def date1ans(request):
-    url = request.POST.get('HTTP_REFERER')
-    pyperclip.copy('{Q1}')
-    pyperclip.paste()
-    return HttpResponse ('copied')
+# def date1ans(request):
+#     url = request.POST.get('HTTP_REFERER')
+#     pyperclip.copy('{Q1}')
+#     pyperclip.paste()
+#     return HttpResponse ('copied')
 
 # def date1ans(request):
 #     url = request.POST.get('HTTP_REFERER')
@@ -1216,29 +1216,29 @@ def useragreementcntxt(request):
 # =============================
 
 # ================================================
-def uploadpdffile(request):
-    user_profile = ProfileDetail.objects.get(username__username=request.user.username)
-    if request.method == 'POST':
-        pdfform = MypdfsForm(request.POST)
-        # pdf = request.FILES.get('image_upload')
+# def uploadpdffile(request):
+#     user_profile = ProfileDetail.objects.get(username__username=request.user.username)
+#     if request.method == 'POST':
+#         pdfform = MypdfsForm(request.POST)
+#         # pdf = request.FILES.get('image_upload')
         
-        if pdfform.is_valid():
-            new = pdfform.save(commit=False)
-            new.user = request.user
-            # new.pdf = file
-            new.date_created = timezone.localtime(timezone.now())
-            new.save()
-            messages.success(request, 'PDF FILE UPLOADED successful')
-            return redirect('pdfmanager')
-        else:
-            messages.error(request, pdfform.errors)
-            return redirect('home')
+#         if pdfform.is_valid():
+#             new = pdfform.save(commit=False)
+#             new.user = request.user
+#             # new.pdf = file
+#             new.date_created = timezone.localtime(timezone.now())
+#             new.save()
+#             messages.success(request, 'PDF FILE UPLOADED successful')
+#             return redirect('pdfmanager')
+#         else:
+#             messages.error(request, pdfform.errors)
+#             return redirect('home')
     
-    context = {
-        'user_profile':user_profile,
-        'pdfform':pdfform,
-    }
-    return render(request, 'home.html', context)
+#     context = {
+#         'user_profile':user_profile,
+#         'pdfform':pdfform,
+#     }
+#     return render(request, 'home.html', context)
 
 def uploaddocfile(request):
     user_profile = ProfileDetail.objects.get(username__username=request.user.username)
