@@ -21,7 +21,7 @@ ALLOWED_HOSTS = ['54.174.182.239', '*']
 # Application definition
 
 INSTALLED_APPS = [
-    # 'jazzmin',#pip install -U django-jazzmin
+    'jazzmin',#pip install -U django-jazzmin
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
