@@ -60,7 +60,7 @@ from . models import *
 
 # import os
 # import urllib.parse
-import pyperclip
+# import pyperclip
 
 
 # class ProfileDetailListView (RetrieveUpdateDestroyAPIView):
