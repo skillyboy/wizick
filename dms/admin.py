@@ -3,9 +3,9 @@ from .models import *
 
 # Register your models here.
 
-@admin.register(Esign)     
-class EsignAdmin(admin.ModelAdmin):
-    list_display = ('user','signature') 
+# @admin.register(Esign)     
+# class EsignAdmin(admin.ModelAdmin):
+#     list_display = ('user','signature') 
 
 
 @admin.register(ProfileDetail)     

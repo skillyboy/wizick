@@ -8,12 +8,12 @@ from tinymce import models as tinymce_models
 # ===========================================================
                         # User-Auth/Roles System
 # ===========================================================        
-class Esign(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    signature = models.CharField(max_length=100)
+# class Esign(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+#     signature = models.CharField(max_length=100)
     
-    def __str__(self):
-        return self.signature
+#     def __str__(self):
+#         return self.signature
 
 
 

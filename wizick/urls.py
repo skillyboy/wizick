@@ -7,8 +7,8 @@ from django.conf import settings
 urlpatterns = [
     path('dmsstaff/', admin.site.urls),
     path('', include('dms.urls')),
-    path('ckeditor', include('ckeditor_uploader.urls')),
-    path('tinymce/', include('tinymce.urls')),
+    # path('ckeditor', include('ckeditor_uploader.urls')),
+    path(r'^tinymce/', include('tinymce.urls')),
     # path('api-auth/', include('rest_framework.urls'))
 
 ]

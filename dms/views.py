@@ -827,24 +827,24 @@ def passwordupdate(request):
     # return redirect('home')
 
     
-def uploadprofile(request):
-    user_profile = ProfileDetail.objects.get(username__username=request.user.username)
-    pixform = ProfileForm(instance = request.user.profiledata)
-    if request.method == 'POST':
-        pixform = ProfileForm(request.POST, request.FILES, instance = request.user.profiledata)
-        if pixform.is_valid():
-            pixform.save()
-            messages.success(request, 'Profile update successful')
-            return redirect('profile')
-        else:
-            messages.error(request, pixform.errors)
-            return redirect('profile')
+# def uploadprofile(request):
+#     user_profile = ProfileDetail.objects.get(username__username=request.user.username)
+#     pixform = ProfileForm(instance = request.user.profiledata)
+#     if request.method == 'POST':
+#         pixform = ProfileForm(request.POST, request.FILES, instance = request.user.profiledata)
+#         if pixform.is_valid():
+#             pixform.save()
+#             messages.success(request, 'Profile update successful')
+#             return redirect('profile')
+#         else:
+#             messages.error(request, pixform.errors)
+#             return redirect('profile')
     
-    context = {
-        'user_profile':user_profile,
-        'pixform':pixform,
-    }
-    return render(request, 'profile.html', context)
+#     context = {
+#         'user_profile':user_profile,
+#         'pixform':pixform,
+#     }
+#     return render(request, 'profile.html', context)
     # return redirect('home')
 
     

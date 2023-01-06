@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-s5*19r3u)-p_9o_61pwg_+9r)xu8k5ob20ir(fdbybdd15udby
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.89.47.67', '*']
+ALLOWED_HOSTS = ['54.174.182.239', '*']
 
 
 # Application definition
@@ -29,8 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dms.apps.DmsConfig',
-    'ckeditor_uploader',#pip install django-ckeditor
-    'ckeditor',
+    # 'ckeditor_uploader',#pip install django-ckeditor
+    # 'ckeditor',
     'tinymce',
     'django.contrib.humanize', #pip inatall humanize
     # 'rest_framework',   
@@ -132,7 +132,7 @@ STATICFILES_DIRS = [(BASE_DIR / 'dms/static'),]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
+DJANGO_SETTINGS_MODULE='testtinymce.staticfiles_settings'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
