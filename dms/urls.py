@@ -30,7 +30,7 @@ urlpatterns = [
     path('editor', editor, name='editor'),
     path('withoutinsight', withoutinsight, name='withoutinsight'),
     path('profile', profile, name='profile'),
-    path('uploadprofile', uploadprofile, name='uploadprofile'),
+    # path('uploadprofile', uploadprofile, name='uploadprofile'),
     path('passwordupdate', passwordupdate, name='passwordupdate'),
     
     path('createdocinsight', createdocinsight, name='createdocinsight'),
